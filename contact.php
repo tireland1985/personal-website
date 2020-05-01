@@ -1,3 +1,4 @@
+<?php require 'scripts/mail.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +49,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/index.html">Home</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
-                        <li class="active"><a href="/contact.html">Contact</a></li>
+                        <li class="active"><a href="/contact.php">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>
@@ -58,18 +59,74 @@
         <ul class="sidenav" id="mobile-nav">
             <li><a href="/index.html">Home</a></li>
             <li><a href="/portfolio.html">Portfolio</a></li>
-            <li class="active"><a href="/contact.html">Contact</a></li>
+            <li class="active"><a href="/contact.php">Contact</a></li>
             <li><a href="/cv.html">CV</a></li>
         </ul>
     </header>
     <main>
+        <!-- Material Forms: https://materializecss.com/text-inputs.html viewed: 15/03/2020, some aspects from Assignment 1 modified. -->
         <div class="row">
-            <div class="col s12 center">
-
+            <div class="contact-form">
+                <div class="info">
+                    <h3>Tim Ireland</h3>
+                    <ul class="ul_form">
+                        <li><i class="white-text fa fa-road"></i>&nbsp;&nbsp;Milton Keynes</li>
+                        <li><i
+                                class="white-text fa fa-envelope"></i>&nbsp;&nbsp;&#116;im&#64;timire&#108;a&#110;&#100;&#46;u&#107;
+                        </li>
+                    </ul>
+                </div>
+                <div class="row contact-me">
+                    <h3>E-mail Me</h3>
+                    <div class="card horizontal card-opacity center">
+                        <div class="card-stacked">
+                            <!-- form uses validateForm() function to check data inputs to name, email & message fields. -->
+                            <!-- also checks that email address entered appears to be a valid format -->
+                            <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm());">
+                                <!-- form has no action element currently. I have found a PHP script to deal with submission/sending the form, but this seemed outside the scope of the assignment. -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input placeholder="Enter your name" id="name" type="text" class="validate white-text">
+                                        <label for="name" class="white-text">Name</label>
+                                    </div>
+                                    <!--removed - no need for name to be in separate fields <div class="input-field col s6">
+                        <input type="text" class="validate" id="last_name" name="last">
+                        <label for="last_name" class="white-text">Last Name</label>
+                    </div>-->
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">email</i>
+                                        <input type="email" class="validate white-text" id="email">
+                                        <label for="email" class="white-text">Email</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">call</i>
+                                        <input type="tel" class="validate white-text" id="phone">
+                                        <label for="phone" class="white-text">Telephone</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="textarea2" class="materialize-textarea white-text"
+                                            data-length="120"></textarea>
+                                        <label for="textarea2" class="white-text">Message</label>
+                                    </div>
+                                </div>
+                                <button type="submit">Submit &nbsp;<i class="material-icons white-text">send</i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
+        <div class="row">
+            <div class="col s12 m12 center">
+                <span id="date-time"></span>
+            </div>
+        </div>
     </main>
     <footer class="page-footer">
         <div class="row">
