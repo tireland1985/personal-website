@@ -21,7 +21,7 @@
 
     <!-- link to local stylesheet(s) -->
     <link rel="stylesheet" href="stylesheets/common.min.css">
-    <link rel="stylesheet" href="stylesheets/index.min.css">
+    <link rel="stylesheet" href="stylesheets/contact.min.css">
 
     <link rel="dns-prefetch" href="https://kit.font-awesome.com">
 
