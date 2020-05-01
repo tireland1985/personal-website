@@ -82,12 +82,12 @@
                         <div class="card-stacked">
                             <!-- form uses validateForm() function to check data inputs to name, email & message fields. -->
                             <!-- also checks that email address entered appears to be a valid format -->
-                            <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm());">
+                            <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm()); action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                 <!-- form has no action element currently. I have found a PHP script to deal with submission/sending the form, but this seemed outside the scope of the assignment. -->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input placeholder="Enter your name" id="name" type="text" class="validate white-text">
+                                        <input placeholder="Enter your name" id="name" type="text" class="validate white-text" name="name" value="<?php echo isset($_POST['name']) ? $data['name'] : ''; // prevent removing value from the form after failed sending ?>" required oninvalid="this.setCustomValidity('Input your name')" oninput="setCustomValidity('')">
                                         <label for="name" class="white-text">Name</label>
                                     </div>
                                     <!--removed - no need for name to be in separate fields <div class="input-field col s6">
@@ -98,8 +98,8 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">email</i>
-                                        <input type="email" class="validate white-text" id="email">
-                                        <label for="email" class="white-text">Email</label>
+                                        <input type="email" class="validate white-text" id="email" name="email" value="<?php echo isset($_POST['email']) ? $data['email'] : ''; // prevent removing value from the form after failed sending ?>" required>
+                                        <label for="email" class="white-text" data-error="wrong" data-success="right">Email</label>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">call</i>
@@ -110,8 +110,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">mode_edit</i>
-                                        <textarea id="textarea2" class="materialize-textarea white-text"
-                                            data-length="120"></textarea>
+                                        <textarea id="textarea2" class="materialize-textarea white-text validate" name="message" data-length="120" required oninvalid="this.setCustomValidity('Input your message')" oninput="setCustomValidity('')"><?php echo isset($_POST['message']) ? $data['message'] : ''; ?></textarea>
                                         <label for="textarea2" class="white-text">Message</label>
                                     </div>
                                 </div>
