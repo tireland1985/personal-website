@@ -29,17 +29,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <script src="scripts/lazyload.min.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="/cv.html">CV</a></li>
+                <li><a href="/cv.html">Overview</a></li>
                 <li><a href="/cv.html#education">Education</a></li>
                 <li><a href="/cv.html#pro-exp">Professional Experience</a></li>
                 <li><a href="/cv.html#other-exp">Other Experience</a></li>
                 <li><a href="/cv.html#skills">Skills</a></li>
+                <li><a href="/download.php?file=TimIreland-CV.pdf">Download</a></li>
             </ul>
             <nav>
                 <div class="nav-wrapper">
@@ -65,8 +68,190 @@
 
     <main>
         <div class="row">
-            <div class="col s12 center">
+            <h1 class="center">Project Overview</h1>
+        </div>
+        <div class="row">
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img src="https://timireland.uk/images/todo-list-project.jpg" alt="ToDoList.app">
+                        <span class="card-title">ToDoList.app</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Class project: Momentum style ToDo List</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985/todo-list">GitHub Repository</a>
+                        &emsp; &emsp; &emsp; &emsp;
+                        <a href="https://tireland1985.github.io/todo-list">Live Link</a>
 
+                    </div>
+                </div>
+            </div>
+            <!-- lazy load images (addressing low performance score in DevTools audit). https://dev.to/ekafyi/lazy-loading-images-with-vanilla-javascript-2fbj -->
+            <!-- performance was impacted by antivirus software.. running audit when disabled results in 80-90+% score -->
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/momentum-clone.jpg" alt="momentum-app clone">
+                            <span class="card-title">Momentum App (clone)</span>
+                    </div>
+                    <div class="card-content">
+                        <p>My attempt at making a momentum-style app</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985/momentum-clone">GitHub Repository</a>
+                        &emsp; &emsp; &emsp;
+                        <a href="https://tireland1985.github.io/momentum-clone">Live Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/weather-app-project.jpg" alt="Weather app">
+                        <span class="card-title">Weather App</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Class project: weather app using OpenWeatherMap API</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985/week7-weather-app">GitHub Repository</a>
+                        &emsp; &emsp; &emsp; &emsp;
+                        <a href="https://tireland1985.github.io/week7-weather-app">Live Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/quote-generator.jpg" alt="Random Quote Generator">
+                        <span class="card-title">Random Quote Generator</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Class project: 'Random' Quote generator</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985/week8-quote-generator">GitHub Repository</a>
+                        &emsp; &emsp; &emsp; &emsp;
+                        <a href="https://tireland1985.github.io/week8-quote-generator">Live Link</a>
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/homelab.jpg" alt="Home lab">
+                        <span class="card-title">Home Lab</span>
+                    </div>
+                    <div class="card-content">
+                        <p> My IT lab and project(s)</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985/cisco-config-examples">Cisco Configuration Examples</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/github-projects.jpg" alt="GitHub Projects">
+                        <span class="card-title">GitHub Projects</span>
+                    </div>
+                    <div class="card-content">
+                        <p>GitHub Projects Overview</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/tireland1985">GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/c220-repaint.jpg" alt="car repaint">
+                        <span class="card-title">Mercedes C220 Paint refinishing</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Partial repaint on my 2006 C220 Coupe</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">no link (yet)</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/r6-project.jpg" alt="Another R6 project">
+                        <span class="card-title">R6 Electrical rewiring & exhaust change</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Relocated & rewired the regulator/rectifier unit, plus other bits</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">no link (yet)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/c250-complete.jpg" alt="Mercedes C250">
+                        <span class="card-title">Mercedes C250 Restoration</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Significant body repairs due to rust</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">no link (yet)</a>
+                    </div>
+                </div>
+            </div></div>
+            <div class="row">
+            <div class="col m4">
+                <div class="card card-opacity-portfolio">
+                    <div class="card-image">
+                        <img class="lazy-load"
+                            src="https://cdn.glitch.com/3a5b333c-942b-4088-9930-e7ea1e516118%2Fplaceholder.png?v=1560442648212"
+                            data-src="https://timireland.uk/images/r6-rebuild.jpg" alt="R6 Rebuild">
+                        <span class="card-title">R6 Rebuild</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Rebuild of my '99 Yamaha R6 after being rear-ended</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">no link (yet)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 center">
+                <span id="date-time"></span>
             </div>
         </div>
     </main>
