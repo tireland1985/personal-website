@@ -22,7 +22,7 @@ let createLabels = function() {
     //event.preventDefault();
     //let candidateSkills = [];
     for(i=0;i<skillsList.length;i++){
-        var allSkills = "<span class='label label-default'>" + skillsList[i] + "</span>";
+        let allSkills = "<span class='label label-default'>" + skillsList[i] + "</span>";
         $("#skillsListContain").append(allSkills);
       }
       
