@@ -77,6 +77,7 @@
                         </li>
                     </ul>
                 </div>
+                <script>alert("E-Mails sent using this form are not currently being received. In the mean time, please use the email address listed. Apologies for the inconvenience");</script>
                 <div class="row contact-me">
                     <h3>E-mail Me</h3>
                     <div class="card horizontal card-opacity center">

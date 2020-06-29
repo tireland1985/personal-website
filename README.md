@@ -1,4 +1,5 @@
 # personal-website
-incomplete.<br />
-This is likely to be based on a recent University assignment.<br />
-watch this space!
+This is a work in progress <br />
+Click [here](https://timireland.uk) to view the current version.<br />
+## Known Issues:
+Contact Form: emails not being sent/received using the form.
