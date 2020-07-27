@@ -33,15 +33,16 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/cv.html">Overview</a></li>
+                <li><a href="/cv.html">Overview</a></li>
                 <li><a href="/cv.html#education">Education</a></li>
                 <li><a href="/cv.html#pro-exp">Professional Experience</a></li>
                 <li><a href="/cv.html#other-exp">Other Experience</a></li>
                 <li><a href="/cv.html#skills">Skills</a></li>
                 <li><a href="/download.php?download_file=Tim-Ireland-CV.pdf">Download</a></li>
+                <li><a href="/university-projects.html">University Projects</a></li>
             </ul>
             <nav>
                 <div class="nav-wrapper">
@@ -50,7 +51,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/index.html">Home</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
-                        <li class="active"><a href="/contact.php">Contact</a></li>
+                        <li><a href="/contact.php">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>
@@ -60,10 +61,12 @@
         <ul class="sidenav" id="mobile-nav">
             <li><a href="/index.html">Home</a></li>
             <li><a href="/portfolio.html">Portfolio</a></li>
-            <li class="active"><a href="/contact.php">Contact</a></li>
+            <li><a href="/contact.php">Contact</a></li>
             <li><a href="/cv.html">CV</a></li>
+            <li><a href="/university-projects.html">University Projects</a></li>
         </ul>
     </header>
+
     <main>
         <!-- Material Forms: https://materializecss.com/text-inputs.html viewed: 15/03/2020, some aspects from Assignment 1 modified. -->
         <div class="row">
