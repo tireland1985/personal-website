@@ -90,6 +90,8 @@
                             <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm()); action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                 <!-- form has no action element currently. I have found a PHP script to deal with submission/sending the form, but this seemed outside the scope of the assignment. -->
                                 <div class="row">
+                                    <input name="firstname" type="text" id="firstname" class="onh" autocomplete="new-password">
+
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input placeholder="Enter your name" id="name" type="text" class="validate white-text" name="name" value="<?php echo isset($_POST['name']) ? $data['name'] : ''; // prevent removing value from the form after failed sending ?>" required oninvalid="this.setCustomValidity('Input your name')" oninput="setCustomValidity('')">
