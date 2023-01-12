@@ -1,5 +1,5 @@
-images/
-.htaccess
-scripts/mail.php
+httpdocs/images/
+httpdocs/.htaccess
+httpdocs/scripts/mail.php
 .vscode/
 files/
