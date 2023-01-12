@@ -5,4 +5,5 @@ httpdocs/scripts/recaptcha.php
 httpdocs/scripts/phpmailer.php
 httpdocs/vendor/
 httpdocs/PHPMailer/
+httpdocs/mailer.php
 .vscode/
