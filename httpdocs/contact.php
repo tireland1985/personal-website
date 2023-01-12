@@ -1,4 +1,3 @@
-<?php require 'scripts/mail.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,16 +32,16 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/cv.html">Overview</a></li>
+                <li><a href="/cv.html">Overview</a></li>
                 <li><a href="/cv.html#education">Education</a></li>
                 <li><a href="/cv.html#pro-exp">Professional Experience</a></li>
                 <li><a href="/cv.html#other-exp">Other Experience</a></li>
                 <li><a href="/cv.html#skills">Skills</a></li>
                 <li><a href="/download.php?download_file=Tim-Ireland-CV.pdf">Download</a></li>
-            </ul>
+             </ul>
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo"><img src="/favicon-32x32.png" alt="Logo"></a>
@@ -64,6 +63,7 @@
             <li><a href="/cv.html">CV</a></li>
         </ul>
     </header>
+
     <main>
         <!-- Material Forms: https://materializecss.com/text-inputs.html viewed: 15/03/2020, some aspects from Assignment 1 modified. -->
         <div class="row">
@@ -77,25 +77,21 @@
                         </li>
                     </ul>
                 </div>
-                <script>alert("E-Mails sent using this form are not currently being received. In the mean time, please use the email address listed. Apologies for the inconvenience");</script>
+                <!-- <script>alert("E-Mails sent using this form are not currently being received. In the mean time, please use the email address listed. Apologies for the inconvenience");</script> -->
                 <div class="row contact-me">
                     <h3>E-mail Me</h3>
                     <div class="card horizontal card-opacity center">
                         <div class="card-stacked">
                             <!-- form uses validateForm() function to check data inputs to name, email & message fields. -->
                             <!-- also checks that email address entered appears to be a valid format -->
-                            <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm()); action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <!-- form has no action element currently. I have found a PHP script to deal with submission/sending the form, but this seemed outside the scope of the assignment. -->
+                            <form class="col s12" id="contact-me" name="contactForm" onsubmit="return(validateForm()); action="scripts/phpmailer.php" method="post">
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input placeholder="Enter your name" id="name" type="text" class="validate white-text" name="name" value="<?php echo isset($_POST['name']) ? $data['name'] : ''; // prevent removing value from the form after failed sending ?>" required oninvalid="this.setCustomValidity('Input your name')" oninput="setCustomValidity('')">
                                         <label for="name" class="white-text">Name</label>
                                     </div>
-                                    <!--removed - no need for name to be in separate fields <div class="input-field col s6">
-                        <input type="text" class="validate" id="last_name" name="last">
-                        <label for="last_name" class="white-text">Last Name</label>
-                    </div>-->
+
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
@@ -105,7 +101,7 @@
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">call</i>
-                                        <input type="tel" class="validate white-text" id="phone">
+                                        <input type="tel" class="validate white-text" id="phone" name="phone" value="<?php echo isset($_POST['phone']) ? $data['phone'] : ''; ?>">
                                         <label for="phone" class="white-text">Telephone</label>
                                     </div>
                                 </div>
