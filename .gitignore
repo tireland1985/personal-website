@@ -1,8 +1,8 @@
 httpdocs/images/
 httpdocs/.htaccess
 httpdocs/scripts/mail.php
-htdocs/scripts/recaptcha.php
-htdocs/scripts/phpmailer.php
-htdocs/vendor/
-htdocs/PHPMailer/
+httpdocs/scripts/recaptcha.php
+httpdocs/scripts/phpmailer.php
+httpdocs/vendor/
+httpdocs/PHPMailer/
 .vscode/
