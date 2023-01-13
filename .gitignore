@@ -1,3 +1,4 @@
+conf/
 httpdocs/images/
 httpdocs/.htaccess
 httpdocs/scripts/mail.php
