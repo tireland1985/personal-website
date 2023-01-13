@@ -9,5 +9,3 @@ httpdocs/mailer.php
 .vscode/
 vendor/
 PHPMailer/
-database.php
-secrets.php
