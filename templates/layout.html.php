@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio website landing page">
     <meta name="theme-color" content="#3d445c">
-    <title>Tim Ireland</title>
+    <title>Tim Ireland <?=$title;?></title>
 
     <link rel="manifest" href="/manifest.json">
     <!-- link to Google fonts (Material Icons)-->
