@@ -7,3 +7,5 @@ httpdocs/vendor/
 httpdocs/PHPMailer/
 httpdocs/mailer.php
 .vscode/
+vendor/
+PHPMailer/
