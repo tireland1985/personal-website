@@ -22,8 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- link to local stylesheet(s) -->
-    <link rel="stylesheet" href="stylesheets/common.min.css">
-    <link rel="stylesheet" href="stylesheets/index.min.css">
+    <link rel="stylesheet" href="stylesheets/portfolio-site.min.css">
 
     <link rel="dns-prefetch" href="https://kit.font-awesome.com">
 
@@ -38,11 +37,11 @@
     <header>
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="/cv.html">Overview</a></li>
-                <li><a href="/cv.html#education">Education</a></li>
-                <li><a href="/cv.html#pro-exp">Professional Experience</a></li>
-                <li><a href="/cv.html#other-exp">Other Experience</a></li>
-                <li><a href="/cv.html#skills">Skills</a></li>
+                <li><a href="/cv">Overview</a></li>
+                <li><a href="/cv/education">Education</a></li>
+                <li><a href="/cv/pro-exp">Professional Experience</a></li>
+                <li><a href="/cv/other-exp">Other Experience</a></li>
+                <li><a href="/cv/skills">Skills</a></li>
                 <li><a href="/download.php?download_file=Tim-Ireland-CV.pdf">Download</a></li>
             </ul>
             <nav>
@@ -50,9 +49,9 @@
                     <a href="#!" class="brand-logo"><img src="/favicon-32x32.png" alt="Logo"></a>
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/index.html">Home</a></li>
-                        <li><a href="/portfolio.html">Portfolio</a></li>
-                        <li><a href="/contact.php">Contact</a></li>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>
@@ -60,65 +59,13 @@
             </nav>
         </div>
         <ul class="sidenav" id="mobile-nav">
-            <li class="active"><a href="/index.html">Home</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
-            <li><a href="/contact.php">Contact</a></li>
-            <li><a href="/cv.html">CV</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/cv">CV</a></li>
         </ul>
     </header>
-    <main>
-        <div class="row">
-            <div class="col s12 center">
-                <h1>Hi, I'm Tim.</h1>
-                <div class="profile">
-                    <a href="#" class="profile" onmouseover="changePic()" onmouseout="normalPic()"><img
-                            src="/images/tim.jpg" alt="profile picture" id="profilePic"></a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 center">
-                <h2> I'm currently a full-time student at The <a href="https://www.northampton.ac.uk/">University of
-                        Northampton</a>, </h2>
-                <h3>studying towards a BEng in <a
-                        href="https://www.northampton.ac.uk/courses/computing-computer-networks-engineering-beng-hons/">
-                        Computer Networks Engineering</a>.</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 center">
-                <div class="quote-container">
-                    <div class="card center card-opacity-index">
-                        <div class="card-image">
-
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <span class="card-title">
-                                    <i class="header fas fa-quote-left fa-2x"></i>
-                                </span>
-                                <p id="quote">"Education is the kindling of a flame, not the filling of a vessel."
-                                    &emsp;-<em>Socrates</em></p>
-                            </div>
-                            <div class="card-action">
-                                <button id="gen" onclick="genQuote()" aria-label="Generate Quote"><i
-                                        class="fas fa-redo-alt"></i></button> &emsp;
-                                <button id="tweet" onclick="tweetQuote()" aria-label="Retweet Quote"><i
-                                        class="fab fa-twitter"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 center">
-                <div class="clock">
-                    <span class="clock-text"></span>
-                </div>
-            </div>
-        </div>
-    </main>
+    <?=$output?>
 
     <footer class="page-footer">
         <div class="row">
@@ -135,7 +82,7 @@
             <a href='mail&#116;o&#58;tim&#64;t%69%&#54;&#68;ir&#101;&#108;%61%&#54;&#69;%&#54;4&#46;uk'
                 aria-label="email"><i class="fas fa-envelope fa-2x"></i></a>
             <br>
-            <p>&copy; 2020</p>
+            <p>&copy; 2020 - <?=date('Y');?></p>
             </div>
         </div>
         <!-- Install button, hidden by default -->
@@ -161,7 +108,7 @@
     <!-- local materialize js/ jQuery -->
     <script src="scripts/plugins.min.js"></script>
 
-    <script src="scripts/index.min.js" defer></script>
+    <script src="scripts/portfolio-site.min.js" defer></script>
 
     <script src="scripts/pwa.js" defer></script>
 
