@@ -5,7 +5,7 @@ class Routes implements \Classes\Routes{
     
 
     public function getController($name){
-        require '../conf/database.php';
+        require '../siteconf/database.php';
 
         // using $this->categoryTable instead of $categoryTable appears necessary to pass certain variables for dynamic navbar menu generation into layout.html.php
         // have so far been unable to get menu working without this.. WIP

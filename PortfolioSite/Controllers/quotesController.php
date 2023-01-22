@@ -9,8 +9,8 @@ class quotesController{
 
         return [
             'template' => 'home.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => 'Home',
+            'variables' => []
         ];
     }
 }

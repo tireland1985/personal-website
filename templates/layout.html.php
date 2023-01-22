@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio website landing page">
     <meta name="theme-color" content="#3d445c">
-    <title>Tim Ireland <?=$title;?></title>
+    <title>Tim Ireland - <?=$title;?></title>
 
     <link rel="manifest" href="/manifest.json">
     <!-- link to Google fonts (Material Icons)-->
@@ -22,8 +22,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- link to local stylesheet(s) -->
-    <link rel="stylesheet" href="stylesheets/portfolio-site.min.css">
-
+    <link rel="stylesheet" href="stylesheets/common.min.css">
+		<?php if($title == 'Home'){ ?>
+    <link rel="stylesheet" href="stylesheets/index.min.css">
+		<?php } else if ($title == 'CV'){ ?>
+    <link rel="stylesheet" href="stylesheets/cv.min.css">
+		<?php } else if($title == 'Portfolio'){ ?>
+    <link rel="stylesheet" href="stylesheets/portfolio.min.css">
+		<?php } else if ($title == 'Contacts'){ ?>
+    <link rel="stylesheet" href="stylesheets/contact.min.css">
+    <?php }
+    ?>
     <link rel="dns-prefetch" href="https://kit.font-awesome.com">
 
     <!-- favicon section -->
@@ -49,7 +58,7 @@
                     <a href="#!" class="brand-logo"><img src="/favicon-32x32.png" alt="Logo"></a>
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/portfolio">Portfolio</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
@@ -108,8 +117,14 @@
     <!-- local materialize js/ jQuery -->
     <script src="scripts/plugins.min.js"></script>
 
-    <script src="scripts/portfolio-site.min.js" defer></script>
-
+    	<?php if ($title == 'Home'){ ?>
+	<script src="scripts/index.min.js" defer></script>
+		<?php } else if ($title == 'CV') { ?>
+	<script src="scripts/skills-list.js"></script>
+		<?php } else if ($title == 'Portfolio'){ ?>
+	<script src="scripts/lazyload.min.js"></script>
+	<?php }
+	?>
     <script src="scripts/pwa.js" defer></script>
 
     <!-- font awesome kit -->
