@@ -9,8 +9,8 @@ class adminController{
 
         return [
             'template' => 'login.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => 'Admin',
+            'variables' => []
         ];
     }
 }

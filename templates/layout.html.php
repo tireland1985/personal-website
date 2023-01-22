@@ -46,7 +46,7 @@
     <header>
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="/cv">Overview</a></li>
+                <li><a href="/cv/overview">Overview</a></li>
                 <li><a href="/cv/education">Education</a></li>
                 <li><a href="/cv/pro-exp">Professional Experience</a></li>
                 <li><a href="/cv/other-exp">Other Experience</a></li>
@@ -60,36 +60,32 @@
                     <ul class="right hide-on-med-and-down">
                         <?php if($title = 'Home'){ ?>
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/portfolio/projects">Portfolio</a></li>
+                        <li><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } ?>
-                        <?php else if ($title = 'Portfolio'){ ?>
+                        <?php } else if ($title = 'Portfolio'){ ?>
                         <li><a href="/">Home</a></li>
-                        <li class="active"><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li class="active"><a href="/portfolio/projects">Portfolio</a></li>
+                        <li><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } ?>
-                        <?php else if ($title = 'CV'){ ?>
+                        <?php } else if ($title = 'CV'){ ?>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/portfolio/projects">Portfolio</a></li>
+                        <li><a href="/contact/form">Contact</a></li>
                         <li class="active"><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } ?>
-                        <?php else if ($title = 'Contact'){ ?>
+                        <?php } else if ($title = 'Contact'){ ?>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li class="active"><a href="/contact">Contact</a></li>
+                        <li><a href="/portfolio/projects">Portfolio</a></li>
+                        <li class="active"><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } ?>
-                        <?php else { ?>
+                        <?php } else { ?>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/portfolio/projects">Portfolio</a></li>
+                        <li><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
                         <?php } ?>
@@ -99,9 +95,9 @@
         </div>
         <ul class="sidenav" id="mobile-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/cv">CV</a></li>
+            <li><a href="/portfolio/projects">Portfolio</a></li>
+            <li><a href="/contact/form">Contact</a></li>
+            <li><a href="/cv/overview">CV</a></li>
         </ul>
     </header>
     <?=$output?>

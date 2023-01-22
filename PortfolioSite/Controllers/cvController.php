@@ -5,12 +5,12 @@ class cvController{
 
     }
 
-    public function home(){
+    public function overview(){
 
         return [
             'template' => 'login.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => 'CV',
+            'variables' => []
         ];
     }
 }

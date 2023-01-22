@@ -5,12 +5,12 @@ class portfolioController{
 
     }
 
-    public function home(){
+    public function projects(){
 
         return [
             'template' => 'login.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => 'Portfolio',
+            'variables' => []
         ];
     }
 }

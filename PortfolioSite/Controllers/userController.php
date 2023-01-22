@@ -9,8 +9,8 @@ class userController{
 
         return [
             'template' => 'login.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => '',
+            'variables' => []
         ];
     }
 }

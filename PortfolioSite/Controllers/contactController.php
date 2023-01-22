@@ -5,12 +5,12 @@ class contactController{
 
     }
 
-    public function home(){
+    public function form(){
 
         return [
             'template' => 'login.html.php',
-            'title' => ' - Home',
-            'variables' => NULL
+            'title' => 'Contact',
+            'variables' => []
         ];
     }
 }
