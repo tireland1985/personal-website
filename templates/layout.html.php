@@ -58,11 +58,41 @@
                     <a href="#!" class="brand-logo"><img src="/favicon-32x32.png" alt="Logo"></a>
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
+                        <?php if($title = 'Home'){ ?>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <?php } ?>
+                        <?php else if ($title = 'Portfolio'){ ?>
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <?php } ?>
+                        <?php else if ($title = 'CV'){ ?>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li class="active"><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <?php } ?>
+                        <?php else if ($title = 'Contact'){ ?>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li class="active"><a href="/contact">Contact</a></li>
+                        <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <?php } ?>
+                        <?php else { ?>
                         <li><a href="/">Home</a></li>
                         <li><a href="/portfolio">Portfolio</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </nav>
