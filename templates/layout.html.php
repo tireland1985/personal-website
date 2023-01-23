@@ -48,8 +48,8 @@
             <ul id="dropdown1" class="dropdown-content">
                 <li><a href="/cv/overview">Overview</a></li>
                 <li><a href="/cv/education">Education</a></li>
-                <li><a href="/cv/pro-exp">Professional Experience</a></li>
-                <li><a href="/cv/other-exp">Other Experience</a></li>
+                <li><a href="/cv/pro_exp">Professional Experience</a></li>
+                <li><a href="/cv/other_exp">Other Experience</a></li>
                 <li><a href="/cv/skills">Skills</a></li>
                 <li><a href="/download.php?download_file=Tim-Ireland-CV.pdf">Download</a></li>
             </ul>

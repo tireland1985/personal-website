@@ -23,7 +23,7 @@ class cvController{
         ];
     }
 
-    public function pro-exp(){
+    public function pro_exp(){
 
         return [
             'template' => 'cv-pro-exp.html.php',
@@ -32,7 +32,7 @@ class cvController{
         ];
     }
 
-    public function other-exp(){
+    public function other_exp(){
 
         return [
             'template' => 'cv-other-exp.html.php',
