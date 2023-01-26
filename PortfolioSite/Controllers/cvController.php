@@ -2,7 +2,7 @@
 namespace PortfolioSite\Controllers;
 class cvController{
     public function __construct($pdo, $cvEmpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post){
-        $this->cvEmpTable = $cEmpTable;
+        $this->cvEmpTable = $cvEmpTable;
         $this->cvSkillsTable = $cvSkillsTable;
         $this->cvEducationTable = $cvEducationTable;
         $this->get = $get;

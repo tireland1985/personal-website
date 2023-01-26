@@ -25,11 +25,11 @@ class Routes implements \Classes\Routes{
         $controllers = [];
         $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable);
         $controllers['contact'] = new \PortfolioSite\Controllers\contactController($_GET, $_POST);
-        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($cvEmpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
+        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $_POST);
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
-        $controllers['user'] = new \PortfolioSite\Controllers\userController($authentication, $userTable, $_GET, $_POST);
-        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($projectsTable, $_GET, $_POST);
+        $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
+        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $_GET, $_POST);
         return $controllers[$name];
     }
 
