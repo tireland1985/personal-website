@@ -8,7 +8,7 @@ class contactController{
     public function form(){
 
         return [
-            'template' => 'login.html.php',
+            'template' => 'contact-form.html.php',
             'title' => 'Contact',
             'variables' => []
         ];

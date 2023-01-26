@@ -1,34 +1,41 @@
 <?php
 namespace PortfolioSite\Controllers;
 class cvController{
-    public function __construct(){
-
+    public function __construct($pdo, $cvEmpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post){
+        $this->cvEmpTable = $cEmpTable;
+        $this->cvSkillsTable = $cvSkillsTable;
+        $this->cvEducationTable = $cvEducationTable;
+        $this->get = $get;
+        $this->post = $post;
+        $this->pdo = $pdo;
     }
 
     public function overview(){
-
+        $employmentList = $this->cvEmpTable->findAll();
+        $skillsList = $this->cvSkillsTable->findAll();
+        $educationList = $this->cvEducationTable->findAll();
         return [
             'template' => 'cv-overview.html.php',
             'title' => 'CV',
-            'variables' => []
+            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList]
         ];
     }
 
     public function education(){
-
+        $educationList = $this->cvEducationTable->findAll();
         return [
             'template' => 'cv-education.html.php',
             'title' => 'CV',
-            'variables' => []
+            'variables' => ['educationList' => $educationList]
         ];
     }
 
     public function pro_exp(){
-
+        $employmentList = $this->cvEmpTable->findAll();
         return [
             'template' => 'cv-pro-exp.html.php',
             'title' => 'CV',
-            'variables' => []
+            'variables' => ['employmentList' => $employmentList]
         ];
     }
 
