@@ -1,0 +1,488 @@
+body {
+    font-family: Ubuntu, sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3d445c;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@-ms-keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@-o-keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+nav {
+    padding: 0 .5em;
+    background: rgba(117, 117, 117, .4);
+    font-family: 'Bree Serif', serif;
+    margin-right: 2em
+}
+
+nav a:link {
+    color: #fff
+}
+
+nav a:visited {
+    color: #fff
+}
+
+nav a:active {
+    color: #fff
+}
+
+nav ul li a {
+    font-size: 1.7em
+}
+
+.dropdown-content {
+    background-color: #3d445c;
+    width: 10vw
+}
+
+ul .dropdown-content li a {
+    font-size: 1.5em
+}
+
+a:link {
+    text-transform: none;
+    color: #63ccff
+}
+
+a:visited {
+    text-transform: none;
+    color: #63ccff
+}
+
+a:active {
+    text-transform: none;
+    color: #63ccff
+}
+
+i {
+    font-size: 1.5rem;
+    color: #63ccff
+}
+
+#date-time {
+    font-size: 1.2em
+}
+
+.page-footer {
+    background-color: #3d445c
+}
+
+#landing-page .profile img {
+    border-style: none;
+    border-radius: 100%;
+    background: url(/images/tim.jpg) no-repeat;
+    margin: auto
+}
+
+#landing-page .profile:hover {
+    border-style: none;
+    border-radius: 100%;
+    transition: background-size .3s ease
+}
+
+#landing-page h1 {
+    font-family: 'Bree Serif', serif;
+    font-size: 3em
+}
+
+#landing-page h2 {
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif
+}
+
+#landing-page h3 {
+    font-size: 1.4rem;
+    font-family: 'Bree Serif', serif
+}
+
+#landing-page h4 {
+    font-size: 1.3rem;
+    font-family: 'Bree Serif', serif
+}
+
+#landing-page .header {
+    margin-top: 5px;
+    opacity: .7;
+    z-index: 1
+}
+
+#landing-page #quote {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, .911)
+}
+
+#landing-page .fa-redo-alt {
+    font-size: 1.3rem;
+    color: rgba(151, 177, 248, .945)
+}
+
+#landing-page .quote-container {
+    opacity: .6;
+    display: block;
+    width: 40vw;
+    margin: 0 auto
+}
+
+#landing-page .card-opacity-index {
+    background: rgba(13, 72, 161, .747)
+}
+
+#landing-page .card-opacity-index:hover {
+    box-shadow: 0 0 20px 0 rgba(57, 82, 163, .7);
+    transition: 1s
+}
+
+#landing-page button {
+    background-color: rgba(13, 72, 161, .747);
+    color: #63ccff;
+    font-size: 1.3em;
+    border: none;
+    text-decoration: none
+}
+
+#landing-page button:active {
+    background-color: rgba(13, 72, 161, .747);
+    color: #63ccff;
+    font-size: 1.3em;
+    border: none;
+    text-decoration: none
+}
+
+#landing-page button:visited {
+    background-color: rgba(13, 72, 161, .747);
+    color: #63ccff;
+    font-size: 1.3em;
+    border: none;
+    text-decoration: none
+}
+
+#landing-page button:focus {
+    background-color: rgba(13, 72, 161, .747);
+    color: #63ccff;
+    font-size: 1.3em;
+    border: none;
+    text-decoration: none;
+    outline: #fff 5px auto
+}
+
+#landing-page .hidden {
+    display: none !important
+}
+
+#landing-page #installContainer {
+    position: absolute;
+    bottom: 1em;
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+#landing-page #installContainer button {
+    background-color: inherit;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1em;
+    padding: .75em
+}
+
+
+#contacts-page .smallicon {
+    font-size: 1em
+}
+
+#contacts-page h1,h2,h3,h4,h5,h6 {
+    font-family: 'Bree Serif', serif
+}
+
+#contacts-page .contact-form>* {
+    padding: 1em
+}
+
+#contacts-page .info {
+    background: #3d445c;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px
+}
+
+#contacts-page .info h3, .info ul {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: #fff
+}
+
+#contacts-page li {
+    color: #fff
+}
+
+#contacts-page .contact-me {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 60vw
+}
+
+#contacts-page .card-opacity {
+    background: rgba(13, 72, 161, .37)
+}
+
+#contacts-page .card-opacity:hover {
+    box-shadow: 0 0 20px 0 rgba(57, 82, 163, .7);
+    transition: 1s
+}
+
+#contacts-page .contact-me h3 {
+    text-align: center;
+    color: #fff
+}
+
+#contacts-page .ul_form {
+    list-style-type: none
+}
+
+#contacts-page .contact-me form label {
+    display: block
+}
+
+#contacts-page .contact-me form p {
+    margin: 0
+}
+
+#contacts-page .contact-me form .full {
+    grid-column: 1/3
+}
+
+#contacts-page .contact-me form button, .contact-me form input,.contact-me form textarea {
+    width: 100%;
+    padding: 1em;
+    border: solid 1px #5a7ae6;
+    border-radius: 4px
+}
+
+#contacts-page .contact-me form textarea {
+    resize: none
+}
+
+#contacts-page .contact-me form button {
+    background: #627edc;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    font-weight: 700
+}
+
+#contacts-page .contact-me form button:focus, .contact-me form button:hover {
+    background: #3952a3;
+    color: #fff;
+    outline: 0;
+    transition: background-color 2s ease-out
+}
+
+
+
+#cv-page h1 {
+    font-weight: 400;
+    font-size: 2.5em;
+    font-family: 'Bree Serif', serif
+}
+
+#cv-page h2 {
+    font-weight: 300;
+    font-size: 2em;
+    font-family: 'Bree Serif', serif
+}
+
+#cv-page .circles {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+#cv-page .circles img {
+    width: 204px;
+    height: 204px;
+    border-radius: 100%
+}
+
+#cv-page h3 {
+    font-weight: 200;
+    font-size: 1.8em;
+    font-family: 'Bree Serif', serif
+}
+
+#cv-page h4 {
+    font-weight: 100;
+    font-size: 1.5em;
+    font-family: 'Bree Serif', serif
+}
+
+#cv-page .linkcolour {
+    color: #63ccff
+}
+
+#cv-page a:link {
+    text-transform: none;
+    color: #63ccff
+}
+
+#cv-page .profile {
+    border-style: none;
+    filter: grayscale(0);
+    margin: auto
+}
+
+#cv-page .profile:hover {
+    filter: grayscale(1);
+    transition: background-size .3s ease
+}
+
+#cv-page .cv-container {
+    display: block;
+    width: 50vw;
+    margin: 0 auto
+}
+
+#cv-page .cv-text {
+    font-size: 1.2em
+}
+
+#cv-page #card-header {
+    color: rgba(11, 12, 12, .575)
+}
+
+#cv-page .card-opacity-cv {
+    background: rgba(13, 72, 161, .37)
+}
+
+#cv-page .card-opacity-cv:hover {
+    box-shadow: 0 0 20px 0 rgba(57, 82, 163, .7);
+    transition: 1s
+}
+
+#cv-page #skillsListContain {
+    border: .1em solid rgba(13, 72, 161, .7);
+    padding: .9em
+}
+
+#cv-page #canSkillsContain {
+    margin: 0 auto;
+    padding: .9em;
+    margin-top: 2em
+}
+
+#cv-page .label {
+    margin: .125em .6em .125em .6em;
+    background: rgba(117, 117, 117, .4);
+    color: #fff;
+    font-size: 1.3em;
+    text-shadow: none;
+    cursor: pointer
+}
+
+#cv-page .label:hover {
+    background: #757575;
+    transition: .5s
+}
+
+#cv-page .selSkill {
+    width: 100%
+}
+
+#cv-page .skillFormat {
+    width: 100%
+}
+
+#cv-page .slider {
+    width: 100%;
+    height: 30px;
+    margin: 3px 0 3px 0
+}
+
+#cv-page .slider:hover {
+    background: rgba(13, 72, 161, .37)
+}
+
+#cv-page .selSkl {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    max-height: 30px
+}
+
+#cv-page .slideContain {
+    width: 30%;
+    height: 30px;
+    float: right;
+    background: rgba(177, 188, 191, .5)
+}
+
+#cv-page .seld {
+    display: none
+}
+
+
+#portfolio-page h1 {
+    font-family: 'Bree Serif', serif
+}
+
+#portfolio-page .card-opacity-portfolio {
+    background-color: rgba(13, 72, 161, .37)
+}
+
+#portfolio-page .card-opacity-portfolio:hover {
+    box-shadow: 0 0 20px 0 rgba(57, 82, 163, .7);
+    transition: 1s
+}
+

@@ -22,17 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- link to local stylesheet(s) -->
-    <link rel="stylesheet" href="stylesheets/common.min.css">
-		<?php if($title == 'Home'){ ?>
-    <link rel="stylesheet" href="stylesheets/index.min.css">
-		<?php } else if ($title == 'CV'){ ?>
-    <link rel="stylesheet" href="stylesheets/cv.min.css">
-		<?php } else if($title == 'Portfolio'){ ?>
-    <link rel="stylesheet" href="stylesheets/portfolio.min.css">
-		<?php } else if ($title == 'Contacts'){ ?>
-    <link rel="stylesheet" href="stylesheets/contact.min.css">
-    <?php }
-    ?>
+    <link rel="stylesheet" href="stylesheets/combined.min.css">
+
     <link rel="dns-prefetch" href="https://kit.font-awesome.com">
 
     <!-- favicon section -->
