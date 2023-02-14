@@ -14,7 +14,7 @@ class contactController{
         return [
             'template' => 'contact-form.html.php',
             'title' => 'Contact',
-            'variables' => []
+            'variables' => ['data[]' => 'data[]']
         ];
     }
 
@@ -30,10 +30,16 @@ class contactController{
 
         if(isset($_POST['submit'])){
 
-            $field_name = $_POST['name'];
-            $field_email = $_POST['email'];
-            $field_phone = $_POST['phone'];
-            $field_message = $_POST['message'];
+            //filter provided data
+            $args = array(
+                'name' => FILTER_SANITIZE_STRING,
+                'phone' => preg_replace('/[^0-9]/', '', $_POST['phone']),
+                'email' => FILTER_SANITIZE_EMAIL,
+                'message' => FILTER_SANITIZE_STRING
+            );
+
+            //populate 'data' array with sanitized information
+            $data = filter_input_array(INPUT_POST, $args);
 
 	        $mail = new PHPMailer(true);
 	
@@ -48,11 +54,11 @@ class contactController{
 	
 	        $mail->setFrom($username, 'Mailer');
 	        $mail->addAddress($myEmail);
-	        $mail->addReplyTo($_POST['email'], $_POST['name']);
+	        $mail->addReplyTo($data['email'], $data['name']);
 	
 	        $mail->isHTML(true);
-	        $mail->Subject = 'Contact request from: ' . $_POST['name'];
-	        $mail->Body = $_POST['message'];
+	        $mail->Subject = 'Contact request from: ' . $data['name'];
+	        $mail->Body = $data['message'];
 	
 	        try {
 		        $mail->send();
@@ -70,10 +76,7 @@ class contactController{
         return [
             'template' => 'contact-form.html.php',
             'title' => 'Contact',
-            'variables' => [ 'field_name' => 'field_name',
-                             'field_email' => 'field_email',
-                             'field_phone' => 'field_phone',
-                             'field_message' => 'field_message']
+            'variables' => ['data[]' => 'data[]']
         ];
     }
 }

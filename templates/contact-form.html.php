@@ -1,3 +1,26 @@
+<?php 
+	/*if(isset($_POST['submit'])){
+		$data = array(
+			array(
+			"name" => $_POST['name'],
+			"email" => $_POST['email'],
+			"phone" => $_POST['phone'],
+			"message" => $_POST['message'])
+		);
+	}*/
+    if(isset($_POST['submit'])){
+                    //filter provided data
+                    $args = array(
+                        'name' => FILTER_SANITIZE_STRING,
+                        'phone' => preg_replace('/[^0-9]/', '', $_POST['phone']),
+                        'email' => FILTER_SANITIZE_EMAIL,
+                        'message' => FILTER_SANITIZE_STRING
+                    );
+        
+                    //populate 'data' array with sanitized information
+                    $data = filter_input_array(INPUT_POST, $args);
+    }
+	?>
 <main id="contacts-page">
         <!-- Material Forms: https://materializecss.com/text-inputs.html viewed: 15/03/2020, some aspects from Assignment 1 modified. -->
         <div class="row">
@@ -22,7 +45,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input placeholder="Enter your name" id="name" type="text" class="validate white-text" name="name" value="<?php echo isset($_POST['name']) ? $field_name : ''; // prevent removing value from the form after failed sending ?>" required oninvalid="this.setCustomValidity('Input your name')" oninput="setCustomValidity('')">
+                                        <input placeholder="Enter your name" id="name" type="text" class="validate white-text" name="name" value="<?php echo isset($_POST['name']) ? $data['name'] : ''; // prevent removing value from the form after failed sending ?>" required oninvalid="this.setCustomValidity('Input your name')" oninput="setCustomValidity('')">
                                         <label for="name" class="white-text">Name</label>
                                     </div>
 
