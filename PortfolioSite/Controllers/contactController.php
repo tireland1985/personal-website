@@ -4,8 +4,9 @@ use \PHPMailer\PHPMailer\PHPMailer;
 use \PHMailer\PHPMailer\Exception;
 
 class contactController{
-    public function __construct(){
-
+    public function __construct(array $get, array $post){
+        $this->get = $get;
+        $this->post = $post;
     }
 
     public function form(){
@@ -18,21 +19,27 @@ class contactController{
     }
 
     public function formSubmit(){
+        // the folowing vatiables are defined in the configuration secrets file
+        $username = constant('MAILER_USERNAME'); 
+        $password = constant('MAILER_PASSWORD'); 
+        $myEmail = constant('MAILER_EMAIL'); 
 
-        $username = $MAILER_USERNAME; //get from secrets file
-        $password = $MAILER_PASSWORD; //get from secrets file
-        $myEmail = $MAILER_EMAIL; //get from secrets file
-
-        require '../../PHPMailer/src/Exception.php';
-        require '../../PHPMailer/src/PHPMailer.php';
-        require '../../PHPMailer/src/SMTP.php';
+        require '../PHPMailer/src/Exception.php';
+        require '../PHPMailer/src/PHPMailer.php';
+        require '../PHPMailer/src/SMTP.php';
 
         if(isset($_POST['submit'])){
+
+            $field_name = $_POST['name'];
+            $field_email = $_POST['email'];
+            $field_phone = $_POST['phone'];
+            $field_message = $_POST['message'];
+
 	        $mail = new PHPMailer(true);
 	
 	        $mail->SMTPDebug = 0;
 	
-	        $mail->Host = 'v.je'; //use real domain, not v.je as dev env does not have smtp 
+	        $mail->Host = 'v.je'; //will not work in current development env due to no SMTP support - also requires real domain name
 	        $mail->SMTPAuth = true;
 	        $mail->Username = $username;
 	        $mail->Password = $password;
@@ -56,7 +63,17 @@ class contactController{
         	}
         }
         else {
-	        echo 'There appears to be an issue with the contact form, please try again later';
+	        echo '<h2>There appears to be an issue with the contact form, please try again later</h2>';
+            print_r($_POST);
         }
+
+        return [
+            'template' => 'contact-form.html.php',
+            'title' => 'Contact',
+            'variables' => [ 'field_name' => 'field_name',
+                             'field_email' => 'field_email',
+                             'field_phone' => 'field_phone',
+                             'field_message' => 'field_message']
+        ];
     }
 }

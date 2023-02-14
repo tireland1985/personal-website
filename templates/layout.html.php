@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- link to local stylesheet(s) -->
-    <link rel="stylesheet" href="stylesheets/combined.min.css">
+    <link rel="stylesheet" href="/stylesheets/combined.min.css">
 
     <link rel="dns-prefetch" href="https://kit.font-awesome.com">
 
@@ -132,17 +132,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- local materialize js/ jQuery -->
-    <script src="scripts/plugins.min.js"></script>
+    <script src="/scripts/plugins.min.js"></script>
 
     	<?php if ($title == 'Home'){ ?>
-	<script src="scripts/index.min.js" defer></script>
+	<script src="/scripts/index.min.js" defer></script>
 		<?php } else if ($title == 'CV') { ?>
-	<script src="scripts/skills-list.js"></script>
+	<script src="/scripts/skills-list.js"></script>
 		<?php } else if ($title == 'Portfolio'){ ?>
-	<script src="scripts/lazyload.min.js"></script>
+	<script src="/scripts/lazyload.min.js"></script>
 	<?php }
 	?>
-    <script src="scripts/pwa.js" defer></script>
+    <script src="/scripts/pwa.js" defer></script>
 
     <!-- font awesome kit -->
     <script src="https://kit.fontawesome.com/49d5ff7e71.js" crossorigin="anonymous"></script>

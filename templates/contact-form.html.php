@@ -46,7 +46,7 @@
                                         <label for="textarea2" class="white-text">Message</label>
                                     </div>
                                 </div>
-                                <button type="submit">Submit &nbsp;<i class="material-icons white-text">send</i></button>
+                                <button type="submit" name="submit">Submit &nbsp;<i class="material-icons white-text">send</i></button>
                             </form>
                         </div>
                     </div>
