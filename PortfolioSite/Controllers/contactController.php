@@ -58,7 +58,7 @@ class contactController{
 	
 	        $mail->isHTML(true);
 	        $mail->Subject = 'Contact request from: ' . $data['name'];
-	        $mail->Body = $data['message'];
+	        $mail->Body = $data['message'] . ' Phone Number: ' . $data['phone'];
 	
 	        try {
 		        $mail->send();
