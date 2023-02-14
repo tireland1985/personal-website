@@ -8,6 +8,18 @@
     <meta name="theme-color" content="#3d445c">
     <title>Tim Ireland - <?=$title;?></title>
 
+    <?php if($title == 'Home'){
+        echo "<script src=\"/scripts/index.min.js\" defer></script> \r\n";
+        echo '	<script src="/scripts/pwa.js" defer></script>';
+    } else if($title == 'CV'){
+        echo '<script src="/scripts/skills-list.js" defer></script>';
+    } else if($title == 'Portfolio'){
+        echo '<script src="/scripts/lazyload.min.js" defer></script>';
+    } else {
+        echo '<!-- js files dynamically loaded as/if required -->';
+    }
+    ?>
+
     <link rel="manifest" href="/manifest.json">
     <!-- link to Google fonts (Material Icons)-->
     <link rel="dns-prefetch preconnect" href="https://fonts.googleapis.com/">
@@ -49,19 +61,19 @@
                     <a href="#!" class="brand-logo"><img src="/favicon-32x32.png" alt="Logo"></a>
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <?php if($title = 'Home'){ ?>
+                        <?php if($title == 'Home'){ ?>
                         <li class="active"><a href="/">Home</a></li>
                         <li><a href="/portfolio/projects">Portfolio</a></li>
                         <li><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } else if ($title = 'Portfolio'){ ?>
+                        <?php } else if ($title == 'Portfolio'){ ?>
                         <li><a href="/">Home</a></li>
                         <li class="active"><a href="/portfolio/projects">Portfolio</a></li>
                         <li><a href="/contact/form">Contact</a></li>
                         <li><a href="#!" class="dropdown-trigger" data-target="dropdown1">CV <i
                                     class="material-icons right">arrow_drop_down</i></a></li>
-                        <?php } else if ($title = 'CV'){ ?>
+                        <?php } else if ($title == 'CV'){ ?>
                         <li><a href="/">Home</a></li>
                         <li><a href="/portfolio/projects">Portfolio</a></li>
                         <li><a href="/contact/form">Contact</a></li>
@@ -133,16 +145,6 @@
 
     <!-- local materialize js/ jQuery -->
     <script src="/scripts/plugins.min.js"></script>
-
-    	<?php if ($title == 'Home'){ ?>
-	<script src="/scripts/index.min.js" defer></script>
-		<?php } else if ($title == 'CV') { ?>
-	<script src="/scripts/skills-list.js"></script>
-		<?php } else if ($title == 'Portfolio'){ ?>
-	<script src="/scripts/lazyload.min.js"></script>
-	<?php }
-	?>
-    <script src="/scripts/pwa.js" defer></script>
 
     <!-- font awesome kit -->
     <script src="https://kit.fontawesome.com/49d5ff7e71.js" crossorigin="anonymous"></script>
