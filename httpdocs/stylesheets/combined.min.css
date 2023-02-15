@@ -218,11 +218,11 @@ main#landing-page button:focus {
     outline: #fff 5px auto
 }
 
-main#landing-page .hidden {
+.hidden {
     display: none !important
 }
 
-main#landing-page #installContainer {
+#installContainer {
     position: absolute;
     bottom: 1em;
     display: flex;
@@ -230,7 +230,7 @@ main#landing-page #installContainer {
     width: 100%
 }
 
-main#landing-page #installContainer button {
+#installContainer button {
     background-color: inherit;
     border: 1px solid #fff;
     color: #fff;
