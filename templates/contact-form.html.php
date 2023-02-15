@@ -69,6 +69,7 @@
                                         <label for="textarea2" class="white-text">Message</label>
                                     </div>
                                 </div>
+                                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? '' ?>">
                                 <button type="submit" name="submit">Submit &nbsp;<i class="material-icons white-text">send</i></button>
                             </form>
                         </div>

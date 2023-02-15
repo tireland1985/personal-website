@@ -11,6 +11,7 @@ class contactController{
 
     public function form(){
 
+        $_SESSION['token'] = bin2hex(random_bytes(35));
         return [
             'template' => 'contact-form.html.php',
             'title' => 'Contact',
@@ -19,6 +20,8 @@ class contactController{
     }
 
     public function formSubmit(){
+
+
         // the folowing vatiables are defined in the configuration secrets file
         $username = constant('MAILER_USERNAME'); 
         $password = constant('MAILER_PASSWORD'); 
@@ -29,6 +32,15 @@ class contactController{
         require '../PHPMailer/src/SMTP.php';
 
         if(isset($_POST['submit'])){
+
+            $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
+            if(!$token || $token !== $_SESSION['token']){
+                //tokens do not match - display error
+                die('A fatal error occurred.');
+                header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+                exit;
+            }
+            //assuming tokens match, continue
 
             //filter provided data
             $args = array(
