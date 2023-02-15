@@ -70,7 +70,7 @@ class contactController{
 	
 	        $mail->isHTML(true);
 	        $mail->Subject = 'Contact request from: ' . $data['name'];
-	        $mail->Body = $data['message'] . ' Phone Number: ' . $data['phone'];
+	        $mail->Body = $data['message'] . '<br> Phone Number: ' . $data['phone'];
 	
 	        try {
 		        $mail->send();
