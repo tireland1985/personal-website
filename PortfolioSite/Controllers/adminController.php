@@ -1,15 +1,20 @@
 <?php
 namespace PortfolioSite\Controllers;
+use Classes\Authentication;
 class adminController{
-    public function __construct(){
 
+    private $userTable;
+
+    public function __construct($authentication, $userTable){
+        $this->authentication = $authentication;
+        $this->userTable = $userTable;
     }
 
     public function home(){
 
         return [
-            'template' => 'login.html.php',
-            'title' => 'Admin',
+            'template' => 'admin/home.html.php',
+            'title' => 'Administration Area',
             'variables' => []
         ];
     }

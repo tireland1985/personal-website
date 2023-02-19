@@ -41,6 +41,32 @@ class DatabaseTable {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function recordLoginSuccess(){
+        $time = date('Y-m-d H:i:s');
+        $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
+                    VALUES (:username, :datetime_attempted, :status)';
+        $stmt = $this->pdo->prepare($query);
+            $values = [
+                'username' => $_POST['username'],
+                'datetime_attempted' => $time,
+                'status' => 'SUCCESS'
+            ];
+        $stmt->execute($values);
+    }
+
+    public function recordLoginFailed(){
+        $time = date('Y-m-d H:i:s');
+        $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
+                    VALUES (:username, :datetime_attempted, :status)';
+        $stmt = $this->pdo->prepare($query);
+            $values = [
+                'username' => $_POST['username'],
+                'datetime_attempted' => $time,
+                'status' => 'FAILED'
+            ];
+        $stmt->execute($values);
+    }
     
     public function insert($record){
         // generic insert function that should work for any table/ schema
