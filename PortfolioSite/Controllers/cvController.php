@@ -15,7 +15,7 @@ class cvController{
         $skillsList = $this->cvSkillsTable->findAll();
         $educationList = $this->cvEducationTable->findAll();
         return [
-            'template' => 'cv-overview.html.php',
+            'template' => 'cv/cv-overview.html.php',
             'title' => 'CV',
             'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList]
         ];
@@ -24,7 +24,7 @@ class cvController{
     public function education(){
         $educationList = $this->cvEducationTable->findAll();
         return [
-            'template' => 'cv-education.html.php',
+            'template' => 'cv/cv-education.html.php',
             'title' => 'CV',
             'variables' => ['educationList' => $educationList]
         ];
@@ -33,7 +33,7 @@ class cvController{
     public function pro_exp(){
         $employmentList = $this->cvEmpTable->findAll();
         return [
-            'template' => 'cv-pro-exp.html.php',
+            'template' => 'cv/cv-pro-exp.html.php',
             'title' => 'CV',
             'variables' => ['employmentList' => $employmentList]
         ];
@@ -42,7 +42,7 @@ class cvController{
     public function other_exp(){
 
         return [
-            'template' => 'cv-other-exp.html.php',
+            'template' => 'cv/cv-other-exp.html.php',
             'title' => 'CV',
             'variables' => []
         ];
@@ -51,7 +51,7 @@ class cvController{
     public function skills(){
 
         return [
-            'template' => 'cv-skills.html.php',
+            'template' => 'cv/cv-skills.html.php',
             'title' => 'CV',
             'variables' => []
         ];
