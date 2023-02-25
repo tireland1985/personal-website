@@ -1,3 +1,3 @@
-<main id="CV">
-    
+<main id="cv-page">
+
 </main>

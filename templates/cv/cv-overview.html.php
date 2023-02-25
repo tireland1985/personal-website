@@ -1,4 +1,4 @@
-<main id="CV">
+<main id="cv-page">
     <div class="row">
         <div class="col s12 m12 center">
             <h1 class="center">CV</h1>
