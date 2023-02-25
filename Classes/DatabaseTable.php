@@ -43,29 +43,59 @@ class DatabaseTable {
     }
 
     public function recordLoginSuccess(){
-        $time = date('Y-m-d H:i:s');
-        $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
-                    VALUES (:username, :datetime_attempted, :status)';
-        $stmt = $this->pdo->prepare($query);
-            $values = [
-                'username' => $_POST['username'],
-                'datetime_attempted' => $time,
-                'status' => 'SUCCESS'
-            ];
-        $stmt->execute($values);
+        //check to see if the submitted username exists
+        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE username = :value';
+        $checkStmt = $this->pdo->prepare($doesUserExist);
+        $checkValues = [
+            'username' => $_POST['username']
+        ];
+        $checkStmt->execute($checkValues);
+
+        if($checkStmt->rowCount() > 0){
+            //record the login attempt
+            $time = date('Y-m-d H:i:s');
+            $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
+                        VALUES (:username, :datetime_attempted, :status)';
+            $stmt = $this->pdo->prepare($query);
+                $values = [
+                    'username' => $_POST['username'],
+                    'datetime_attempted' => $time,
+                    'status' => 'SUCCESS'
+                ];
+            $stmt->execute($values);
+        }
+        else {
+            //user doesnt exist - do nothinf
+        }
+
     }
 
     public function recordLoginFailed(){
-        $time = date('Y-m-d H:i:s');
-        $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
+        //check to see if the submitted username exists
+        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE username = :value';
+        $checkStmt = $this->pdo->prepare($doesUserExist);
+        $checkValues = [
+            'username' => $_POST['username']
+        ];
+        $checkStmt->execute($checkValues);
+
+        if($checkStmt->rowCount() > 0){
+            //if the submitted username exists, record the login attempt
+            $time = date('Y-m-d H:i:s');
+            $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
                     VALUES (:username, :datetime_attempted, :status)';
-        $stmt = $this->pdo->prepare($query);
-            $values = [
-                'username' => $_POST['username'],
-                'datetime_attempted' => $time,
-                'status' => 'FAILED'
-            ];
-        $stmt->execute($values);
+            $stmt = $this->pdo->prepare($query);
+                $values = [
+                    'username' => $_POST['username'],
+                    'datetime_attempted' => $time,
+                    'status' => 'FAILED'
+             ];
+            $stmt->execute($values);
+        } 
+        else {
+            // user not found - do nothing.
+        }
+        
     }
     
     public function insert($record){
