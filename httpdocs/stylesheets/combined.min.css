@@ -411,6 +411,15 @@ main#cv-page .card-opacity-cv:hover {
     transition: 1s
 }
 
+main#cv-page .cv-skill {
+    background-color: rgba(13, 72, 161, .6)
+}
+
+main#cv-page .cv-skill:hover {
+    box-shadow: 0 0 20px 0 rgba(57, 82, 163, .7);
+    transition: 1s
+}
+
 main#cv-page #skillsListContain {
     border: .1em solid rgba(13, 72, 161, .7);
     padding: .9em
