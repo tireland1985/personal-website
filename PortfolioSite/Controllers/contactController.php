@@ -74,10 +74,10 @@ class contactController{
 	
 	        try {
 		        $mail->send();
-		        echo 'Your message has been sent';
+		        echo '<script>alert("Your message has been sent");</script>';
 	        }
 	        catch (\Exception $e) {
-		        echo "Message sending failed. Error: {$mail->ErrorInfo}";
+		        echo "<script>alert(\"Message sending failed. Error: {$mail->ErrorInfo}\");</script>";
         	}
         }
         else {
