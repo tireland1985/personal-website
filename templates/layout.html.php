@@ -54,7 +54,7 @@
                 <li><a href="/cv/pro_exp">Professional Experience</a></li>
                 <li><a href="/cv/other_exp">Other Experience</a></li>
                 <li><a href="/cv/skills">Skills</a></li>
-                <li><a href="/download.php?download_file=Tim-Ireland-CV.pdf">Download</a></li>
+                <li><a href="/download/file?download_file=Tim-Ireland-CV.pdf">Download</a></li>
             </ul>
             <nav>
                 <div class="nav-wrapper">
