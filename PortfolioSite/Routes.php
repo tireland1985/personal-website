@@ -30,6 +30,7 @@ class Routes implements \Classes\Routes{
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
         $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $_GET, $_POST);
+        $controllers['download'] - new \PortfolioSite\Controllers\downloadController($_GET);
         return $controllers[$name];
     }
 
