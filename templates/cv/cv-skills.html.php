@@ -1,4 +1,5 @@
 <main id="cv-page">
+    <!-- New skills page - uses materialize modals to provide further, brief information about the listed skill items-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
         <div class="row">
@@ -197,7 +198,7 @@
                     <a href="#!" class="modal-action modal-close btn blue darken-4 white-text">Close</a>
                 </div>
             </div>
-    <script>
+    <!--<script>/* code moved to modals.js file
 		$(document).ready(function(){
 			//initialise all modals
 			$('.modal').modal();
@@ -207,8 +208,8 @@
 			
 			//load modal on click
 			$('.trigger-modal').modal();
-  });
-    </script>
+  });*/
+    </script>-->
             </div>
         </div>
 
