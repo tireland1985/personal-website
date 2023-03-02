@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col s12 m12 center">
                 <h1>Skills</h1>
-                <h2>Click a skill for details</h2>
+                <h2>Click an item for a brief description</h2>
             <a href="#skills-modal-test" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id="">Cisco IOS</a>
 				
 			   <div id="skills-modal-test" class="modal card-opacity-cv">
