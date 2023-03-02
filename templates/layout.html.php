@@ -12,7 +12,8 @@
         echo "<script src=\"/scripts/index.min.js\" defer></script> \r\n";
         echo '	<script src="/scripts/pwa.js" defer></script>';
     } else if($title == 'CV'){
-        echo '<script src="/scripts/skills-list.js" defer></script>';
+        echo "<script src=\"/scripts/skills-list.js\" defer></script> \r\n";
+        echo "<script src=\"/scripts/modals.js\" defer></script>";
     } else if($title == 'Portfolio'){
         echo '<script src="/scripts/lazyload.min.js" defer></script>';
     } else {
