@@ -1,5 +1,5 @@
 <main id="cv-page">
-    <div class="row">
+    <div class="row"><!-- converted static cv.html file to a static template, dynamic version coming at a later date -->
         <div class="col s12 m12 center">
             <h1 class="center">CV</h1>
             <h2 class="center">Timothy Andrew Ireland</h2>
@@ -120,6 +120,7 @@
                 <div class="card horizontal center card-opacity-cv white-text">
                     <div class="card-stacked">
                         <div class="card-content">
+                            <!-- keeping the JavaScript array of skill names for now - will be changed at a later date -->
                             <div id="skillsListContain"></div>
                         </div>
                     </div>

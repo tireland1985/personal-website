@@ -1,3 +1,4 @@
+// array contains a list of skill names
 let skillsList = [
     "Cisco IOS",
     "DHCP",
@@ -17,7 +18,7 @@ let skillsList = [
     "GitHub",
     "Cisco Autonomous AP's"
 ];
-
+// create 'labels' from the above array, insert a list of all items in a specified <div> by it's ID value
 let createLabels = function() {
     //event.preventDefault();
     //let candidateSkills = [];

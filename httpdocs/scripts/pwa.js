@@ -1,3 +1,4 @@
+// Progressive Web App code - considering complete removal - unsure of benefit for this type of site
 const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
 

@@ -1,15 +1,7 @@
 <?php 
-	/*if(isset($_POST['submit'])){
-		$data = array(
-			array(
-			"name" => $_POST['name'],
-			"email" => $_POST['email'],
-			"phone" => $_POST['phone'],
-			"message" => $_POST['message'])
-		);
-	}*/
+
     if(isset($_POST['submit'])){
-                    //filter provided data
+                    //filter and sanitize provided data - ensure the phone number (if provided) contains only numbers
                     $args = array(
                         'name' => FILTER_SANITIZE_STRING,
                         'phone' => preg_replace('/[^0-9]/', '', $_POST['phone']),
@@ -17,7 +9,7 @@
                         'message' => FILTER_SANITIZE_STRING
                     );
         
-                    //populate 'data' array with sanitized information
+                    //populate 'data' array with sanitized information from POST array
                     $data = filter_input_array(INPUT_POST, $args);
     }
 	?>
@@ -58,7 +50,7 @@
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">call</i>
-                                        <input type="tel" class="validate white-text" id="phone" name="phone" value="<?php echo isset($_POST['phone']) ? $data['phone'] : ''; ?>">
+                                        <input type="tel" class="validate white-text" id="phone" name="phone" value="<?php echo isset($_POST['phone']) ? $data['phone'] : ''; // value for 'phone' is validated/ sanitized on back-end ?>">
                                         <label for="phone" class="white-text">Telephone</label>
                                     </div>
                                 </div>
@@ -69,7 +61,7 @@
                                         <label for="textarea2" class="white-text">Message</label>
                                     </div>
                                 </div>
-                                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? '' ?>">
+                                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? '' // basic CSRF protection ?>"> 
                                 <button type="submit" name="submit">Submit &nbsp;<i class="material-icons white-text">send</i></button>
                             </form>
                         </div>
