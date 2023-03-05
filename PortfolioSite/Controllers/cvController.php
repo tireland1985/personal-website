@@ -49,11 +49,11 @@ class cvController{
     }
 
     public function skills(){
-
+		$skillsList = $this->cvSkillsTable->findAll();
         return [
             'template' => 'cv/cv-skills.html.php',
             'title' => 'CV',
-            'variables' => []
+            'variables' => ['skillsList' => $skillsList]
         ];
     }
 }
