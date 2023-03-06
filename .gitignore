@@ -11,4 +11,4 @@ httpdocs/mailer.php
 vendor/
 PHPMailer/
 .env
-.dev.env
+.env.dev
