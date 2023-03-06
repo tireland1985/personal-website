@@ -10,3 +10,4 @@ httpdocs/mailer.php
 .vscode/
 vendor/
 PHPMailer/
+.env
