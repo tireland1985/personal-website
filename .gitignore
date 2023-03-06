@@ -1,4 +1,4 @@
-siteconf/
+siteconf/secrets.php
 httpdocs/images/
 httpdocs/.htaccess
 httpdocs/scripts/mail.php
