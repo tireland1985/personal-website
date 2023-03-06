@@ -23,13 +23,13 @@ class contactController{
 
 
         // the folowing vatiables are defined in the configuration secrets file
-        $username = constant('MAILER_USERNAME'); 
-        $password = constant('MAILER_PASSWORD'); 
-        $myEmail = constant('MAILER_EMAIL'); 
+        $username = $_ENV['MAILER_USERNAME'];
+        $password = $_ENV['MAILER_PASSWORD'];
+        $myEmail = $_ENV['MAILER_EMAIL']; 
 
-        require '../PHPMailer/src/Exception.php';
-        require '../PHPMailer/src/PHPMailer.php';
-        require '../PHPMailer/src/SMTP.php';
+        require '../vendor/phpmailer/phpmailer/src/Exception.php';
+        require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+        require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 
         if(isset($_POST['submit'])){
 
