@@ -10,12 +10,12 @@
 
     <?php if($title == 'Home'){
         echo "<script src=\"/scripts/index.min.js\" defer></script> \r\n";
-        echo '	<script src="/scripts/pwa.js" defer></script>';
+        echo "<script src=\"/scripts/pwa.js\" defer></script>";
     } else if($title == 'CV'){
         echo "<script src=\"/scripts/skills-list.js\" defer></script> \r\n";
         echo "<script src=\"/scripts/modals.js\" defer></script>";
     } else if($title == 'Portfolio'){
-        echo '<script src="/scripts/lazyload.min.js" defer></script>';
+        echo "<script src=\"/scripts/lazyload.min.js\" defer></script> \r\n";
     } else {
         echo '<!-- js files dynamically loaded as/if required -->';
     }
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">
 
     <!-- link to Materialize CSS Library via CDN -->
+    <link rel="dns-prefetch preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.2/dist/css/materialize.min.css">
 
