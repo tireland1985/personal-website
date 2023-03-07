@@ -7,7 +7,7 @@ Click [here](https://dev.timireland.uk) for this version. this is updated infreq
 ## Known Issues:
 CV: Skills list unresponsive on mobile (JavaScript version as used in original/current live site).
 ### Tech:
-[Materialize CSS Frontend Framework](https://materializecss.com)<br />
+[Materialize CSS Frontend Framework](https://materializeweb.com/)<br />
 JavaScript<br />
 jQuery<br />
 PHP<br />
