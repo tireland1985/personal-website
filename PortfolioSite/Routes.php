@@ -80,7 +80,7 @@ class Routes implements \Classes\Routes{
 
         $requiresLogin = $loginRoutes[$route] ?? false;
         if ($requiresLogin && !isset($_SESSION['loggedin'])){
-            header('location: /admin/login');
+            header('location: /login/auth');
             exit();
         }
     }
