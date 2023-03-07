@@ -15,10 +15,11 @@ class cvController{
         $employmentList = $this->cvEmpTable->findAll();
         $skillsList = $this->cvSkillsTable->findAll();
         $educationList = $this->cvEducationTable->findAll();
+        $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
             'template' => 'cv/cv-overview.html.php',
             'title' => 'CV',
-            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList]
+            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList, 'otherExperienceList' => $otherExperienceList]
         ];
     }
 
