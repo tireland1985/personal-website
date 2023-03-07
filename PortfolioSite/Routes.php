@@ -13,6 +13,7 @@ class Routes implements \Classes\Routes{
        // $menuTable = new \Classes\DatabaseTable($pdo, 'menu', 'id');
         $userTable = new \Classes\DatabaseTable($pdo, 'users', 'id');
         $cvEmpTable = new \Classes\DatabaseTable($pdo, 'cv_employment', 'id');
+        $cvOtherExpTable = new \Classes\DatabaseTable($pdo, 'cv_other_exp', 'id');
         $cvSkillsTable = new \Classes\DatabaseTable($pdo, 'cv_skills', 'id');
         $cvEducationTable = new \Classes\DatabaseTable($pdo, 'cv_education', 'id');
         $quotesTable = '';
@@ -25,7 +26,7 @@ class Routes implements \Classes\Routes{
         $controllers = [];
         $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable);
         $controllers['contact'] = new \PortfolioSite\Controllers\contactController($_GET, $_POST);
-        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
+        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $pdo, $loginTable, $_POST);
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
@@ -42,8 +43,10 @@ class Routes implements \Classes\Routes{
         session_start();
         $loginRoutes = [];
 
+        # admin routes requiring login
         $loginRoutes['admin/home'] = true;
 
+        # user routes requiring login
         $loginRoutes['user/list'] = true;
         $loginRoutes['user/register'] = true;
 		$loginRoutes['user/registerUserSubmit'] = true;
@@ -52,14 +55,27 @@ class Routes implements \Classes\Routes{
 		$loginRoutes['user/deleteSubmit'] = true;
 		$loginRoutes['user/profile'] = true;
 		$loginRoutes['user/profileSubmit'] = true;
-		
-		$loginRoutes['cv/listSkills'] = true;
-        $loginRoutes['cv/listEducation'] = true;
-        $loginRoutes['cv/listEmployment'] = true;
-        $loginRoutes['cv/list'] = true;
-		$loginRoutes['cv/edit'] = true;
-		$loginRoutes['cv/editSubmit'] = true;
-		$loginRoutes['cv/deleteSubmit'] = true;
+
+		#cv routes requiring login
+		$loginRoutes['cv/showSkills'] = true;
+        $loginRoutes['cv/showEducation'] = true;
+        $loginRoutes['cv/showProfessionalExperience'] = true;
+        $loginRoutes['cv/showOtherExp'] = true;
+
+		$loginRoutes['cv/editSkills'] = true;
+		$loginRoutes['cv/editEducation'] = true;
+		$loginRoutes['cv/editProfessionalExperience'] = true;
+        $loginRoutes['cv/editOtherExp'] = true;
+
+        $loginRoutes['cv/editSkillsSubmit'] = true;
+        $loginRoutes['cv/editEducationSubmit'] = true;
+        $loginRoutes['cv/editProfessionalExperienceSubmit'] = true;
+        $loginRoutes['cv/editOtherExpSubmit'] = true;
+        
+        $loginRoutes['cv/deleteSkillsSubmit'] = true;
+        $loginRoutes['cv/deleteEducationSubmit'] = true;
+        $loginRoutes['cv/deleteProfessionalExperienceSubmit'] = true;
+        $loginRoutes['cv/deleteOtherExpSubmit'] = true;
 		
 
         $requiresLogin = $loginRoutes[$route] ?? false;
