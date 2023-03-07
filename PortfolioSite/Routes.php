@@ -19,7 +19,7 @@ class Routes implements \Classes\Routes{
         $quotesTable = '';
         $projectsTable = new \Classes\DatabaseTable($pdo, 'projects', 'id');
         $loginTable = new \Classes\DatabaseTable($pdo, 'login_attempts', 'id');
-        $authentication = new \Classes\Authentication($userTable, 'username', 'password');
+        $authentication = new \Classes\Authentication($userTable, 'email', 'password');
        // $images = new \Classes\Image();
 
 

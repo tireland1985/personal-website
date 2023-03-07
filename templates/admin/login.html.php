@@ -1,14 +1,17 @@
 <main id="admin-login">
-    <?php if(isset($error)): ?>
-        <div class="errors">
-            &emsp; <strong><?=$error;?> </strong>
-        </div>
-        <?php endif; ?>
-
         <div class="row">
             <div class="login-form">
                 <div class="info">
                     <h3>Log In:</h3>
+                    <?php if(isset($error)): ?>
+                        <div class="row">
+                            <div class="col s12 m12 center">
+                                <div class="errors">
+                                    &emsp; <strong><?=$error;?> </strong>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="row login-me">
                     <div class="card horizontal card-opacity center">

@@ -27,7 +27,9 @@ class loginController{
             header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
             exit;
         }
+        unset($_SESSION['login_token']);
         // if CSRF check is ok, load the rate limiter
+        //print_r($_POST);
         require_once('../functions/rate_limiter.php');
 
         //Check if they have gone over the rate limit before starting, but don't add the IP to the rate limit
@@ -49,7 +51,7 @@ class loginController{
             $this->loginTable->recordLoginFailed();
             //load the login form and display error
             return [
-                'template' => 'login.html.php',
+                'template' => 'admin/login.html.php',
                 'title' => 'Log In',
                 'variables' => ['error' => 'Invalid username or password']
             ];

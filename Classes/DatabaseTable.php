@@ -44,21 +44,21 @@ class DatabaseTable {
 
     public function recordLoginSuccess(){
         //check to see if the submitted username exists
-        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE username = :value';
+        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE email = :email';
         $checkStmt = $this->pdo->prepare($doesUserExist);
         $checkValues = [
-            'username' => $_POST['username']
+            'email' => $_POST['username']
         ];
         $checkStmt->execute($checkValues);
 
         if($checkStmt->rowCount() > 0){
             //record the login attempt
             $time = date('Y-m-d H:i:s');
-            $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
-                        VALUES (:username, :datetime_attempted, :status)';
+            $query = 'INSERT INTO ' . $this->table . '(email, datetime_attempted, status)
+                        VALUES (:email, :datetime_attempted, :status)';
             $stmt = $this->pdo->prepare($query);
                 $values = [
-                    'username' => $_POST['username'],
+                    'email' => $_POST['username'],
                     'datetime_attempted' => $time,
                     'status' => 'SUCCESS'
                 ];
@@ -72,21 +72,21 @@ class DatabaseTable {
 
     public function recordLoginFailed(){
         //check to see if the submitted username exists
-        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE username = :value';
+        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE email = :email';
         $checkStmt = $this->pdo->prepare($doesUserExist);
         $checkValues = [
-            'username' => $_POST['username']
+            'email' => $_POST['username']
         ];
         $checkStmt->execute($checkValues);
 
         if($checkStmt->rowCount() > 0){
             //if the submitted username exists, record the login attempt
             $time = date('Y-m-d H:i:s');
-            $query = 'INSERT INTO ' . $this->table . '(username, datetime_attempted, status)
-                    VALUES (:username, :datetime_attempted, :status)';
+            $query = 'INSERT INTO ' . $this->table . '(email, datetime_attempted, status)
+                    VALUES (:email, :datetime_attempted, :status)';
             $stmt = $this->pdo->prepare($query);
                 $values = [
-                    'username' => $_POST['username'],
+                    'email' => $_POST['username'],
                     'datetime_attempted' => $time,
                     'status' => 'FAILED'
              ];
