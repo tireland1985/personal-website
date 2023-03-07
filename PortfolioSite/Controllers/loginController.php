@@ -27,7 +27,7 @@ class loginController{
             header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
             exit;
         }
-        unset($_SESSION['login_token']);
+        unset($_SESSION['login_token']); // remove token after verification
         // if CSRF check is ok, load the rate limiter
         //print_r($_POST);
         require_once('../functions/rate_limiter.php');
@@ -41,7 +41,8 @@ class loginController{
         //Pass supplied details to the Authentication class for verification
         if($this->authentication->login($this->post['username'], $this->post['password'])){
             //record the login attempt
-            $this->loginTable->recordLoginSuccess();
+            //TODO: combine recordLoginSuccess & recordLoginFailure into a single function that takes one arguement - eg $status = 'SUCCESS' or 'FAILED'
+            $this->loginTable->recordLoginSuccess(); 
 
             //redirect to admin portal
             header('location: /admin/home');
