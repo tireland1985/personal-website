@@ -11,7 +11,7 @@ class loginController{
     public function auth(){
 
         return [
-            'template' => 'login.html.php',
+            'template' => 'admin/login.html.php',
             'title' => 'Login',
             'variables' => []
         ];
