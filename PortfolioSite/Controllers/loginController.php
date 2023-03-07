@@ -10,6 +10,7 @@ class loginController{
 
     public function auth(){
 
+        $_SESSION['login_token'] = bin2hex(random_bytes(35));
         return [
             'template' => 'admin/login.html.php',
             'title' => 'Login',
@@ -18,6 +19,15 @@ class loginController{
     }
 
     public function authSubmit(){
+        // first do a basic anti-CSRF check
+        $login_token = filter_input(INPUT_POST, 'login_token', FILTER_SANITIZE_STRING);
+        if(!$login_token || $login_token !== $_SESSION['login_token']){
+            //tokens do not match - display error
+            die('A fatal error occurred.');
+            header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+            exit;
+        }
+        // if CSRF check is ok, load the rate limiter
         require_once('../functions/rate_limiter.php');
 
         //Check if they have gone over the rate limit before starting, but don't add the IP to the rate limit
@@ -26,7 +36,7 @@ class loginController{
             die("Your IP has been restricted because of too many attempts. Please try again later.\r\n");
         }
 
-        //Login Code
+        //Pass supplied details to the Authentication class for verification
         if($this->authentication->login($this->post['username'], $this->post['password'])){
             //record the login attempt
             $this->loginTable->recordLoginSuccess();
