@@ -42,14 +42,16 @@ class loginController{
         if($this->authentication->login($this->post['username'], $this->post['password'])){
             //record the login attempt
             //TODO: combine recordLoginSuccess & recordLoginFailure into a single function that takes one arguement - eg $status = 'SUCCESS' or 'FAILED'
-            $this->loginTable->recordLoginSuccess(); 
+            $status = 'SUCCESS';
+            $this->loginTable->recordLoginAttempt($status); 
 
             //redirect to admin portal
             header('location: /admin/home');
         }
         else {
-            //record the failed attempt
-            $this->loginTable->recordLoginFailed();
+            //record the failed attempt if the entered username exists - this is checked by the below function
+            $status = 'FAILED';
+            $this->loginTable->recordLoginAttempt($status);
             //load the login form and display error
             return [
                 'template' => 'admin/login.html.php',
@@ -66,6 +68,7 @@ class loginController{
     }
 
     public function logout(){
+        session_regenerate_id(); // probably not needed but cant hurt..
         session_destroy();
         header('location: /');
     }

@@ -26,6 +26,12 @@ class DatabaseTable {
 
         return $stmt->fetchAll();
     } 
+    public function findId($id){
+        $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . 'WHERE id = :id');
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
     
     public function findAllOrderByLimit($order, $limit){
         $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY ' . $order . ' DESC LIMIT ' . $limit);
@@ -94,8 +100,36 @@ class DatabaseTable {
         } 
         else {
             // user not found - do nothing.
+
         }
         
+    }
+    public function recordLoginAttempt($status){
+        //TODO: combine recordLogin*() functions here
+        //prepare and run a query for the provided username
+        $findUser = 'SELECT * FROM users WHERE email = :email';
+        $stmt = $this->pdo->prepare($findUser);
+        $value = [
+            'email' =>$_POST['username']
+        ];
+
+        $stmt->execute($value);
+
+        if($stmt->rowCount() > 0){
+            // if the provided username exists, record details of the attempt
+            $time = date('Y-m-d H:i:s');
+            $query = 'INSERT INTO ' . $this->table . '(email, datetime_attempted, status)
+                        VALUES (:email, :datetime_attempted, :status)';
+            $stmt1 = $this->pdo->prepare($query);
+                $values = [
+                    'email' => $_POST['username'],
+                    'datetime_attempted' => $time,
+                    'status' => $status
+                ];
+            $stmt1->execute($values);
+        } else {
+            // matching user not found - do nothing(?)
+        }
     }
     
     public function insert($record){
