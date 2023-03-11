@@ -11,6 +11,12 @@
         <h1>Administration Portal:</h1>
         <p>Hello, <?=$_SESSION['firstname']; ?></p>
         <p>You are logged in with user role: <?=$_SESSION['user_role'];?></p>
+        <p>Last Successful login to your account: 
+        <?php foreach($lastLoginSuccess as $row){ 
+            $datetime = strtotime($row->datetime_attempted); ?>
+            &emsp; <?=date("j F Y H:i", $datetime);?>
+        <?php }?> </p>
+
         </div>
     </div>
 </main>
