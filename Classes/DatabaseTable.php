@@ -26,10 +26,10 @@ class DatabaseTable {
 
         return $stmt->fetchAll();
     } 
-    public function findId($id){
+    public function findById($id){
         $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . 'WHERE id = :id');
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();
     }
     
@@ -47,7 +47,7 @@ class DatabaseTable {
         $stmt->execute();
         return $stmt->fetchAll();
     }
-
+/* - recordLoginSuccess & recordLoginFailed deprecated - 
     public function recordLoginSuccess(){
         //check to see if the submitted username exists
         $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE email = :email';
@@ -103,7 +103,7 @@ class DatabaseTable {
 
         }
         
-    }
+    } */
     public function recordLoginAttempt($status){
         //TODO: combine recordLogin*() functions here
         //prepare and run a query for the provided username
