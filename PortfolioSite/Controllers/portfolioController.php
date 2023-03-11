@@ -36,31 +36,35 @@ class portfolioController{
     public function showPersonal(){
         //admin function - list only personal projects
         $projectsList = $this->projectsTable->find('project_type', 'personal');
+        $view = 'personal';
         return [
-            'template' => 'admin/portfolio/showPersonal.html.php',
+            'template' => 'admin/portfolio/showProjects.html.php',
             'title' => 'Admin - Personal Projects',
-            'variables' => ['projectsList' => $projectsList]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view]
         ];
     }
 
     public function showUniversity(){
         //admin function - show only university related projects
         $projectsList = $this->projectsTable->find('project_type', 'university');
+        $view = 'university';
         return [
-            'template' => 'admin/projects/showUniversity.html.php',
+            'template' => 'admin/projects/showProjects.html.php',
             'title' => 'Admin - University Projects',
             'variables' => [
-                'projectsList' => $projectsList
+                'projectsList' => $projectsList,
+                'view' => $view
             ]
             ];
     }
     public function showProjects(){
         // admin function - display list of records
         $projectsList = $this->projectsTable->findAll();
+        $view = 'all';
         return [
             'template' => 'admin/portfolio/showProjects.html.php',
             'title' => 'Admin - Projects',
-            'variables' => ['projectsList' => $projectsList]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view]
         ];
     }
 
