@@ -19,7 +19,7 @@ class Authentication{
 			session_regenerate_id();
 			$_SESSION['username'] = $username;
 			$_SESSION['user_id'] = $user[0]->id;
-			$_SESSION['privilege_level'] = $user[0]->privilege_level;
+			$_SESSION['user_role'] = $user[0]->user_role;
 			$_SESSION['loggedin'] = true;
 			$_SESSION['firstname'] = $user[0]->firstname;
 			$_SESSION['lastname'] = $user[0]->lastname;
