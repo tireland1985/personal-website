@@ -24,7 +24,7 @@ class Routes implements \Classes\Routes{
 
 
         $controllers = [];
-        $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable);
+        $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable, $loginTable);
         $controllers['contact'] = new \PortfolioSite\Controllers\contactController($_GET, $_POST);
         $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $pdo, $loginTable, $_POST);
