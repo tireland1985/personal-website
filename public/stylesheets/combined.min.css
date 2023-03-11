@@ -579,3 +579,8 @@ main#admin-login .login-me form button:focus, .login-me form button:hover {
     outline: 0;
     transition: background-color 2s ease-out
 }
+
+main#admin-page > ul li.admin-nav a{
+    color: white;
+    text-decoration: none;
+}
