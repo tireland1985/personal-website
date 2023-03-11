@@ -49,7 +49,7 @@ class portfolioController{
         $projectsList = $this->projectsTable->find('project_type', 'university');
         $view = 'university';
         return [
-            'template' => 'admin/projects/showProjects.html.php',
+            'template' => 'admin/portfolio/showProjects.html.php',
             'title' => 'Admin - University Projects',
             'variables' => [
                 'projectsList' => $projectsList,
@@ -68,7 +68,7 @@ class portfolioController{
         ];
     }
 
-    public function editProjects(){
+    public function editProjects($errors = []){
         //admin function - edit records
         $projectsList = $this->projectsTable->findAll();
 
@@ -81,15 +81,34 @@ class portfolioController{
         }
 
         return [
-            'template' => 'admin/projects/editProjects.html.php',
+            'template' => 'admin/portfolio/editProjects.html.php',
             'title' => 'Admin - Edit Projects',
-            'variables' => ['item' => $item, 'projectsList' => $projectsList]
+            'variables' => ['item' => $item, 'projectsList' => $projectsList, 'errors' => $errors]
         ];
     }
 
     public function editProjectsSubmit(){
         //admin function - save submitted data
-        $this->projectsTable->save($this->post['projects']);
+        $project = $this->post['project'];
+        $valid = true;
+        $errors = [];
+        if(empty($project['project_title'])){
+            $valid = false;
+            $errors[] = 'No title provided';
+        }
+        if(empty($project['project_desc'])){
+            $valid = false;
+            $errors[] = 'No project description provided';
+        }
+        if(empty($project['image_url'])){
+            $valid = false;
+            $errors[] = 'No project image provided';
+        }
+        if($valid == true){
+            $this->projectsTable->save($project);
+            header('location: /portfolio/showProjects');
+        }
+        
     }
 
     public function deleteProjectsSubmit(){
