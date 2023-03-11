@@ -207,6 +207,19 @@ class DatabaseTable {
 
         return $stmt->fetchAll();
     }
+
+    public function findTwoLatestOnly($field1, $value1, $field2, $value2, $order){
+        $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . $field1 . ' = :value1 AND ' . $field2 . ' = :value2 ORDER BY ' . $order . ' DESC LIMIT 1');
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, $this->entityClass, $this->entityConstructor);
+
+        $values = [
+            'value1' => $value1,
+            'value2' => $value2
+        ];
+
+        $stmt->execute($values);
+        return $stmt->fetchAll();
+    }
 /*
     public function checkUser($field, $value){
         $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . $field . ' = :value');
