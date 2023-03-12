@@ -84,7 +84,7 @@ class cvController{
 
     public function showProfessionalExperience(){
         // admin function - display list of records
-        $employmentList = $this->cvEmpTable->findAll();
+        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', '200');
         return [
             'template' => 'admin/cv/showProExp.html.php',
             'title' => 'Admin - Professional Experience',
