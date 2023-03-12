@@ -124,11 +124,11 @@ class cvController{
     }
 
     public function other_exp(){
-
+        $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
             'template' => 'cv/cv-other-exp.html.php',
             'title' => 'CV',
-            'variables' => []
+            'variables' => ['otherExperienceList' => $otherExperienceList]
         ];
     }
 
