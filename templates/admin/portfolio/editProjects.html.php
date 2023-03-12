@@ -47,7 +47,7 @@
                 <label for="other_url_name">Name of URL:</label>
                 <input type="text" name="project[other_url_name]" id="other_url_name" value="<?=$item->other_url_name ?? ''?>"class="white-text" />
 
-                <label for="project_type">Select Project Type:</label>
+                <label for="project_type">Select Project Type: (click below - may not be properly visible)</label>
                 <select name="project[project_type]" id="project_type">
                     <?php if($item->project_type == 'university'){
                         echo "<option selected=\"selected\" value=\"university\">University</option>\r\n";
