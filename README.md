@@ -5,7 +5,7 @@ Now using PHPMailer for the contact form - tested and working.<br />
 Click [here](https://timireland.uk) to view the current/ original version.<br />
 Click [here](https://dev.timireland.uk) for this version. this is updated infrequently and only where testing in a live environment is beneficial<br />
 ## Known Issues:
-CV: Skills list unresponsive on mobile (JavaScript version as used in original/current live site).
+CV: Skills list unresponsive on mobile (JavaScript version as used in original/current live site).<br />
 Portfolio: admin edit projects page display issue - the select/option fields do not properly display but are selectable and otherwise working
 ### Tech:
 [Materialize CSS Frontend Framework](https://materializeweb.com/)<br />
