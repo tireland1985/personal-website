@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col s12 m12 center">
                 <h2 class="header" id="skills">Skills</h2>
-                <div class="card horizontal card-opcaity-cv center">
+                <div class="card horizontal card-opacity-cv center">
                     <div class="card-stacked">
                         <div class="card-content">
                             <div id="cvSkillsList">
