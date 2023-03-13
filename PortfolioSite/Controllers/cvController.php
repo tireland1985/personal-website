@@ -24,7 +24,7 @@ class cvController{
     }
 
     public function education(){
-        $educationList = $this->cvEducationTable->findAll();
+        $educationList = $this->cvEducationTable->findAllOrderByLimit('id', 'DESC', 999);
         return [
             'template' => 'cv/cv-education.html.php',
             'title' => 'CV',
@@ -177,7 +177,7 @@ class cvController{
     public function skills(){
 		$skillsList = $this->cvSkillsTable->findAll();
         return [
-            'template' => 'cv/cv-skills.html.php',
+            'template' => 'cv/cv-skills-new.html.php',
             'title' => 'CV',
             'variables' => ['skillsList' => $skillsList]
         ];
