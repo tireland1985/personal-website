@@ -12,9 +12,9 @@ class cvController{
     }
 
     public function overview(){
-        $employmentList = $this->cvEmpTable->findAllOrderByLimit('id', 'ASC', 999);
+        $employmentList = $this->cvEmpTable->findAllOrderByLimit('id', 'DESC', 999);
         $skillsList = $this->cvSkillsTable->findAll();
-        $educationList = $this->cvEducationTable->findAllOrderByLimit('id', 'ASC', 999);
+        $educationList = $this->cvEducationTable->findAllOrderByLimit('id', 'DESC', 999);
         $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
             'template' => 'cv/cv-overview.html.php',
