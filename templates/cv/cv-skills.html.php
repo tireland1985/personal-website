@@ -6,7 +6,7 @@
             <div class="col s12 m12 center">
                 <h1>Skills</h1>
                 <h2>Click an item for a brief description</h2>
-            <a href="#skills-modal-test" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id="">Cisco IOS</a>
+                <a href="#skills-modal-test" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id="skillsModal">Cisco IOS</a>
 				
 			   <div id="skills-modal-test" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -18,7 +18,7 @@
                 </div>
             </div>
 			&nbsp; &nbsp;
-			<a href="#skills-modal-test2" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">DHCP</a>
+			<a href="#skills-modal-test2" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">DHCP</a>
 				
 			   <div id="skills-modal-test2" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -30,7 +30,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test3" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">DNS</a>
+			<a href="#skills-modal-test3" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">DNS</a>
 				
 			   <div id="skills-modal-test3" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -42,7 +42,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test4" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Linux</a>
+			<a href="#skills-modal-test4" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Linux</a>
 				
 			   <div id="skills-modal-test4" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -54,7 +54,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test5" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">BIND 9</a>
+			<a href="#skills-modal-test5" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">BIND 9</a>
 				
 			   <div id="skills-modal-test5" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test6" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Microsoft Windows</a>
+			<a href="#skills-modal-test6" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Microsoft Windows</a>
 				
 			   <div id="skills-modal-test6" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -78,7 +78,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test7" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Active Directory</a>
+			<a href="#skills-modal-test7" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Active Directory</a>
 				
 			   <div id="skills-modal-test7" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -90,7 +90,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test8" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Multilayer Switching</a>
+			<a href="#skills-modal-test8" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Multilayer Switching</a>
 				
 			   <div id="skills-modal-test8" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -102,7 +102,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test9" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Dynamic Routing</a>
+			<a href="#skills-modal-test9" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Dynamic Routing</a>
 				
 			   <div id="skills-modal-test9" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -115,7 +115,7 @@
             </div>
 			
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test10" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">IPv6</a>
+			<a href="#skills-modal-test10" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">IPv6</a>
 				
 			   <div id="skills-modal-test10" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -127,7 +127,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test11" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">VMware ESXi</a>
+			<a href="#skills-modal-test11" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">VMware ESXi</a>
 				
 			   <div id="skills-modal-test11" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -139,7 +139,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test12" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">HTML 5</a>
+			<a href="#skills-modal-test12" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">HTML 5</a>
 				
 			   <div id="skills-modal-test12" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -151,7 +151,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test13" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">CSS3</a>
+			<a href="#skills-modal-test13" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">CSS3</a>
 				
 			   <div id="skills-modal-test13" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -163,7 +163,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test14" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Git</a>
+			<a href="#skills-modal-test14" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Git</a>
 				
 			   <div id="skills-modal-test14" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -175,7 +175,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test15" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">GitHub</a>
+			<a href="#skills-modal-test15" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">GitHub</a>
 				
 			   <div id="skills-modal-test15" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
@@ -187,7 +187,7 @@
                 </div>
             </div>
 						&nbsp; &nbsp;
-			<a href="#skills-modal-test16" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="">Cisco Autonomous AP's</a>
+			<a href="#skills-modal-test16" class="btn modal-trigger waves-effect waves-light card-opacity-cv" id ="skillsModal">Cisco Autonomous AP's</a>
 				
 			   <div id="skills-modal-test16" class="modal card-opacity-cv">
                     <div class="modal-content card-opacity-cv white-text">
