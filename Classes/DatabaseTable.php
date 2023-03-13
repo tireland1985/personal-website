@@ -33,8 +33,8 @@ class DatabaseTable {
         $stmt->execute();
     }
     
-    public function findAllOrderByLimit($order, $limit){
-        $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY ' . $order . ' DESC LIMIT ' . $limit);
+    public function findAllOrderByLimit($order, $asc_desc, $limit){
+        $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY ' . $order . ' ' . $asc_desc . ' LIMIT ' . $limit);
         $stmt->setFetchMode(\PDO::FETCH_CLASS, $this->entityClass, $this->entityConstructor);
 
         $stmt->execute();
