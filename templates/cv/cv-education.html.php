@@ -8,7 +8,13 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <h3><a href="<?=$row->institute_url ?? ''?>"><?=$row->institute_name ?? '' ?></a></h3>
-                            <h4><?=$row->start_year ?? ''?> - <?=$row->end_year ?? '' ?></h4>
+                            <?php if(!empty($row->start_year) && !empty($row->end_year)){ ?>
+                                <h4><?=$row->start_year ?? ''?> - <?=$row->end_year ?? '' ?></h4>
+                            <?php } 
+                            if(!empty($row->start_year) && empty($row->end_year)){ ?>
+                                <h4><?=$row->start_year ?? ''?></h4>
+                            <?php }?>
+                            
                             <p class="cv-text"><?=$row->course_names ?? '' ?></p>
                         </div>
                     </div>
