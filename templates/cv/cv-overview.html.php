@@ -17,7 +17,13 @@
                             <div class="card-content">
                                 <?php foreach($educationList as $education){ ?>
                                     <h3><a href="<?=$education->institute_url ?? '' ?>"><?=$education->institute_name ?? ''?></a></h3>
-                                    <h4><?=$education->start_year ?? ''?> - <?=$education->end_year ?? ''?></h4>
+                                    <?php if(!empty($education->start_year) && !empty($education->end_year)){ ?>
+                                        <h4><?=$education->start_year ?? ''?> - <?=$education->end_year ?? '' ?></h4>
+                                    <?php } 
+                                    if(!empty($education->start_year) && empty($education->end_year)){ ?>
+                                        <h4><?=$education->start_year ?? ''?></h4>
+                                    <?php }?>   
+
                                     <p class="cv-text"><?=$education->course_names ?? ''?></p>
                                 <?php }?>
                             </div>
