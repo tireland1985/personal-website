@@ -14,7 +14,7 @@
                     <div class="modal-footer card-opacity-cv">
                         <a href="#!" class="modal-action modal-close btn blue darken-4 white-text">Close</a>
                     </div>
-                </div>
+                </div> &nbsp; &nbsp;
             <?php } ?>
         </div>
     </div>
