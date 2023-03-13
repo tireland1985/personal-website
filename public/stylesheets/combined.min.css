@@ -450,6 +450,11 @@ main#cv-page .label:hover {
     transition: .5s
 }
 
+main#cv-page #skillsModal {
+   /* padding: .9em;*/
+    margin: .6em .6em .6em .6em;
+}
+
 main#cv-page .selSkill {
     width: 100%
 }
