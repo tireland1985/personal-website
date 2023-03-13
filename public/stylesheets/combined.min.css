@@ -425,6 +425,11 @@ main#cv-page #skillsListContain {
     padding: .9em
 }
 
+main#cv-page #cvSkillsList {
+    border: .1em solid rgba(13, 72, 161, .7);
+    padding: .9em
+}
+
 main#cv-page #canSkillsContain {
     margin: 0 auto;
     padding: .9em;
