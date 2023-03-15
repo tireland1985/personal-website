@@ -14,3 +14,6 @@ jQuery<br />
 PHP<br />
 [PHPMailer](https://github.com/PHPMailer/PHPMailer)<br />
 [PHP DotEnv](https://github.com/vlucas/phpdotenv)<br />
+
+#### Warning:
+This site builds on ideas and principles used in several University assignments - I strongly recommend that if you are looking for coursework ideas you look elsewhere as copying any part of this repository for your own assignments will get flagged on TurnItIn. <br/>
