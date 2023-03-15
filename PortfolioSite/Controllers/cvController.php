@@ -42,7 +42,7 @@ class cvController{
         ];
     }
 
-    public function editEducation(){
+    public function editEducation($errors = []){
         // admin function - edit records
         $educationList = $this->cvEducationTable->findAll();
 
@@ -133,7 +133,7 @@ class cvController{
         ];
     }
 
-    public function editProfessionalExperience(){
+    public function editProfessionalExperience($errors = []){
         //admin function - edit records
         $employmentList = $this->cvEmpTable->findAll();
 
@@ -222,9 +222,10 @@ class cvController{
         ];
     }
 
-    public function editOtherExp(){
+    public function editOtherExp($errors = []){
         //admin function - edit records
         $otherExperienceList = $this->cvOtherExpTable->findAll();
+
 
         if(isset($this->get['id'])){
             $result = $this->cvOtherExpTable->find('id', $this->get['id']);
@@ -287,7 +288,7 @@ class cvController{
         ];
     }
 
-    public function editSkills(){
+    public function editSkills($errors = []){
         //admin function - edit records
         $skillsList = $this->cvSkillsTable->findAll();
 
