@@ -16,8 +16,9 @@
                 <tr>
                     <th>Educational Institute</th> <th>Start Year</th> <th>Graduation Year</th>
                 </tr>
-                <tr>
+                
                     <?php foreach($educationList as $row){ ?>
+                    <tr>
                         <td><?=$row->institute_name;?></td>
                         <td><?=$row->start_year;?></td>
                         <td><?=$row->end_year ?? '' ?></td>
@@ -28,8 +29,9 @@
                                 <input type="submit" value="Delete">
                             </form>
                         </td>
+                    </tr>
                     <?php } ?>
-                </tr>
+                
             </table>
         </div>
 </main>
