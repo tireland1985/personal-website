@@ -21,7 +21,7 @@
                         <td><?=$row->email;?></td>
                         <td><?=$row->firstname;?></td>
                         <td><?=$row->lastname;?></td>
-                        <td><a href="/user/editUser?id=<?=$row->id;?>">Edit</a></td>
+                        <td><a href="/user/editUsers?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/user/deleteUser" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
