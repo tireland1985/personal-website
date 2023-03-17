@@ -17,6 +17,7 @@
                         <?php endforeach;
                         endif; ?>
                 </ul>
+            <div class="container">
             <form action="" method="post">
                 <input type="hidden" name="user[id]" value="<?=$item->id;?>" />
                 <label for="firstname">Firstname</label>
@@ -35,6 +36,7 @@
 
                 <input type="submit" value="Update">
             </form>
+            </div>
         </div>
     </div>
 </main>

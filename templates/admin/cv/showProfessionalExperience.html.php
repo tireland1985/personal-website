@@ -20,7 +20,7 @@
                 </tr>
                 
                     <?php foreach($employmentList as $row){ ?>
-                    <tr>
+                        <tr>
                         <td><?=$row->employer_name;?></td>
                         <td><?=$row->start_date;?></td>
                         <td><?=$row->end_date;?></td>

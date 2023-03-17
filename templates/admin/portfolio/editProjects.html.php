@@ -17,7 +17,7 @@
                         <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
-
+            <div class="container">
             <form action="" method="post">
                 <input type="hidden" name="project[id]" value="<?=$_GET['id'] ?? ''?>" />
                 
@@ -65,6 +65,7 @@
 
                 <input type="submit" value="Submit"/>
             </form>
+            </div>
         </div>
     </div>
 </main>

@@ -13,6 +13,7 @@
                         </div>
                     <?php endif; ?>
                 </div>
+                <div class="container">
                 <div class="row login-me">
                     <div class="card horizontal card-opacity center">
                         <div class="card-stacked">
@@ -42,6 +43,7 @@
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
