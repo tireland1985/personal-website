@@ -23,11 +23,10 @@ class loginController{
         $login_token = filter_input(INPUT_POST, 'login_token', FILTER_SANITIZE_STRING);
         if(!$login_token || $login_token !== $_SESSION['login_token']){
             //tokens do not match - display error
-            die('A fatal error occurred.');
+            die('A fatal error occurred: token mismatch.');
             header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
             exit;
         }
-        unset($_SESSION['login_token']); // remove token after verification
         // if CSRF check is ok, load the rate limiter
         //print_r($_POST);
         require_once('../functions/rate_limiter.php');
@@ -44,6 +43,8 @@ class loginController{
             //TODO: combine recordLoginSuccess & recordLoginFailure into a single function that takes one arguement - eg $status = 'SUCCESS' or 'FAILED'
             $status = 'SUCCESS';
             $this->loginTable->recordLoginAttempt($status); 
+
+            unset($_SESSION['login_token']); // remove token after successful login
 
             //redirect to admin portal
             header('location: /admin/home');
