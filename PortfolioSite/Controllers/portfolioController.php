@@ -132,7 +132,7 @@ class portfolioController{
 
         if($valid == true){
             //no errors - sanitize input
-            $project['project_title'] = $this->purifier->purify($project['title']);
+            $project['project_title'] = $this->purifier->purify($project['project_title']);
             $project['project_desc'] = $this->purifier->purify($project['project_desc']);
             $project['github_url_name'] = strip_tags($project['github_url_name']);
             $project['other_url_name'] = strip_tags($project['other_url_name']);
