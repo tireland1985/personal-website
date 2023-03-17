@@ -7,8 +7,8 @@ $dotenv->load();
 
 //initialise HTMLPurifier (testing)
 require_once '../vendor/ezyang/htmlpurifier/library/HTMLPurifier.auto.php';
-//$config = HTMLPurifier_HTML5Config::createDeafault();
-$config = \HTMLPurifier_Config::createDefault();
+$config = HTMLPurifier_HTML5Config::createDefault();
+//$config = \HTMLPurifier_Config::createDefault();
 //Allow only basic tags
 $config->set('HTML.Allowed', 'p,b,a[href],i, ul, li');
 $purifier = new \HTMLPurifier($config);
