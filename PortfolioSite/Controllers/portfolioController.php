@@ -1,11 +1,12 @@
 <?php
 namespace PortfolioSite\Controllers;
 class portfolioController{
-    public function __construct($pdo, $projectsTable, array $get, array $post){
+    public function __construct($pdo, $projectsTable, array $get, array $post, $purifier){
         $this->pdo = $pdo;
         $this->projectsTable = $projectsTable;
         $this->get = $get;
         $this->post = $post;
+        $this->purifier = $purifier;
     }
 
     public function projects(){
@@ -104,7 +105,39 @@ class portfolioController{
             $valid = false;
             $errors[] = 'No project image provided';
         }
+        if(filter_var($project['image_url'], FILTER_VALIDATE_URL) == false){
+            $valid = false;
+            $errors[] = 'Image URL is not valid';
+        }
+        if(!empty($project['github_url'])){
+            if(empty($project['github_url_name'])){
+                $valid = false;
+                $errors[] = 'No name provided for GitHub URL';
+            }
+            if(filter_var($project['github_url'], FILTER_VALIDATE_URL) == false){
+                $valid = false;
+                $errors[] = 'GitHub URL is not valid';
+            }
+        }
+        if(!empty($project['other_url'])){
+            if(empty($project['other_url_name'])){
+                $valid = false;
+                $errors[] = 'No name provided for "other url"';
+            }
+            if(filter_var($project['other_url'], FILTER_VALIDATE_URL) == false){
+                $valid = false;
+                $errors[] = 'Other URL is not valid';
+            }
+        }
+
         if($valid == true){
+            //no errors - sanitize input
+            $project['project_title'] = $this->purifier->purify($project['title']);
+            $project['project_desc'] = $this->purifier->purify($project['project_desc']);
+            $project['github_url_name'] = strip_tags($project['github_url_name']);
+            $project['other_url_name'] = strip_tags($project['other_url_name']);
+            $project['github_url'] = filter_var($project['github_url'], FILTER_SANITIZE_URL);
+            $project['other_url'] = filter_var($project['other_url'], FILTER_SANITIZE_URL);
             $this->projectsTable->save($project);
             header('location: /portfolio/showProjects');
         }
