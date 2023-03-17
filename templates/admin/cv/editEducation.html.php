@@ -30,7 +30,7 @@
                 </textarea>
                 
                 <label for="institute_url">Enter website URL </label>
-                <input type="text" name="education[institute_uel]" id="institute_url" value="<?=$item->institute_url ?? ''?>" class="white-text" />
+                <input type="text" name="education[institute_url]" id="institute_url" value="<?=$item->institute_url ?? ''?>" class="white-text" />
 
                 <label for="start_year">Start Year of course(s)</label>
                 <input type="number" name="education[start_year]" id="start_year" value="<?=$item->start_year ?? ''?>" class="white-text" />
