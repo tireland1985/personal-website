@@ -505,6 +505,12 @@ main#portfolio-page .card-opacity-portfolio:hover {
     transition: 1s
 }
 
+main#admin-login .container {
+        display: block;
+        width: 50vw;
+        margin: 0 auto
+}
+
 main#admin-login .login-form>* {
     padding: 1em
 }
@@ -593,4 +599,9 @@ main#admin-login .login-me form button:focus, .login-me form button:hover {
 main#admin-page > ul li.admin-nav a{
     color: white;
     text-decoration: none;
+}
+main#admin-page .container {
+    display: block;
+    width: 50vw;
+    margin: 0 auto
 }
