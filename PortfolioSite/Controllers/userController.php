@@ -9,15 +9,23 @@ class userController{
         $this->post = $post;
     }
 
-    public function profile($errors = []){
+    public function profile(){
+        return [
+            'template' => 'user/user_profile.html.php',
+            'title' => 'User Profile',
+            'variables' => []
+        ];
+    }
+
+    public function editProfile($errors = []){
         if(isset($_SESSION['user_id'])){
             $result = $this->userTable->find('id', $_SESSION['user_id']);
             $currentUser = $result[0];
             $user = [];
 
             return [
-                'template' => 'user_profile.html.php',
-                'title' => '',
+                'template' => 'user/editProfile.html.php',
+                'title' => 'Edit Profile',
                 'variables' => ['currentUser' => $currentUser, 'errors' => $errors]
             ];
         }
@@ -28,17 +36,22 @@ class userController{
 
     }
 
-    public function profileSubmit(){
+    public function editProfileSubmit(){
         $user = $this->post['user'];
         $currentPass = $user['password'];
         $newPass = $user['new_password'];
         $newPassConfirm = $user['confirm_new_password'];
+        $userId = $user['id'];
         $result = $this->userTable->find('id', $_SESSION['user_id']);
         $userResult = $result[0];
 
         $valid = true;
         $errors = [];
 
+        if($userId !== $_SESSION['user_id']){
+            $valid = false;
+            $errors[] = 'Cannot modify other users here';
+        }
         if(empty($currentPass)){
             $valid = false;
             $errors[] = 'Enter your existing password';
