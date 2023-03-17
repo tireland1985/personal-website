@@ -6,6 +6,13 @@ class Routes implements \Classes\Routes{
 
     public function getController($name){
         require '../siteconf/database.php';
+        //HTMLPurifier with xemlock's html5 extension
+        require_once '../vendor/ezyang/htmlpurifier/library/HTMLPurifier.auto.php';
+        $config = \HTMLPurifier_HTML5Config::createDefault();
+        //$config = \HTMLPurifier_Config::createDefault();
+        //Allow only basic tags
+        $config->set('HTML.Allowed', 'p,b,a[href],i, ul, li');
+        $purifier = new \HTMLPurifier($config);
 
         // using $this->categoryTable instead of $categoryTable appears necessary to pass certain variables for dynamic navbar menu generation into layout.html.php
         // have so far been unable to get menu working without this.. WIP
@@ -26,11 +33,11 @@ class Routes implements \Classes\Routes{
         $controllers = [];
         $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable, $loginTable);
         $controllers['contact'] = new \PortfolioSite\Controllers\contactController($_GET, $_POST);
-        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST);
+        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST, $purifier);
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $pdo, $loginTable, $_POST);
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
-        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $_GET, $_POST);
+        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $_GET, $_POST, $purifier);
         $controllers['download'] = new \PortfolioSite\Controllers\downloadController($_GET);
         return $controllers[$name];
     }
