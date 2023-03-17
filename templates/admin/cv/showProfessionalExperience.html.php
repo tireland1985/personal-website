@@ -9,7 +9,7 @@
         </div>
         <div class="col s9">
             <div>
-                <a href="/cv/editProfessionalExperience"></a>
+                <a href="/cv/editProfessionalExperience">Add new record</a>
             </div>
 
             <table>
