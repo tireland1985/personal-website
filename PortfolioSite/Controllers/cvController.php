@@ -1,7 +1,7 @@
 <?php
 namespace PortfolioSite\Controllers;
 class cvController{
-    public function __construct($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post){
+    public function __construct($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post, $purifier){
         $this->cvEmpTable = $cvEmpTable;
         $this->cvOtherExpTable = $cvOtherExpTable;
         $this->cvSkillsTable = $cvSkillsTable;
@@ -9,6 +9,7 @@ class cvController{
         $this->get = $get;
         $this->post = $post;
         $this->pdo = $pdo;
+        $this->purifier = $purifier;
     }
 
     public function overview(){
@@ -101,6 +102,9 @@ class cvController{
             }
         }
         if($valid == true){
+            // no errors, run HTMLPurifier on relevant fields and save record
+            $edu['institute_name'] = $this->purifier->purify($edu['institute_name']);
+            $edu['course_names'] = $this->purifier->purify($edu['course_names']);
             $this->cvEducationTable->save($edu);
             header('location: /cv/showEducation');
         }
@@ -190,6 +194,9 @@ class cvController{
             }
         }
         if($valid == true){
+            //no errors, run HTMLPurifier and save record
+            $proExp['employer_name'] = $this->purifier->purify($proExp['employer_name']);
+            $proExp['duties'] = $this->purifier->purify($proExp['duties']);
             $this->cvEmpTable->save($proExp);
             header('location: /cv/showProfessionalExperience');
         }
@@ -257,6 +264,9 @@ class cvController{
         }
 
         if($valid == true){
+            //no errors, run HTMLPurifier and save record
+            $otherExp['title'] = $this->purifier->purify($otherExp['title']);
+            $otherExp['details'] = $this->purifier->purify($otherExp['details']);
             $this->cvOtherExpTable->save($otherExp);
             header('location: /cv/showOtherExp');
         }
@@ -330,6 +340,12 @@ class cvController{
         }
 
         if($valid == true){
+            //no errors, run HTMLPurifier, ensure no html exists in 'modal_name' and save record
+            $skills['skill_name'] = $this->purifier->purify($skills['skill_name']);
+            $skills['skill_desc'] = $this->purifier->purify($skills['skil_desc']);
+            $skills['skill_name_long'] = $this->purifier->purify($skills['skill_name_long']);
+            $skills['modal_name'] = strip_tags($skills['modal_name']);
+            
             $this->cvSkillsTable->save($skills);
             header('location: /cv/showSkills');
         }
