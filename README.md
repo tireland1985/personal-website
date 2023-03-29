@@ -1,5 +1,5 @@
 # personal-website
-This is a work in progress <br />
+This is a work in progress - development is done in a vagrant box - ['csy2028/current'](https://app.vagrantup.com/csy2028/boxes/current)<br />
 Currently being rewritten in PHP, and based off work done as part of a number of University projects.<br />
 Now using PHPMailer for the contact form - tested and working.<br />
 Click [here](https://timireland.uk) to view the current/ original version.<br />
