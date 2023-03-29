@@ -18,16 +18,16 @@
                 </ul>
             <?php endif; ?>
             <div class="container">
+            <script src="/scripts/materialize-forms.js" defer></script>
             <form action="" method="post">
                 <input type="hidden" name="project[id]" value="<?=$_GET['id'] ?? ''?>" />
                 
                 <label for="project_title">Project Title:</label>
                 <input type="text" name="project[project_title]" id="project_title" value="<?=$item->project_title ?? ''?>" class="white-text"/>
 
-                <label for="project_desc">Description:</label>
-                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" class="white-text">
-                    <?=$item->project_desc ?? ''?>
-                </textarea>
+                <label for="project_desc">Description:</label><br />
+                <!--<i class="material-icons prefix">mode_edit</i>-->
+                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" class="white-text"><?=$item->project_desc ?? ''?></textarea>
                 
                 <label for="image_url">Enter full URL for image: </label>
                 <input type="text" name="project[image_url]" id="image_url" value="<?=$item->image_url ?? ''?>" class="white-text" />
@@ -46,26 +46,30 @@
 
                 <label for="other_url_name">Name of URL:</label>
                 <input type="text" name="project[other_url_name]" id="other_url_name" value="<?=$item->other_url_name ?? ''?>"class="white-text" />
-
-                <label for="project_type">Select Project Type: (click below - may not be properly visible)</label>
-                <select name="project[project_type]" id="project_type">
+                
+                
+                <div class="input-field white-text">
+                <label for="project_type">Select Project Type: (click below - may not be properly visible)</label> <br />
+                <select name="project[project_type]" id="project_type" class="white-text">
                     <?php if($item->project_type == 'university'){
-                        echo "<option selected=\"selected\" value=\"university\">University</option>\r\n";
-                        echo "<option value=\"personal\">Personal</option>\r\n";
+                        echo "<option class=\"white-text\" selected=\"selected\" value=\"university\">University</option>\r\n";
+                        echo "<option class=\"white-text\" value=\"personal\" class=\white-text\">Personal</option>\r\n";
                     }
                     else if($item->project_type == 'personal'){
-                        echo "<option selected=\"selected\" value=\"personal\">Personal</option>\r\n";
-                        echo "<option value=\"university\">University</option>\r\n";
+                        echo "<option class=\"white-text\" selected=\"selected\" value=\"personal\">Personal</option>\r\n";
+                        echo "<option class=\"white-text\" value=\"university\">University</option>\r\n";
                     }
                     else { ?>
-                        <option selected="selected" value="personal">Personal</option>
-                        <option value="university">University</option>
+                        <option class="white-text" selected="selected" value="personal">Personal</option>
+                        <option class="white-text" value="university">University</option>
                     <?php } ?>
                 </select>
+                </div>
 
                 <input type="submit" value="Submit"/>
             </form>
             </div>
         </div>
     </div>
+
 </main>
