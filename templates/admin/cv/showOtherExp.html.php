@@ -18,7 +18,7 @@
                         
                     </tr>
                     
-                    <?php foreach($otherExperienceList as $row){?>
+                    <?php foreach($otherExperienceList as $row): ?>
                     <tr>
                         <td><?=$row->id;?></td>
                         <td><?=$row->title;?></td>
@@ -30,7 +30,7 @@
                             </form>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php endforeach; ?>
                     
                 </table>
             </div>

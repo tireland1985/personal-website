@@ -16,7 +16,7 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                 </tr>
-                <?php foreach($userList as $row){ ?>
+                <?php foreach($userList as $row): ?>
                     <tr>
                         <td><?=$row->email;?></td>
                         <td><?=$row->firstname;?></td>
@@ -29,7 +29,7 @@
                             </form>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </table>
         </div>
 </div>

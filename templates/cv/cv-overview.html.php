@@ -15,7 +15,7 @@
                     <div class="card horizontal card-opacity-cv center">
                         <div class="card-stacked">
                             <div class="card-content">
-                                <?php foreach($educationList as $education){ ?>
+                                <?php foreach($educationList as $education): ?>
                                     <h3><a href="<?=$education->institute_url ?? '' ?>"><?=$education->institute_name ?? ''?></a></h3>
                                     <?php if(!empty($education->start_year) && !empty($education->end_year)){ ?>
                                         <h4><?=$education->start_year ?? ''?> - <?=$education->end_year ?? '' ?></h4>
@@ -25,7 +25,7 @@
                                     <?php }?>   
 
                                     <p class="cv-text"><?=$education->course_names ?? ''?></p>
-                                <?php }?>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col s12 m12 center">
                 <h2 class="header" id="pro-exp">Professional Experience</h2>
-                    <?php foreach($employmentList as $row){?>
+                    <?php foreach($employmentList as $row): ?>
                         <div class="card horizontal card-opacity-cv center">
                             <div class="card-stacked">
                                 <div class="card-content">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endforeach; ?>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
             <div class="col s12 m12 center">
                 <h2 class="header" id="other-exp">Other Experience</h2>
                 <img src="/images/homelab_1.jpg" alt="homelab picture" class="profile center">
-                <?php foreach($otherExperienceList as $row){ ?>
+                <?php foreach($otherExperienceList as $row): ?>
                     <div class="card horizontal card-opacity-cv center">
                         <div class="card-stacked">
                             <div class="card-content">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -79,9 +79,9 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <div id="cvSkillsList">
-                                <?php foreach($skillsList as $row){ ?>
+                                <?php foreach($skillsList as $row): ?>
                                     <span class="label label-default"><?=$row->skill_name ?? '' ?></span>
-                                <?php } ?>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

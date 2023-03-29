@@ -17,7 +17,7 @@
                 <tr>
                     <th>Skill Name:</th> <th>Modal Name:</th>
                 </tr>
-                <?php foreach($skillsList as $row){ ?>
+                <?php foreach($skillsList as $row): ?>
                     <tr>
                         <td><?=$row->skill_name; ?></td>
                         <td><?=$row->modal_name; ?></td>
@@ -29,7 +29,7 @@
                             </form>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </table>
         </div>
 </main>

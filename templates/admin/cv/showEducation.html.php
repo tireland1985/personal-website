@@ -17,7 +17,7 @@
                     <th>Educational Institute</th> <th>Start Year</th> <th>Graduation Year</th>
                 </tr>
                 
-                    <?php foreach($educationList as $row){ ?>
+                    <?php foreach($educationList as $row): ?>
                     <tr>
                         <td><?=$row->institute_name;?></td>
                         <td><?=$row->start_year;?></td>
@@ -30,7 +30,7 @@
                             </form>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php endforeach; ?>
                 
             </table>
         </div>

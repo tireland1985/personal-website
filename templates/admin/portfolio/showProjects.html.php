@@ -8,39 +8,39 @@
         </ul>
         </div>
         <div class="col s9">
-            <?php if($view == 'all'){ ?>
+            <?php if($view == 'all'): ?>
                    <h2>All Projects:</h2> 
                    <p>
                         <a href="/portfolio/showPersonal">Personal Projects</a> &emsp;
                         <a href="/portfolio/showUniversity">University Projects</a> &emsp;
                         <a href="/portfolio/editProjects">Add New Project</a>&emsp;
                     </p>
-            <?php   } 
-            if($view =='personal'){ ?>
+            <?php   endif; 
+            if($view =='personal'): ?>
                 <h2>Personal Projects</h2>
                 <p>
                     <a href="/portfolio/showProjects">All Projects</a> &emsp;
                     <a href="/portfolio/showUniversity">University Projects</a> &emsp;
                     <a href="/portfolio/editProjects">Add New Project</a>&emsp;
                 </p>
-            <?php }
-            if($view == 'university'){ ?>
+            <?php endif;
+            if($view == 'university'): ?>
                 <h2>University Projects</h2>
                 <p>
                     <a href="/portfolio/showProjects">All Projects</a> &emsp;
                     <a href="/portfolio/showPersonal">Personal Projects</a> &emsp;
                     <a href="/portfolio/editProjects">Add New Project</a>&emsp;
                 </p>
-            <?php }
+            <?php endif;
             ?>
 
             <table>
                 <tr>
-                    <?php if($view == 'all' || $view == 'personal' || $view == 'university'){ ?>
+                    <?php if($view == 'all' || $view == 'personal' || $view == 'university'): ?>
                         <th>Project Name:</th> <th>Project Type:</th>
-                   <?php } ?>
+                   <?php endif; ?>
                 </tr>
-                <?php foreach($projectsList as $row){ ?>
+                <?php foreach($projectsList as $row): ?>
                     <tr>
                         <td><?=$row->project_title;?></td>
                         <td><?=$row->project_type;?></td>
@@ -52,7 +52,7 @@
                             </form>
                         </td>
                     </tr>
-                <?php }?>
+                <?php endforeach; ?>
             </table>
         </div>
     </div>

@@ -19,7 +19,7 @@
                     <th>End Year</th>
                 </tr>
                 
-                    <?php foreach($employmentList as $row){ ?>
+                    <?php foreach($employmentList as $row): ?>
                         <tr>
                         <td><?=$row->employer_name;?></td>
                         <td><?=$row->start_date;?></td>
@@ -32,7 +32,7 @@
                             </form>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php endforeach; ?>
                 
             </table>
             <!-- CONTENT HERE-->

@@ -5,7 +5,7 @@
             <img src="https://timireland.uk/images/homelab_1.jpg" alt="homelab">
         </div>
     </div>
-    <?php foreach($otherExperienceList as $row){ ?>
+    <?php foreach($otherExperienceList as $row): ?>
         <div class="cv-container">
         <div class="row">
             <div class="col s12 m12 center">
@@ -21,5 +21,5 @@
             </div>
         </div>
     </div>
-    <?php } ?>
+    <?php endforeach; ?>
 </main>
