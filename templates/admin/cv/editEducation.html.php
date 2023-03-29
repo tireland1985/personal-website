@@ -25,9 +25,7 @@
                 <input type="text" name="education[institute_name]" id="institute_name" value="<?=$item->institute_name ?? ''?>" class="white-text"/>
 
                 <label for="course_names">Courses Studied:</label>
-                <textarea name="education[course_names]" id="course_names" cols="30" rows="10" class="white-text">
-                    <?=$item->course_names ?? ''?>
-                </textarea>
+                <textarea name="education[course_names]" id="course_names" cols="30" rows="10" class="white-text"><?=$item->course_names ?? ''?></textarea>
                 
                 <label for="institute_url">Enter website URL </label>
                 <input type="text" name="education[institute_url]" id="institute_url" value="<?=$item->institute_url ?? ''?>" class="white-text" />

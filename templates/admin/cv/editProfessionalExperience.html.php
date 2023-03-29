@@ -25,9 +25,7 @@
                 <input type="text" name="professionalExperience[employer_name]" id="employer_name" value="<?=$item->employer_name ?? ''?>" class="white-text"/>
 
                 <label for="duties">Duties Performed:</label>
-                <textarea name="professionalExperience[duties]" id="duties" cols="30" rows="10" class="white-text">
-                    <?=$item->duties ?? ''?>
-                </textarea>
+                <textarea name="professionalExperience[duties]" id="duties" cols="30" rows="10" class="white-text"><?=$item->duties ?? ''?></textarea>
                 
                 <label for="employer_url">Enter website URL </label>
                 <input type="text" name="professionalExperience[employer_url]" id="employer_url" value="<?=$item->employer_url ?? ''?>" class="white-text" />

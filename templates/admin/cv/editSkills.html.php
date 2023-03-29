@@ -25,9 +25,7 @@
                 <input type="text" name="skills[skill_name]" id="skill_name" value="<?=$item->skill_name ?? ''?>" class="white-text"/>
 
                 <label for="skill_desc">Description / Details:</label>
-                <textarea name="skills[skill_desc]" id="skill_desc" cols="30" rows="10" class="white-text">
-                    <?=$item->skill_desc ?? ''?>
-                </textarea>
+                <textarea name="skills[skill_desc]" id="skill_desc" cols="30" rows="10" class="white-text"><?=$item->skill_desc ?? ''?></textarea>
                 
                 <label for="skill_name_long">Enter either Acronym or full skill name: </label>
                 <input type="text" name="skills[skill_name_long]" id="skill_name_long" value="<?=$item->skill_name_long ?? ''?>" class="white-text" />
