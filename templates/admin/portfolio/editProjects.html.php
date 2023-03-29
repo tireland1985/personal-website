@@ -27,7 +27,7 @@
 
                 <label for="project_desc">Description:</label><br />
                 <!--<i class="material-icons prefix">mode_edit</i>-->
-                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" class="white-text"><?=$item->project_desc ?? ''?></textarea>
+                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->project_desc ?? ''?></textarea>
                 
                 <label for="image_url">Enter full URL for image: </label>
                 <input type="text" name="project[image_url]" id="image_url" value="<?=$item->image_url ?? ''?>" class="white-text" />

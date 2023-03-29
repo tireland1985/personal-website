@@ -25,7 +25,7 @@
                 <input type="text" name="otherExperience[title]" id="title" value="<?=$item->title ?? ''?>" class="white-text"/>
 
                 <label for="details">Details:</label>
-                <textarea name="otherExperience[details]" id="details" cols="30" rows="10" class="white-text"><?=$item->details ?? ''?></textarea>
+                <textarea name="otherExperience[details]" id="details" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->details ?? ''?></textarea>
 
                 <input type="submit" value="Submit"/>
             </form>
