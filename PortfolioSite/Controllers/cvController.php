@@ -13,9 +13,9 @@ class cvController{
     }
 
     public function overview(){
-        $employmentList = $this->cvEmpTable->findAllOrderByLimit('id', 'DESC', 999);
+        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', 999);
         $skillsList = $this->cvSkillsTable->findAll();
-        $educationList = $this->cvEducationTable->findAllOrderByLimit('id', 'DESC', 999);
+        $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
         $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
             'template' => 'cv/cv-overview.html.php',
@@ -25,7 +25,7 @@ class cvController{
     }
 
     public function education(){
-        $educationList = $this->cvEducationTable->findAllOrderByLimit('id', 'DESC', 999);
+        $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
         return [
             'template' => 'cv/cv-education.html.php',
             'title' => 'CV',
@@ -119,7 +119,7 @@ class cvController{
     }
 
     public function pro_exp(){
-        $employmentList = $this->cvEmpTable->findAll();
+        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', '200');
         return [
             'template' => 'cv/cv-pro-exp.html.php',
             'title' => 'CV',

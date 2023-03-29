@@ -15,7 +15,7 @@ PHP<br />
 [PHPMailer](https://github.com/PHPMailer/PHPMailer)<br />
 [PHP DotEnv](https://github.com/vlucas/phpdotenv)<br />
 [HTMLPurifier](https://github.com/ezyang/htmlpurifier)<br />
-[HTMLPurifier-html5](https://github.com/xemlock/htmlpurifier-html5)<br />
+[HTMLPurifier - HTML5 Extension](https://github.com/xemlock/htmlpurifier-html5)<br />
 []()<br />
 
 #### Warning:
