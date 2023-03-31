@@ -8,6 +8,9 @@
     <meta name="theme-color" content="#3d445c">
     <title>Tim Ireland - <?=$title;?></title>
 
+    <!-- Link to jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <?php if($title == 'Home'){
         echo "<script src=\"/scripts/index.min.js\" defer></script> \r\n";
         echo "<script src=\"/scripts/pwa.js\" defer></script>";
@@ -139,8 +142,6 @@
 
 
 
-    <!-- Link to jQuery CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Link to Materialize JavaScript CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.2/dist/js/materialize.min.js"></script>
 

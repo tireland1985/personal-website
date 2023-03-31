@@ -27,13 +27,13 @@
 
                 <label for="project_desc">Description:</label><br />
                 <!--<i class="material-icons prefix">mode_edit</i>-->
-                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->project_desc ?? ''?></textarea>
+                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" maxlength="512" class="materialize-textarea white-text"><?=$item->project_desc ?? ''?></textarea>
                 
-                <label for="image_url">Enter full URL for image: </label>
-                <input type="text" name="project[image_url]" id="image_url" value="<?=$item->image_url ?? ''?>" class="white-text" />
+                <label for="primary_image_url">Enter full URL for image: </label>
+                <input type="text" name="project[primary_image_url]" id="primary_image_url" value="<?=$item->primary_image_url ?? ''?>" class="white-text" />
 
-                <label for="image_alt_text">Image URL alt-text:</label>
-                <input type="text" name="project[image_alt_text]" id="image_alt_text" value="<?=$item->image_alt_text ?? ''?>" class="white-text" />
+                <label for="primary_image_alt_text">Image URL alt-text:</label>
+                <input type="text" name="project[primary_image_alt_text]" id="primary_image_alt_text" value="<?=$item->primary_image_alt_text ?? ''?>" class="white-text" />
                 
                 <label for="github_url">GitHub Repository URL:</label>
                 <input type="text" name="project[github_url]" id="github_url" value="<?=$item->github_url ?? ''?>"class="white-text" />
@@ -64,6 +64,23 @@
                         <option class="white-text" value="university">University</option>
                     <?php } ?>
                 </select>
+                </div>
+
+                <div class="input-field white-text">
+                    <label for="multiple_images">Does this project require multiple images?</label><br />
+                    <select name="project[multiple_images]" id="multiple_images">
+                        <?php if($item->multiple_images == 'true'){ ?>
+                            <option value="true" selected="selected">Yes</option>
+                            <option value="false">No</option>
+                        <?php }
+                        else if($item->multiple_images == 'false'){ ?>
+                            <option value="false" selected="selected">No</option>
+                            <option value="true">Yes</option>
+                        <?php } else {?>
+                            <option value="false" selected="selected">No</option>
+                            <option value="true">Yes</option>
+                        <?php } ?>
+                    </select>
                 </div>
 
                 <input type="submit" value="Submit"/>

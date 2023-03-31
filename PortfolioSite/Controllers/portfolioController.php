@@ -104,11 +104,11 @@ class portfolioController{
             $valid = false;
             $errors[] = 'No project description provided';
         }
-        if(empty($project['image_url'])){
+        if(empty($project['primary_image_url'])){
             $valid = false;
             $errors[] = 'No project image provided';
         }
-        if(filter_var($project['image_url'], FILTER_VALIDATE_URL) == false){
+        if(filter_var($project['primary_image_url'], FILTER_VALIDATE_URL) == false){
             $valid = false;
             $errors[] = 'Image URL is not valid';
         }
