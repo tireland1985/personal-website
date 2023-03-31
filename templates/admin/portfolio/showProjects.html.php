@@ -14,13 +14,14 @@
             <table>
                 <tr>
                     <?php if($view == 'all' || $view == 'personal' || $view == 'university'): ?>
-                        <th>Project Name:</th> <th>Project Type:</th>
+                        <th>Project Name:</th> <th>Project Type:</th> <th>Multiple Images Permitted</th>
                    <?php endif; ?>
                 </tr>
                 <?php foreach($projectsList as $row): ?>
                     <tr>
                         <td><?=$row->project_title;?></td>
                         <td><?=$row->project_type;?></td>
+                        <td><?=$row->multiple_images;?></td>
                         <td><a href="/portfolio/editProjects?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/portfolio/deleteProjects" method="post">
