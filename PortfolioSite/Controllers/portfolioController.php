@@ -10,27 +10,30 @@ class portfolioController{
     }
 
     public function projects(){
+        $view = 'all';
         $projectsList = $this->projectsTable->findAll();
         return [
-            'template' => 'portfolio.html.php',
+            'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view]
         ];
     }
     public function universityProjects(){
+        $view = 'university';
         $projectsList = $this->projectsTable->find('project_type', 'university');
         return [
-            'template' => 'portfolio_university.html.php',
+            'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view]
         ];
     }
     public function personalProjects(){
+        $view = 'personal';
         $projectsList = $this->projectsTable->find('project_type', 'personal');
         return [
-            'template' => 'portfolio_personal.html.php',
+            'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view]
         ];
     }
 
