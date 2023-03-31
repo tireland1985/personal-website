@@ -3,7 +3,7 @@ This is a work in progress - development is done in a vagrant box - ['csy2028/cu
 Currently being rewritten in PHP, and based off work done as part of a number of University projects.<br />
 Now using PHPMailer for the contact form - tested and working.<br />
 Click [here](https://timireland.uk) to view the current/ original version.<br />
-Click [here](https://dev.timireland.uk) for this version. Updated infrequently - last update: Feb 15, 2023<br />
+Click [here](https://dev.timireland.uk) for this version. Updated infrequently - last update: [March 29, 2023 - ba303db](https://github.com/tireland1985/personal-website/commit/ba303db0427d705dbbcaa8b0e33116cadf40edc4)<br />
 ## Known Issues:
 CV: Skills list unresponsive on mobile (JavaScript version as used in original/current live site).<br />
 Portfolio: admin edit projects page display issue - the select/option fields do not properly display but are selectable and otherwise working
