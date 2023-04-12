@@ -33,7 +33,7 @@ class cvController{
         ];
     }
 
-    public function showEducation(){
+  /*  public function showEducation(){
         // admin function - display records
         $educationList = $this->cvEducationTable->findAll();
         return [
@@ -41,7 +41,7 @@ class cvController{
             'title' => 'Admin - Education',
             'variables' => ['educationList' => $educationList]
         ];
-    }
+    }*/
 
    /* public function editEducation($errors = []){
         // admin function - edit records
@@ -127,7 +127,7 @@ class cvController{
         ];
     }
 
-    public function showProfessionalExperience(){
+  /*  public function showProfessionalExperience(){
         // admin function - display list of records
         $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', '200');
         return [
@@ -135,7 +135,7 @@ class cvController{
             'title' => 'Admin - Professional Experience',
             'variables' => ['employmentList' => $employmentList]
         ];
-    }
+    }*/
 
  /*   public function editProfessionalExperience($errors = []){
         //admin function - edit records
@@ -219,7 +219,7 @@ class cvController{
     }
 
     
-    public function showOtherExp(){
+ /*   public function showOtherExp(){
         // admin function - display list of records
         $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
@@ -227,7 +227,7 @@ class cvController{
             'title' => 'Admin - Other Experience',
             'variables' => ['otherExperienceList' => $otherExperienceList]
         ];
-    }
+    }*/
 
  /*   public function editOtherExp($errors = []){
         //admin function - edit records
@@ -288,7 +288,7 @@ class cvController{
         ];
     }
         
-    public function showSkills(){
+ /*   public function showSkills(){
         // admin function - display list of records
         $skillsList = $this->cvSkillsTable->findAll();
         return [
@@ -296,7 +296,7 @@ class cvController{
             'title' => 'Admin - Skills',
             'variables' => ['skillsList' => $skillsList]
         ];
-    }
+    }*/
 
  /*   public function editSkills($errors = []){
         //admin function - edit records
