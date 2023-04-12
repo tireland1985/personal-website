@@ -47,63 +47,7 @@ class DatabaseTable {
         $stmt->execute();
         return $stmt->fetchAll();
     }
-/* - recordLoginSuccess & recordLoginFailed deprecated - 
-    public function recordLoginSuccess(){
-        //check to see if the submitted username exists
-        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE email = :email';
-        $checkStmt = $this->pdo->prepare($doesUserExist);
-        $checkValues = [
-            'email' => $_POST['username']
-        ];
-        $checkStmt->execute($checkValues);
 
-        if($checkStmt->rowCount() > 0){
-            //record the login attempt
-            $time = date('Y-m-d H:i:s');
-            $query = 'INSERT INTO ' . $this->table . '(email, datetime_attempted, status)
-                        VALUES (:email, :datetime_attempted, :status)';
-            $stmt = $this->pdo->prepare($query);
-                $values = [
-                    'email' => $_POST['username'],
-                    'datetime_attempted' => $time,
-                    'status' => 'SUCCESS'
-                ];
-            $stmt->execute($values);
-        }
-        else {
-            //user doesnt exist - do nothinf
-        }
-
-    }
-
-    public function recordLoginFailed(){
-        //check to see if the submitted username exists
-        $doesUserExist = 'SELECT * FROM ' . $this->table . ' WHERE email = :email';
-        $checkStmt = $this->pdo->prepare($doesUserExist);
-        $checkValues = [
-            'email' => $_POST['username']
-        ];
-        $checkStmt->execute($checkValues);
-
-        if($checkStmt->rowCount() > 0){
-            //if the submitted username exists, record the login attempt
-            $time = date('Y-m-d H:i:s');
-            $query = 'INSERT INTO ' . $this->table . '(email, datetime_attempted, status)
-                    VALUES (:email, :datetime_attempted, :status)';
-            $stmt = $this->pdo->prepare($query);
-                $values = [
-                    'email' => $_POST['username'],
-                    'datetime_attempted' => $time,
-                    'status' => 'FAILED'
-             ];
-            $stmt->execute($values);
-        } 
-        else {
-            // user not found - do nothing.
-
-        }
-        
-    } */
     public function recordLoginAttempt($status){
         //TODO: combine recordLogin*() functions here
         //prepare and run a query for the provided username
