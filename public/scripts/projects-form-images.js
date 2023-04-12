@@ -8,8 +8,10 @@ $(document).ready(function(){
 function toggleInput(){
     if($("#multiple_images").val() === "true"){
         $("#imageUpload").show();
+        $("#extended_details").show();
     }
     else {
         $("#imageUpload").hide();
+        $("#extended_details").hide();
     }
 }

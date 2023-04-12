@@ -14,7 +14,7 @@
             <table>
                 <tr>
                     <?php if($view == 'all' || $view == 'personal' || $view == 'university'): ?>
-                        <th>Project Name:</th> <th>Project Type:</th> <th>Multiple Images Permitted</th>
+                        <th>Project Name:</th> <th>Project Type:</th> <th>Extended Project?</th>
                    <?php endif; ?>
                 </tr>
                 <?php foreach($projectsList as $row): ?>

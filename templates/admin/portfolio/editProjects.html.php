@@ -68,7 +68,7 @@
 
                 <div class="input-field white-text">
                 <script src="/scripts/projects-form-images.js" defer></script>
-                    <label for="multiple_images">Does this project require multiple images?</label><br />
+                    <label for="multiple_images">Is this an extended project (if yes, you will need to edit this project after initial submission)?</label><br />
                     <select name="project[multiple_images]" id="multiple_images">
                         <?php if($item->multiple_images == 'true'){ ?>
 
@@ -87,7 +87,11 @@
                 <br />
                 <div class="input-field white-text" id="imageUpload">
                     <label for="images">Image(s) Upload</label><br /><br />
-                    <input type="file" name="images[]" id="" multiple>
+                    <input type="file" name="images[]" id="" multiple><br />
+                </div>
+                <div class="input-field white-text" id="extended_details">
+                    <label for="extended_details">Extended Details:</label> <br />
+                    <textarea name="project[extended_details]" id="extended_details" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->extended_details ?? ''?></textarea>
                 </div>
 
                 <input type="submit" value="Submit"/>
