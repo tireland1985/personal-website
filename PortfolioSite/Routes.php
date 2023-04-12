@@ -26,7 +26,9 @@ class Routes implements \Classes\Routes{
         $quotesTable = '';
         $projectsTable = new \Classes\DatabaseTable($pdo, 'projects', 'id');
         $loginTable = new \Classes\DatabaseTable($pdo, 'login_attempts', 'id');
+        $imagesTable = new \Classes\DatabaseTable($pdo, 'project_images', 'id');
         $authentication = new \Classes\Authentication($userTable, 'email', 'password');
+        
        // $images = new \Classes\Image();
 
 
@@ -37,7 +39,7 @@ class Routes implements \Classes\Routes{
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $pdo, $loginTable, $_POST);
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
-        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $_GET, $_POST, $purifier);
+        $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $imagesTable, $_GET, $_POST, $purifier);
         $controllers['download'] = new \PortfolioSite\Controllers\downloadController($_GET);
         return $controllers[$name];
     }

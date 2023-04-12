@@ -1,9 +1,10 @@
 <?php
 namespace PortfolioSite\Controllers;
 class portfolioController{
-    public function __construct($pdo, $projectsTable, array $get, array $post, $purifier){
+    public function __construct($pdo, $projectsTable, $imagesTable, array $get, array $post, $purifier){
         $this->pdo = $pdo;
         $this->projectsTable = $projectsTable;
+        $this->imagesTable = $imagesTable;
         $this->get = $get;
         $this->post = $post;
         $this->purifier = $purifier;
@@ -12,28 +13,52 @@ class portfolioController{
     public function projects(){
         $view = 'all';
         $projectsList = $this->projectsTable->findAll();
+        if(isset($this->get['project_id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        }
+        else {
+            $images = false;
+            $project = false;
+        }
         return [
             'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList, 'view' => $view]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view, 'images' => $images, 'project' => $project]
         ];
     }
     public function universityProjects(){
         $view = 'university';
         $projectsList = $this->projectsTable->find('project_type', 'university');
+        if(isset($this->get['project_id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        }
+        else {
+            $images = false;
+            $project = false;
+        }
         return [
             'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList, 'view' => $view]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view, 'images' => $images, 'project' => $project]
         ];
     }
     public function personalProjects(){
         $view = 'personal';
         $projectsList = $this->projectsTable->find('project_type', 'personal');
+        if(isset($this->get['project_id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        }
+        else {
+            $images = false;
+            $project = false;
+        }
         return [
             'template' => 'portfolio/projects.html.php',
             'title' => 'Portfolio',
-            'variables' => ['projectsList' => $projectsList, 'view' => $view]
+            'variables' => ['projectsList' => $projectsList, 'view' => $view, 'images' => $images, 'project' => $project]
         ];
     }
 
@@ -141,6 +166,9 @@ class portfolioController{
             $project['other_url_name'] = strip_tags($project['other_url_name']);
             $project['github_url'] = filter_var($project['github_url'], FILTER_SANITIZE_URL);
             $project['other_url'] = filter_var($project['other_url'], FILTER_SANITIZE_URL);
+            if(!empty($project['extended_details'])){
+                $project['extended_details'] = $this->purifier->purify($project['extended_details']);
+            }
             $this->projectsTable->save($project);
             header('location: /portfolio/showProjects');
         }

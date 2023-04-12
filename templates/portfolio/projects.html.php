@@ -2,7 +2,39 @@
     <div class="row">
         <?php require_once('../templates/portfolio/view_types.html.php'); ?>
     </div>
+<?php if(isset($this->get['project_id'])){
+    // TODO:
+    // load the specified project *if* it is listed as an extended project in the database
+    if($project->multiple_images == 'true'){ 
+        // load and display all the project images as a gallery ?>
+        <!-- load the Material Box plugin -->
+        <script src="/scripts/material-box.js"></script>
+        <div class="row">
+            <h2><?=$project->project_title;?></h2>
+            <?php foreach($images as $img){ ?>
+                <div class="col m4">
+                    <div class="card card-opacity-portfolio">
+                        <div class="card-image">
+                            <img src="<?=$img->file_name;?>" alt="<?=$img->image_title;?>" class="materialboxed">
+                        </div>
+                    </div>
+                </div>
+           <?php } ?>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 center white-text">
+                <article>
+                    <?=$project->extended_details;?>
+                </article>
+            </div>
+        </div>
+    <?php } else {
+        // specified project does not have further details or additional images
+        echo '<h2>The specified project does not include further details..</h2>';
+    }
 
+} 
+else {?>
     <div class="row">
         <?php foreach($projectsList as $row): ?>
             <div class="col m4">
@@ -37,4 +69,5 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <?php } ?>
 </main>
