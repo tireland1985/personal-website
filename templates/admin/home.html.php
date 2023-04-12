@@ -16,6 +16,12 @@
             $datetime = strtotime($row->datetime_attempted); ?>
             &emsp; <?=date("j F Y H:i", $datetime);?>
         <?php }?> </p>
+        <p>Last Failed Login: 
+            <?php foreach($lastLoginFailed as $row){
+                $failDate = strtotime($row->datetime_attempted);?>
+                &emsp; <?=date("j F Y H:i", $failDate);?>
+             <?php }?>
+        </p>
 
         </div>
     </div>
