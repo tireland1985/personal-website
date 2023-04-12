@@ -1,3 +1,6 @@
+<li class="admin-nav"><a href="/admin/home">Administration</a></li>
+<br />
+
 <li class="admin-nav">Portfolio:</li>
 <li class="admin-nav"><a href="/portfolio/showPersonal">Personal Projects</a></li>
 <li class="admin-nav"><a href="/portfolio/showUniversity">University Projects</a></li>
