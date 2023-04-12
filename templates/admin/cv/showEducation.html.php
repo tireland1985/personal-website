@@ -24,7 +24,7 @@
                         <td><?=$row->end_year ?? '' ?></td>
                         <td><a href="/cv/editEducation?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/cv/deleteEducation" method="post">
+                            <form action="/delete/deleteEducation" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
                                 <input type="submit" value="Delete">
                             </form>

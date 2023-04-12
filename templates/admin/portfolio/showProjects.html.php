@@ -24,7 +24,7 @@
                         <td><?=$row->multiple_images;?></td>
                         <td><a href="/portfolio/editProjects?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/portfolio/deleteProjects" method="post">
+                            <form action="/delete/deleteProjects" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>"/>
                                 <input type="submit" value="Delete" />
                             </form>

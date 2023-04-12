@@ -41,6 +41,7 @@ class Routes implements \Classes\Routes{
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
         $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $imagesTable, $_GET, $_POST, $purifier);
         $controllers['download'] = new \PortfolioSite\Controllers\downloadController($_GET);
+        $controllers['delete'] = new \PortfolioSite\Controllers\deleteController($pdo, $userTable, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $quotesTable, $projectsTable, $imagesTable, $_POST);
         return $controllers[$name];
     }
 

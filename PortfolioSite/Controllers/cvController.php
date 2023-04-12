@@ -111,12 +111,12 @@ class cvController{
 
     }
 
-    public function deleteEducationSubmit(){
+   /* public function deleteEducationSubmit(){
         // admin function - delete record
         //TODO: check permissions first
         $this->cvEducationTable->delete($this->post['id']);
         header('location: /cv/showEducation');
-    }
+    }*/
 
     public function pro_exp(){
         $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', '200');
@@ -202,12 +202,12 @@ class cvController{
         }
     }
 
-    public function deleteProfessionalExperienceSubmit(){
+   /* public function deleteProfessionalExperienceSubmit(){
         // admin function - delete record
         //TODO: check permissions first
         $this->cvEmpTable->delete($this->post['id']);
         header('location: /cv/showProfessionalExperience');
-    }
+    }*/
 
     public function other_exp(){
         $otherExperienceList = $this->cvOtherExpTable->findAll();
@@ -272,12 +272,12 @@ class cvController{
         }
     }
 
-    public function deleteOtherExpSubmit(){
+  /*  public function deleteOtherExpSubmit(){
         // admin function - delete record
         //TODO: check permissions first
         $this->cvOtherExpTable->delete($this->post['id']);
         header('location: /cv/showOtherExp');
-    }
+    }*/
 
     public function skills(){
 		$skillsList = $this->cvSkillsTable->findAll();
@@ -351,10 +351,10 @@ class cvController{
         }
     }
 
-    public function deleteSkillsSubmit(){
+   /* public function deleteSkillsSubmit(){
         // admin function - delete record
         //TODO: check permissions first
         $this->cvSkillsTable->delete($this->post['id']);
         header('location: /cv/showSkills');
-    }
+    }*/
 }

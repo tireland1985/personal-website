@@ -26,7 +26,7 @@
                         <td><?=$row->end_date;?></td>
                         <td><a href="/cv/editProfessionalExperience?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/cv/deleteProfessionalExperience" method="post">
+                            <form action="/delete/deleteProfessionalExperience" method="post">
                                 <input type="hidden" name="id" value="<?$row->id;?>" />
                                 <input type="submit" value="Delete" />
                             </form>
