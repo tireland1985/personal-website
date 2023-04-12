@@ -10,7 +10,7 @@
         <div class="col s9">
             <!-- CONTENT HERE-->
             <div>
-                <a href="/editCV/editOtherExp">Add to Other Experience</a>
+                <a href="/otherexp/edit">Add to Other Experience</a>
                 <table>
                     <tr>
                         <th>Record ID</th>
@@ -22,7 +22,7 @@
                     <tr>
                         <td><?=$row->id;?></td>
                         <td><?=$row->title;?></td>
-                        <td><a href="/editCV/editOtherExp?id=<?=$row->id;?>">Edit</a></td>
+                        <td><a href="/otherexp/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/delete/deleteOtherExp" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />

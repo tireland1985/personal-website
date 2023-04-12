@@ -10,7 +10,7 @@
         <div class="col s9">
             <!-- CONTENT HERE-->
             <div>
-                <a href="/editCV/editEducation">Add Education</a>
+                <a href="/education/edit">Add Education</a>
             </div>
             <table>
                 <tr>
@@ -22,7 +22,7 @@
                         <td><?=$row->institute_name;?></td>
                         <td><?=$row->start_year;?></td>
                         <td><?=$row->end_year ?? '' ?></td>
-                        <td><a href="/editCV/editEducation?id=<?=$row->id;?>">Edit</a></td>
+                        <td><a href="/education/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/delete/deleteEducation" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />

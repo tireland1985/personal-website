@@ -10,7 +10,7 @@
         <div class="col s9">
             <!-- CONTENT HERE-->
             <div>
-                <a href="/editCV/editSkills">Add New Skill</a>
+                <a href="/skills/edit">Add New Skill</a>
             </div>
             <br>
             <table>
@@ -21,7 +21,7 @@
                     <tr>
                         <td><?=$row->skill_name; ?></td>
                         <td><?=$row->modal_name; ?></td>
-                        <td><a href="/editCV/editSkills?id=<?=$row->id;?>">Edit</a></td>
+                        <td><a href="/skills/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/delete/deleteSkills" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />

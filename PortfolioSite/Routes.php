@@ -41,8 +41,12 @@ class Routes implements \Classes\Routes{
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);
         $controllers['portfolio'] = new \PortfolioSite\Controllers\portfolioController($pdo, $projectsTable, $imagesTable, $_GET, $_POST, $purifier);
         $controllers['download'] = new \PortfolioSite\Controllers\downloadController($_GET);
+        $controllers['education'] = new \PortfolioSite\Controllers\educationController($pdo, $cvEducationTable, $_GET, $_POST, $purifier);
+        $controllers['otherexp'] = new \PortfolioSite\Controllers\otherexpController($pdo, $cvOtherExpTable, $_GET, $_POST, $purifier);
+        $controllers['proexp'] = new \PortfolioSite\Controllers\proexpController($pdo, $cvEmpTable, $_GET, $_POST, $purifier);
+        $controllers['skills'] = new \PortfolioSite\Controllers\skillsController($pdo, $cvSkillsTable, $_GET, $_POST, $purifier);
         $controllers['delete'] = new \PortfolioSite\Controllers\deleteController($pdo, $userTable, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $quotesTable, $projectsTable, $imagesTable, $_POST);
-        $controllers['editCV'] = new \PortfolioSite\controllers\editCVController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST, $purifier);
+        //$controllers['editCV'] = new \PortfolioSite\controllers\editCVController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST, $purifier);
         return $controllers[$name];
     }
 
@@ -67,8 +71,8 @@ class Routes implements \Classes\Routes{
 		$loginRoutes['user/profile'] = true;
 		$loginRoutes['user/profileSubmit'] = true;
 
-		#cv routes requiring login
-		$loginRoutes['cv/showSkills'] = true;
+		#cv routes requiring login - review for removal
+		/*$loginRoutes['cv/showSkills'] = true;
         $loginRoutes['cv/showEducation'] = true;
         $loginRoutes['cv/showProfessionalExperience'] = true;
         $loginRoutes['cv/showOtherExp'] = true;
@@ -86,8 +90,25 @@ class Routes implements \Classes\Routes{
         $loginRoutes['cv/deleteSkillsSubmit'] = true;
         $loginRoutes['cv/deleteEducationSubmit'] = true;
         $loginRoutes['cv/deleteProfessionalExperienceSubmit'] = true;
-        $loginRoutes['cv/deleteOtherExpSubmit'] = true;
+        $loginRoutes['cv/deleteOtherExpSubmit'] = true; */
 		
+        $loginRoutes['education/show'] = true;
+        $loginRoutes['education/edit'] = true;
+        $loginRoutes['education/editSubmit'] = true;
+
+        $loginRoutes['proexp/show'] = true;
+        $loginRoutes['proexp/edit'] = true;
+        $loginRoutes['proexp/editSubmit'] = true;
+
+        $loginRoutes['otherexp/show'] = true;
+        $loginRoutes['otherexp/edit'] = true;
+        $loginRoutes['otherexp/editSubmit'] = true;
+
+        $loginRoutes['skills/show'] = true;
+        $loginRoutes['skills/edit'] = true;
+        $loginRoutes['skills/editSubmit'] = true;
+
+        $loginRoutes['delete/'] = true;
 
         $requiresLogin = $loginRoutes[$route] ?? false;
         if ($requiresLogin && !isset($_SESSION['loggedin'])){
