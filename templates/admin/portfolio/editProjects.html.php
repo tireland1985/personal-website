@@ -67,9 +67,11 @@
                 </div>
 
                 <div class="input-field white-text">
+                <script src="/scripts/projects-form-images.js" defer></script>
                     <label for="multiple_images">Does this project require multiple images?</label><br />
                     <select name="project[multiple_images]" id="multiple_images">
                         <?php if($item->multiple_images == 'true'){ ?>
+
                             <option value="true" selected="selected">Yes</option>
                             <option value="false">No</option>
                         <?php }
@@ -81,6 +83,11 @@
                             <option value="true">Yes</option>
                         <?php } ?>
                     </select>
+                </div>
+                <br />
+                <div class="input-field white-text" id="imageUpload">
+                    <label for="images">Image(s) Upload</label><br /><br />
+                    <input type="file" name="images[]" id="" multiple>
                 </div>
 
                 <input type="submit" value="Submit"/>
