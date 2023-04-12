@@ -1,6 +1,6 @@
 <?php
 namespace PortfolioSite\Controllers;
-class cvController{
+class editCVController{
     public function __construct($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post, $purifier){
         $this->cvEmpTable = $cvEmpTable;
         $this->cvOtherExpTable = $cvOtherExpTable;
@@ -12,38 +12,7 @@ class cvController{
         $this->purifier = $purifier;
     }
 
-    public function overview(){
-        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', 999);
-        $skillsList = $this->cvSkillsTable->findAll();
-        $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
-        $otherExperienceList = $this->cvOtherExpTable->findAll();
-        return [
-            'template' => 'cv/cv-overview.html.php',
-            'title' => 'CV',
-            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList, 'otherExperienceList' => $otherExperienceList]
-        ];
-    }
-
-    public function education(){
-        $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
-        return [
-            'template' => 'cv/cv-education.html.php',
-            'title' => 'CV',
-            'variables' => ['educationList' => $educationList]
-        ];
-    }
-
-    public function showEducation(){
-        // admin function - display records
-        $educationList = $this->cvEducationTable->findAll();
-        return [
-            'template' => 'admin/cv/showEducation.html.php',
-            'title' => 'Admin - Education',
-            'variables' => ['educationList' => $educationList]
-        ];
-    }
-
-   /* public function editEducation($errors = []){
+    public function editEducation($errors = []){
         // admin function - edit records
         $educationList = $this->cvEducationTable->findAll();
 
@@ -109,35 +78,9 @@ class cvController{
             header('location: /cv/showEducation');
         }
 
-    }*/
-
-   /* public function deleteEducationSubmit(){
-        // admin function - delete record
-        //TODO: check permissions first
-        $this->cvEducationTable->delete($this->post['id']);
-        header('location: /cv/showEducation');
-    }*/
-
-    public function pro_exp(){
-        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', '200');
-        return [
-            'template' => 'cv/cv-pro-exp.html.php',
-            'title' => 'CV',
-            'variables' => ['employmentList' => $employmentList]
-        ];
     }
 
-    public function showProfessionalExperience(){
-        // admin function - display list of records
-        $employmentList = $this->cvEmpTable->findAllOrderByLimit('start_date', 'DESC', '200');
-        return [
-            'template' => 'admin/cv/showProfessionalExperience.html.php',
-            'title' => 'Admin - Professional Experience',
-            'variables' => ['employmentList' => $employmentList]
-        ];
-    }
-
- /*   public function editProfessionalExperience($errors = []){
+    public function editProfessionalExperience($errors = []){
         //admin function - edit records
         $employmentList = $this->cvEmpTable->findAll();
 
@@ -200,36 +143,9 @@ class cvController{
             $this->cvEmpTable->save($proExp);
             header('location: /cv/showProfessionalExperience');
         }
-    }*/
-
-   /* public function deleteProfessionalExperienceSubmit(){
-        // admin function - delete record
-        //TODO: check permissions first
-        $this->cvEmpTable->delete($this->post['id']);
-        header('location: /cv/showProfessionalExperience');
-    }*/
-
-    public function other_exp(){
-        $otherExperienceList = $this->cvOtherExpTable->findAll();
-        return [
-            'template' => 'cv/cv-other-exp.html.php',
-            'title' => 'CV',
-            'variables' => ['otherExperienceList' => $otherExperienceList]
-        ];
     }
 
-    
-    public function showOtherExp(){
-        // admin function - display list of records
-        $otherExperienceList = $this->cvOtherExpTable->findAll();
-        return [
-            'template' => 'admin/cv/showOtherExp.html.php',
-            'title' => 'Admin - Other Experience',
-            'variables' => ['otherExperienceList' => $otherExperienceList]
-        ];
-    }
-
- /*   public function editOtherExp($errors = []){
+    public function editOtherExp($errors = []){
         //admin function - edit records
         $otherExperienceList = $this->cvOtherExpTable->findAll();
 
@@ -270,35 +186,9 @@ class cvController{
             $this->cvOtherExpTable->save($otherExp);
             header('location: /cv/showOtherExp');
         }
-    }*/
-
-  /*  public function deleteOtherExpSubmit(){
-        // admin function - delete record
-        //TODO: check permissions first
-        $this->cvOtherExpTable->delete($this->post['id']);
-        header('location: /cv/showOtherExp');
-    }*/
-
-    public function skills(){
-		$skillsList = $this->cvSkillsTable->findAll();
-        return [
-            'template' => 'cv/cv-skills.html.php',
-            'title' => 'CV',
-            'variables' => ['skillsList' => $skillsList]
-        ];
-    }
-        
-    public function showSkills(){
-        // admin function - display list of records
-        $skillsList = $this->cvSkillsTable->findAll();
-        return [
-            'template' => 'admin/cv/showSkills.html.php',
-            'title' => 'Admin - Skills',
-            'variables' => ['skillsList' => $skillsList]
-        ];
     }
 
- /*   public function editSkills($errors = []){
+    public function editSkills($errors = []){
         //admin function - edit records
         $skillsList = $this->cvSkillsTable->findAll();
 
@@ -349,12 +239,6 @@ class cvController{
             $this->cvSkillsTable->save($skills);
             header('location: /cv/showSkills');
         }
-    }*/
+    }
 
-   /* public function deleteSkillsSubmit(){
-        // admin function - delete record
-        //TODO: check permissions first
-        $this->cvSkillsTable->delete($this->post['id']);
-        header('location: /cv/showSkills');
-    }*/
 }

@@ -9,7 +9,7 @@
         </div>
         <div class="col s9">
             <div>
-                <a href="/cv/editProfessionalExperience">Add new record</a>
+                <a href="/editCV/editProfessionalExperience">Add new record</a>
             </div>
 
             <table>
@@ -24,7 +24,7 @@
                         <td><?=$row->employer_name;?></td>
                         <td><?=$row->start_date;?></td>
                         <td><?=$row->end_date;?></td>
-                        <td><a href="/cv/editProfessionalExperience?id=<?=$row->id;?>">Edit</a></td>
+                        <td><a href="/editCV/editProfessionalExperience?id=<?=$row->id;?>">Edit</a></td>
                         <td>
                             <form action="/delete/deleteProfessionalExperience" method="post">
                                 <input type="hidden" name="id" value="<?$row->id;?>" />
