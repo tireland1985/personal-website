@@ -64,5 +64,17 @@ class deleteController {
     public function deleteImagesSubmit(){
         //TODO:
         //admin function - delete "images" record (and file)
+        $findIages = $this->imagesTable->find('project_id', $this->post['id']);
+        foreach($findImages as $row){
+            //delete the file
+            // if(@unlink $row->file_name){
+                //delete the record
+            //  $this->imagesTable->delete($row->id);
+           // } else {
+            //      // couldn't delete the image file..
+                //  echo "<h2>Error: Cannot delete file</h2>"
+          //  }
+            
+        }
     }
 }
