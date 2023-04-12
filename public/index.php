@@ -2,7 +2,8 @@
 require '../autoload.php';
 require_once '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '../.env.dev'); // define, then load the specified .env file
+// define and load the relevant environment variables from the specified file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '../.env.dev'); 
 $dotenv->load();
 
 $routes = new \PortfolioSite\Routes();
