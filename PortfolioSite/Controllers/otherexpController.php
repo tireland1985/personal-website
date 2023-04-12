@@ -9,7 +9,7 @@ class otherexpController {
         $this->purifier = $purifier;
     }
 
-    public function showOtherExp(){
+    public function show(){
         // admin function - display list of records
         $otherExperienceList = $this->cvOtherExpTable->findAll();
         return [
