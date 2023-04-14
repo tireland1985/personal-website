@@ -30,28 +30,28 @@ class deleteController {
         // admin function - delete employment record
         //TODO: check permissions first
         $this->cvEmpTable->delete($this->post['id']);
-        header('location: /cv/showProfessionalExperience');
+        header('location: /proexp/show');
     }
 
     public function deleteOtherExpSubmit(){
         // admin function - delete "other experience" record
         //TODO: check permissions first
         $this->cvOtherExpTable->delete($this->post['id']);
-        header('location: /cv/showOtherExp');
+        header('location: /otherexp/show');
     }
 
     public function deleteSkillsSubmit(){
         // admin function - delete "skills" record
         //TODO: check permissions first
         $this->cvSkillsTable->delete($this->post['id']);
-        header('location: /cv/showSkills');
+        header('location: /skills/show');
     }
 
     public function deleteEducationSubmit(){
         // admin function - delete "education" record
         //TODO: check permissions first
         $this->cvEducationTable->delete($this->post['id']);
-        header('location: /cv/showEducation');
+        header('location: /education/show');
     }
 
     public function deleteProjectsSubmit(){
@@ -67,7 +67,7 @@ class deleteController {
         $findIages = $this->imagesTable->find('project_id', $this->post['id']);
         foreach($findImages as $row){
             //delete the file
-            // if(@unlink $row->file_name){
+            // if(@unlink($row->file_name)){
                 //delete the record
             //  $this->imagesTable->delete($row->id);
            // } else {
