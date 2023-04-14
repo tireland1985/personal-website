@@ -19,7 +19,7 @@
             <?php endif; ?>
             <div class="container">
             <script src="/scripts/materialize-forms.js" defer></script>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="project[id]" value="<?=$_GET['id'] ?? ''?>" />
                 
                 <label for="project_title">Project Title:</label>
