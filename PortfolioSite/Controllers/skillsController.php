@@ -61,14 +61,15 @@ class skillsController{
         }
 
         if($valid == true){
-            //no errors, run HTMLPurifier, ensure no html exists in 'modal_name' and save record
+            //no errors, run HTMLPurifier, ensure no html exists in 'modal_name', replace any spaces in the modal_name field with underscores and save record
             $skills['skill_name'] = $this->purifier->purify($skills['skill_name']);
-            $skills['skill_desc'] = $this->purifier->purify($skills['skil_desc']);
+            $skills['skill_desc'] = $this->purifier->purify($skills['skill_desc']);
             $skills['skill_name_long'] = $this->purifier->purify($skills['skill_name_long']);
             $skills['modal_name'] = strip_tags($skills['modal_name']);
+            $skills['modal_name'] = str_replace(" ", "_", $skills['modal_name']);
             
             $this->cvSkillsTable->save($skills);
-            header('location: /cv/showSkills');
+            header('location: /skills/show');
         }
     }
 
