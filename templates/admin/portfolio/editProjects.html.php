@@ -27,7 +27,7 @@
 
                 <label for="project_desc">Description:</label><br />
                 <!--<i class="material-icons prefix">mode_edit</i>-->
-                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" maxlength="512" class="materialize-textarea white-text"><?=$item->project_desc ?? ''?></textarea>
+                <textarea name="project[project_desc]" id="project_desc" cols="30" rows="10" maxlength="512" data-length="512" class="materialize-textarea white-text"><?=$item->project_desc ?? ''?></textarea>
                 
                 <label for="primary_image_url">Enter full URL for image: </label>
                 <input type="text" name="project[primary_image_url]" id="primary_image_url" value="<?=$item->primary_image_url ?? ''?>" class="white-text" />
@@ -68,7 +68,7 @@
 
                 <div class="input-field white-text">
                 <script src="/scripts/projects-form-images.js" defer></script>
-                    <label for="multiple_images">Is this an extended project (if yes, you will need to edit this project after initial submission)?</label><br />
+                    <label for="multiple_images">Is this an extended project? (if yes, you will need to edit this project after submission/ when changing this field)</label><br /><br />
                     <select name="project[multiple_images]" id="multiple_images">
                         <?php if($item->multiple_images == 'true'){ ?>
 
@@ -84,11 +84,25 @@
                         <?php } ?>
                     </select>
                 </div>
-                <br />
+                <br /> <!-- file upload option 1? -->
+                <!--
                 <div class="input-field white-text" id="imageUpload">
                     <label for="images">Image(s) Upload</label><br /><br />
                     <input type="file" name="images[]" id="images" multiple><br />
+                </div>-->
+                <!-- end option 1 -->
+                            <!-- file upload from materialize docs -->
+                <div class="file-field input-field" id="#imageUpload">
+                    <label for="images">Image(s) Upload</label> <br /> <br />
+                    <div class="btn blue darken-4">
+                        <span>Select</span>
+                        <input type="file" name="images[]" id="images" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input type="text" name="" id="" class="file-path validate" placeholder="Upload one or more Images">
+                    </div>
                 </div>
+                <!-- end materialize file input section-->
                 <div class="input-field white-text" id="extended_details">
                     <label for="extended_details">Extended Details:</label> <br />
                     <textarea name="project[extended_details]" id="extended_details" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->extended_details ?? ''?></textarea>

@@ -18,6 +18,7 @@
                 </ul>
             <?php endif; ?>
             <div class="container">
+            <script src="/scripts/materialize-forms.js"></script>
             <form action="" method="post">
                 <input type="hidden" name="skills[id]" value="<?=$_GET['id'] ?? ''?>" />
                 
@@ -31,7 +32,7 @@
                 <input type="text" name="skills[skill_name_long]" id="skill_name_long" value="<?=$item->skill_name_long ?? ''?>" class="white-text" />
 
                 <label for="modal_name">Provide a brief name for the modal popup:</label>
-                <input type="text" name="skills[modal_name]" id="modal_name" value="<?=$item->modal_name ?? ''?>" class="white-text" />
+                <input type="text" name="skills[modal_name]" id="modal_name" value="<?=$item->modal_name ?? ''?>" class="white-text" data-length="45"/>
 
                 <input type="submit" value="Submit"/>
             </form>
