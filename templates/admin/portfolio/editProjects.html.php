@@ -18,7 +18,7 @@
                 </ul>
             <?php endif; ?>
             <div class="container">
-            <script src="/scripts/materialize-forms.js" defer></script>
+            <script src="/scripts/materialize-forms.js"></script>
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="project[id]" value="<?=$_GET['id'] ?? ''?>" />
                 
