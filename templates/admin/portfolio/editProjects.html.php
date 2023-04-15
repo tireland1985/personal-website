@@ -87,7 +87,7 @@
                 <br />
                 <div class="input-field white-text" id="imageUpload">
                     <label for="images">Image(s) Upload</label><br /><br />
-                    <input type="file" name="images[]" id="" multiple><br />
+                    <input type="file" name="images[]" id="images" multiple><br />
                 </div>
                 <div class="input-field white-text" id="extended_details">
                     <label for="extended_details">Extended Details:</label> <br />
