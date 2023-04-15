@@ -18,6 +18,7 @@
                         endif; ?>
                 </ul>
             <div class="container">
+            <script src="/scripts/materialize-forms.js" defer></script>
             <form action="" method="post">
                 <input type="hidden" name="user[id]" value="<?=$item->id;?>" />
                 <label for="firstname">Firstname</label>
