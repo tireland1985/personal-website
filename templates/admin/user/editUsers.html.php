@@ -30,11 +30,12 @@
                 <label for="email">Email</label>
                 <input type="email" name="user[email]" id="email" value="<?=$item->email ?? '' ?>" class="validate"/>
                 
-                <label for="user_role">User Role</label>
-                <select name="user[user_role]" id="user_role">
+                <div class="input-field white-text">
+                    <label for="user_role">User Role</label>
+                    <select name="user[user_role]" id="user_role">
                         <!-- TODO: select option..-->
-                </select>
-
+                    </select>
+                </div>
                 <input type="submit" value="Update">
             </form>
             </div>
