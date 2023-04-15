@@ -170,10 +170,10 @@ class portfolioController{
                 $project['extended_details'] = $this->purifier->purify($project['extended_details']);
             }
 
-            if(isset($_FILES)){
+           /* if(isset($_FILES)['']){
                 //TODO:
                 //action(s) to take if the upload section of the form is used..
-            }
+            }*/
             $this->projectsTable->save($project);
             header('location: /portfolio/showProjects');
         }
