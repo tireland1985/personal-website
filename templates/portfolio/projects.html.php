@@ -16,7 +16,7 @@
  //   $test = (object)$project;
  //   var_dump($test);
     foreach($project as $row){ 
-        if(!empty($row->extended_details)){
+        if($row->multiple_images == 'true'){
         // load and display all the project images as a gallery ?>
         <!-- load the Material Box plugin -->
         <script src="/scripts/material-box.js"></script>
@@ -24,6 +24,8 @@
             <div class="col m12 s12 center">
                 <h2><?=$row->project_title;?></h2>
             </div>
+            <!-- remove the below paragraph once image functionality is finished-->
+            <p class="center">project images will display here..</p>
             <?php foreach($images as $img){ ?>
                 <div class="col m4">
                     <div class="card card-opacity-portfolio">

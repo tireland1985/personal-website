@@ -92,7 +92,7 @@
                 </div>-->
                 <!-- end option 1 -->
                             <!-- file upload from materialize docs -->
-                <div class="file-field input-field" id="#imageUpload">
+                <div class="file-field input-field" id="imageUpload">
                     <label for="images">Image(s) Upload</label> <br /> <br />
                     <div class="btn blue darken-4">
                         <span>Select</span>
