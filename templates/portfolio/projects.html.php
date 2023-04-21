@@ -2,15 +2,28 @@
     <div class="row">
         <?php require_once('../templates/portfolio/view_types.html.php'); ?>
     </div>
-<?php if(isset($this->get['project_id'])){
+<?php if(isset($_GET['id'])){
     // TODO:
     // load the specified project *if* it is listed as an extended project in the database
-    if($project->multiple_images == 'true'){ 
+//    var_dump($project);
+//    var_dump($images);
+    //$projectObject = json_encode($project);
+    //var_dump($projectObject);
+   
+    //$project = $test;
+    //echo "extended project: " . $project->multiple_images;
+
+ //   $test = (object)$project;
+ //   var_dump($test);
+    foreach($project as $row){ 
+        if(!empty($row->extended_details)){
         // load and display all the project images as a gallery ?>
         <!-- load the Material Box plugin -->
         <script src="/scripts/material-box.js"></script>
         <div class="row">
-            <h2><?=$project->project_title;?></h2>
+            <div class="col m12 s12 center">
+                <h2><?=$row->project_title;?></h2>
+            </div>
             <?php foreach($images as $img){ ?>
                 <div class="col m4">
                     <div class="card card-opacity-portfolio">
@@ -24,15 +37,18 @@
         <div class="row">
             <div class="col s12 m12 center white-text">
                 <article>
-                    <?=$project->extended_details;?>
+                    <?=$row->extended_details;?>
                 </article>
             </div>
         </div>
-    <?php } else {
-        // specified project does not have further details or additional images
-        echo '<h2>The specified project does not include further details..</h2>';
-    }
-
+        <?php    }else {?>
+            <div class="row">
+                <div class="col m12 s12 center">
+                    <h2 class="white-text center">No further details for the specified project exist.</h2>
+                </div>
+            </div>
+        <?php } 
+        }
 } 
 else {?>
     <div class="row">

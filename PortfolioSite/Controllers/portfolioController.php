@@ -13,9 +13,9 @@ class portfolioController{
     public function projects(){
         $view = 'all';
         $projectsList = $this->projectsTable->findAll();
-        if(isset($this->get['project_id'])){
-            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
-            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        if(isset($this->get['id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['id'], 'multiple_images', 'true');
         }
         else {
             $images = false;
@@ -30,9 +30,9 @@ class portfolioController{
     public function universityProjects(){
         $view = 'university';
         $projectsList = $this->projectsTable->find('project_type', 'university');
-        if(isset($this->get['project_id'])){
-            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
-            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        if(isset($this->get['id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['id'], 'multiple_images', 'true');
         }
         else {
             $images = false;
@@ -47,9 +47,9 @@ class portfolioController{
     public function personalProjects(){
         $view = 'personal';
         $projectsList = $this->projectsTable->find('project_type', 'personal');
-        if(isset($this->get['project_id'])){
-            $images = $this->imagesTable->find('project_id', $this->get['project_id']);
-            $project = $this->projectsTable->findTwo('id', $this->get['project_id'], 'multiple_images', 'true');
+        if(isset($this->get['id'])){
+            $images = $this->imagesTable->find('project_id', $this->get['id']);
+            $project = $this->projectsTable->findTwo('id', $this->get['id'], 'multiple_images', 'true');
         }
         else {
             $images = false;
