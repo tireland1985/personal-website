@@ -45,9 +45,16 @@ class userController{
         $result = $this->userTable->find('id', $_SESSION['user_id']);
         $userResult = $result[0];
 
+        //password strength check - min 8 chars, min 1 uppercase char, min 1 digit, min one of the following special chars - !@#$%^&*-[]
+        $pwStrength = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,}$/';
+        
         $valid = true;
         $errors = [];
 
+        if(!preg_match($pwStrength, $newPass)){
+            $valid = false;
+            $errors[] = 'Password MUST contain at minimum: at least 8 characters long, at least one uppercase character, at least one digit (number), and at least one of the following special characters: ! @ # $ % ^ & * - [ ]';
+        }
         if($userId !== $_SESSION['user_id']){
             $valid = false;
             $errors[] = 'Cannot modify other users here';
@@ -66,6 +73,7 @@ class userController{
         }
 
         if($valid == true){
+
             //verify that the user provided the correct password
             if(password_verify($currentPass, $userResult->password)){
                 $user['password'] = password_hash($newPass, PASSWORD_DEFAULT);
@@ -80,6 +88,7 @@ class userController{
                 $valid = false;
                 $errors[] = 'Incorrect Password';
             }
+            
         }
     }
     public function showUsers(){
