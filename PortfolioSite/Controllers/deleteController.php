@@ -23,6 +23,7 @@ class deleteController {
         }
         else {
             //cannot delete user id 1 - redirect to error page
+            die('Error deleting user');
         }
     }
 
