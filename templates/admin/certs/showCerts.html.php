@@ -17,7 +17,7 @@
                     <th>Vendor Name</th> <th>Cert Name</th> <th>Start Date</th> <th>End Date</th>
                 </tr>
                 
-                    <?php foreach($$certList as $row): ?>
+                    <?php foreach($certsList as $row): ?>
                     <tr>
                         <td><?=$row->vendor_name;?></td>
                         <td><?=$row->cert_name;?></td>
