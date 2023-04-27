@@ -62,6 +62,12 @@ class deleteController {
         header('location: /portfolio/showProjects/');
     }
 
+    public function deleteCert(){
+        // admin function - delete "certification" record
+        //TODO: check permissions first
+        $this->certsTable->delete($this->post['id']);
+        header('location: /certs/show/');
+    }
     public function deleteImagesSubmit(){
         //TODO:
         //admin function - delete "images" record (and file)
