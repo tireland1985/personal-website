@@ -46,6 +46,7 @@ class Routes implements \Classes\Routes{
         $controllers['otherexp'] = new \PortfolioSite\Controllers\otherexpController($pdo, $cvOtherExpTable, $_GET, $_POST, $purifier);
         $controllers['proexp'] = new \PortfolioSite\Controllers\proexpController($pdo, $cvEmpTable, $_GET, $_POST, $purifier);
         $controllers['skills'] = new \PortfolioSite\Controllers\skillsController($pdo, $cvSkillsTable, $_GET, $_POST, $purifier);
+        $controllers['certs'] = new \PortfolioSite\Controllers\certsController($pdo, $certsTable, $_GET, $_POST, $purifier);
         $controllers['delete'] = new \PortfolioSite\Controllers\deleteController($pdo, $userTable, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $quotesTable, $projectsTable, $imagesTable, $_POST);
         //$controllers['editCV'] = new \PortfolioSite\controllers\editCVController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST, $purifier);
         return $controllers[$name];
@@ -109,6 +110,9 @@ class Routes implements \Classes\Routes{
         $loginRoutes['skills/edit'] = true;
         $loginRoutes['skills/editSubmit'] = true;
 
+        $loginRoutes['certs/show'] = true;
+        $loginRoutes['certs/edit'] = true;
+        $loginRoutes['certs/editSubmit'] = true;
         $loginRoutes['delete/'] = true;
 
         $requiresLogin = $loginRoutes[$route] ?? false;

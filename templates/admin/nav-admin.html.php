@@ -12,6 +12,7 @@
 <li class="admin-nav"><a href="/otherexp/show">Other Experience</a></li>
 <li class="admin-nav"><a href="/skills/show">Skills</a></li>
 <li class="admin-nav"><a href="/education/show">Education</a></li>
+<li class="admin-nav"><a href="/certs/show">Certs</a></li>
 
 <br />
 <li class="admin-nav">User:</li>
