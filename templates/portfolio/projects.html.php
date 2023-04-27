@@ -78,7 +78,7 @@ else {?>
                             <a href="/portfolio/projects?id=<?=$row->id ?? ''?>">More Info</a>
                         <?php endif;
                         if(empty($row->github_url) && empty($row->other_url) && $row->multiple_images !== 'true'): ?>
-                            <a href="#">no link (yet)</a>
+                            <a href="#">no further details (yet)</a>
                         <?php endif; ?>
 
 
