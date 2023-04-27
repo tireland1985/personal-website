@@ -27,6 +27,7 @@ class Routes implements \Classes\Routes{
         $projectsTable = new \Classes\DatabaseTable($pdo, 'projects', 'id');
         $loginTable = new \Classes\DatabaseTable($pdo, 'login_attempts', 'id');
         $imagesTable = new \Classes\DatabaseTable($pdo, 'project_images', 'id');
+        $certsTable = new \Classes\DatabaseTable($pdo, 'certifications', 'id');
         $authentication = new \Classes\Authentication($userTable, 'email', 'password');
         
        // $images = new \Classes\Image();
@@ -35,7 +36,7 @@ class Routes implements \Classes\Routes{
         $controllers = [];
         $controllers['admin'] = new \PortfolioSite\Controllers\adminController($authentication, $userTable, $loginTable);
         $controllers['contact'] = new \PortfolioSite\Controllers\contactController($_GET, $_POST);
-        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $_GET, $_POST, $purifier);
+        $controllers['cv'] = new \PortfolioSite\Controllers\cvController($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $certsTable, $_GET, $_POST, $purifier);
         $controllers['login'] = new \PortfolioSite\Controllers\loginController($authentication, $pdo, $loginTable, $_POST);
         $controllers['quotes'] = new \PortfolioSite\Controllers\quotesController($quotesTable);
         $controllers['user'] = new \PortfolioSite\Controllers\userController($pdo, $authentication, $userTable, $_GET, $_POST);

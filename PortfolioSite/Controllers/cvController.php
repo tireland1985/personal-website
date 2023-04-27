@@ -1,11 +1,12 @@
 <?php
 namespace PortfolioSite\Controllers;
 class cvController{
-    public function __construct($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, array $get, array $post, $purifier){
+    public function __construct($pdo, $cvEmpTable, $cvOtherExpTable, $cvSkillsTable, $cvEducationTable, $certsTable, array $get, array $post, $purifier){
         $this->cvEmpTable = $cvEmpTable;
         $this->cvOtherExpTable = $cvOtherExpTable;
         $this->cvSkillsTable = $cvSkillsTable;
         $this->cvEducationTable = $cvEducationTable;
+        $this->certsTable = $certsTable;
         $this->get = $get;
         $this->post = $post;
         $this->pdo = $pdo;
@@ -17,10 +18,11 @@ class cvController{
         $skillsList = $this->cvSkillsTable->findAll();
         $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
         $otherExperienceList = $this->cvOtherExpTable->findAll();
+        $certsList = $this->certsTable->findAll(); // change this to order by vendor name
         return [
             'template' => 'cv/cv-overview.html.php',
             'title' => 'CV',
-            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList, 'otherExperienceList' => $otherExperienceList]
+            'variables' => ['employmentList' => $employmentList, 'skillsList' => $skillsList, 'educationList' => $educationList, 'otherExperienceList' => $otherExperienceList, 'certsList' => $certsList]
         ];
     }
 

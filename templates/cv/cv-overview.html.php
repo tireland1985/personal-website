@@ -31,7 +31,21 @@
                     </div>
             </div>            
         </div>
-        
+        <div class="row">
+            <div class="col s12 m12 center">
+                <h2 class="header" id="certifications">Professional Certifications</h2>
+                <div class="card horizontal card-opacity-cv center">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <?php foreach($certsList as $certs): ?>
+                                <h3><a href="<?=$certs->vendor_url ?? '' ?>"><?=$certs->vendor_name ?? '' ?></a></h3>
+                                <p class="cv-text"><?=$certs->cert_name ?? '' ?> - &emsp; <?=$certs->vaid_from ?? '' ?> - <?=$certs->valid_to ?? ''?></p>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col s12 m12 center">
                 <h2 class="header" id="pro-exp">Professional Experience</h2>
