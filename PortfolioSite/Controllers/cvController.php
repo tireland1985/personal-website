@@ -18,7 +18,7 @@ class cvController{
         $skillsList = $this->cvSkillsTable->findAll();
         $educationList = $this->cvEducationTable->findAllOrderByLimit('start_year', 'DESC', 999);
         $otherExperienceList = $this->cvOtherExpTable->findAll();
-        $certsList = $this->certsTable->findAll(); // change this to order by vendor name
+        $certsList = $this->certsTable->findAllOrderByLimit('vendor_name', 'DESC', 999); // change this to order by vendor name
         return [
             'template' => 'cv/cv-overview.html.php',
             'title' => 'CV',
