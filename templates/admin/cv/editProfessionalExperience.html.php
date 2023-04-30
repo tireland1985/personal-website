@@ -28,7 +28,7 @@
                 <textarea name="professionalExperience[duties]" id="duties" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->duties ?? ''?></textarea>
                 
                 <label for="employer_url">Enter website URL </label>
-                <input type="text" name="professionalExperience[employer_url]" id="employer_url" value="<?=$item->employer_url ?? ''?>" class="white-text" />
+                <input type="url" name="professionalExperience[employer_url]" id="employer_url" value="<?=$item->employer_url ?? ''?>" class="white-text" />
 
                 <label for="start_year">Year started:</label>
                 <input type="number" name="professionalExperience[start_year]" id="start_year" value="<?=$item->start_year ?? ''?>" class="white-text" />

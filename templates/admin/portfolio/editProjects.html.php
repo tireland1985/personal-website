@@ -36,13 +36,13 @@
                 <input type="text" name="project[primary_image_alt_text]" id="primary_image_alt_text" value="<?=$item->primary_image_alt_text ?? ''?>" class="white-text" />
                 
                 <label for="github_url">GitHub Repository URL:</label>
-                <input type="text" name="project[github_url]" id="github_url" value="<?=$item->github_url ?? ''?>"class="white-text" />
+                <input type="url" name="project[github_url]" id="github_url" value="<?=$item->github_url ?? ''?>"class="white-text" />
 
                 <label for="github_url_name">GitHub Repository Name:</label>
                 <input type="text" name="project[github_url_name]" id="github_url_name" value="<?=$item->github_url_name ?? ''?>"class="white-text" />
 
                 <label for="other_url">Other/ Demo URL:</label>
-                <input type="text" name="project[other_url]" id="other_url" value="<?=$item->other_url ?? ''?>"class="white-text" />
+                <input type="url" name="project[other_url]" id="other_url" value="<?=$item->other_url ?? ''?>"class="white-text" />
 
                 <label for="other_url_name">Name of URL:</label>
                 <input type="text" name="project[other_url_name]" id="other_url_name" value="<?=$item->other_url_name ?? ''?>"class="white-text" />

@@ -28,12 +28,12 @@
                 <input type ="text" name="cert[cert_name]" id="cert_name" class="white-text" value="<?=$item->course_names ?? ''?>" />
                 
                 <label for="vendor_url">Enter vendor/certification URL </label>
-                <input type="text" name="cert[vendor_url]" id="vendor_url" value="<?=$item->vendor_url ?? ''?>" class="white-text" />
+                <input type="url" name="cert[vendor_url]" id="vendor_url" value="<?=$item->vendor_url ?? ''?>" class="white-text" />
 
-                <label for="valid_from">Start Year of certificate</label>
+                <label for="valid_from">Start Date of certificate</label>
                 <input type="date" name="cert[valid_from]" id="valid_from" value="<?=$item->valid_from ?? ''?>" class="white-text" />
                 
-                <label for="valid_to">End Year:</label>
+                <label for="valid_to">End Date:</label>
                 <input type="date" name="cert[valid_to]" id="valid_to" value="<?=$item->end_year ?? ''?>"class="white-text" />
 
                 <input type="submit" value="Submit"/>

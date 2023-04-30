@@ -28,7 +28,7 @@
                 <textarea name="education[course_names]" id="course_names" cols="30" rows="10" class="materialize-textarea white-text"><?=$item->course_names ?? ''?></textarea>
                 
                 <label for="institute_url">Enter website URL </label>
-                <input type="text" name="education[institute_url]" id="institute_url" value="<?=$item->institute_url ?? ''?>" class="white-text" />
+                <input type="url" name="education[institute_url]" id="institute_url" value="<?=$item->institute_url ?? ''?>" class="white-text" />
 
                 <label for="start_year">Start Year of course(s)</label>
                 <input type="number" name="education[start_year]" id="start_year" value="<?=$item->start_year ?? ''?>" class="white-text" />
