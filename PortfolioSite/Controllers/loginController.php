@@ -23,7 +23,7 @@ class loginController{
         $login_token = filter_input(INPUT_POST, 'login_token', FILTER_SANITIZE_STRING);
         if(!$login_token || $login_token !== $_SESSION['login_token']){
             //tokens do not match - display error
-            die('A fatal error occurred: token mismatch.');
+            die('A fatal error occurred: Authentication Failed');
             header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
             exit;
         }
