@@ -119,11 +119,25 @@ class DatabaseTable {
 
     public function delete($id){
         $stmt = $this->pdo->prepare('DELETE FROM ' . $this->table . ' WHERE ' . $this->primaryKey . ' = :id');
-        $values = [
-            'id' => $id
-        ];
-        $stmt->execute($values);
+        //$values = [
+        //    'id' => $id
+        //];
+        //$stmt->execute($values);
+        // modify delete() to ensure the value passed through is an integer as expected.
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->execute();
     }
+
+    /*
+     * for reference.. remove once updated delete function is verified working
+     *  public function findById($id){
+     *   $stmt = $this->pdo->prepare('SELECT * FROM ' . $this->table . 'WHERE id = :id');
+     *   $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+     *   $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+     *   $stmt->execute();
+     * }
+    */
 
     public function countRecords($field){
         $stmt = $this->pdo->prepare('SELECT ' . $field . ' FROM ' . $this->table );
