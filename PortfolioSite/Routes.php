@@ -72,6 +72,7 @@ class Routes implements \Classes\Routes{
 		$loginRoutes['user/deleteSubmit'] = true;
 		$loginRoutes['user/profile'] = true;
 		$loginRoutes['user/profileSubmit'] = true;
+        $loginRoutes['user/deleteSubmit'] = true;
 
 		#cv routes requiring login - review for removal
 		/*$loginRoutes['cv/showSkills'] = true;
@@ -97,22 +98,27 @@ class Routes implements \Classes\Routes{
         $loginRoutes['education/show'] = true;
         $loginRoutes['education/edit'] = true;
         $loginRoutes['education/editSubmit'] = true;
+        $loginRoutes['education/deleteSubmit'] = true;
 
         $loginRoutes['proexp/show'] = true;
         $loginRoutes['proexp/edit'] = true;
         $loginRoutes['proexp/editSubmit'] = true;
+        $loginRoutes['proexp/deleteSubmit'] = true;
 
         $loginRoutes['otherexp/show'] = true;
         $loginRoutes['otherexp/edit'] = true;
         $loginRoutes['otherexp/editSubmit'] = true;
+        $loginRoutes['otherexp/deleteSubmit'] = true;
 
         $loginRoutes['skills/show'] = true;
         $loginRoutes['skills/edit'] = true;
         $loginRoutes['skills/editSubmit'] = true;
+        $loginRoutes['skills/deleteSubmit'] = true;
 
         $loginRoutes['certs/show'] = true;
         $loginRoutes['certs/edit'] = true;
         $loginRoutes['certs/editSubmit'] = true;
+        $loginRoutes['certs/deleteSubmit'] = true;
         $loginRoutes['delete/'] = true;
 
         $requiresLogin = $loginRoutes[$route] ?? false;

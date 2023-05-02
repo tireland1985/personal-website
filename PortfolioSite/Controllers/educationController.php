@@ -87,4 +87,9 @@ class educationController {
 
     }
 
+    public function deleteSubmit(){
+        $this->cvEducationTable->delete($this->post['id']);
+        header('location: /education/show');
+    }
+
 }

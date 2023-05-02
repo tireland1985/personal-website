@@ -73,5 +73,8 @@ class skillsController{
         }
     }
 
-
+    public function deleteSubmit(){
+        $this->cvSkillsTable->delete($this->post['id']);
+        header('location: /skills/show');
+    }
 }

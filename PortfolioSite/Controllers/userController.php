@@ -155,14 +155,15 @@ class userController{
 
     }
 
-   /* public function deleteSubmit(){
+    public function deleteSubmit(){
         //TODO: check privileges
         if($this->post['id'] !== 1){
             $this->userTable->delete($this->post['id']);
             header('location: /user/showUsers');
         }
         else {
-            //cannot delete user id 1 - redirect to error page
+            //cannot delete user id 1 - show error
+            die('Action Prohibited');
         }
-    }*/
+    }
 }

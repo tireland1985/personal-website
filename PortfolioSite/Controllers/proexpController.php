@@ -80,8 +80,13 @@ class proexpController {
             $proExp['employer_name'] = $this->purifier->purify($proExp['employer_name']);
             $proExp['duties'] = $this->purifier->purify($proExp['duties']);
             $this->cvEmpTable->save($proExp);
-            header('location: /cv/showProfessionalExperience');
+            header('location: /proexp/show');
         }
+    }
+
+    public function deleteSubmit(){
+        $this->cvEmpTable->delete($this->post['id']);
+        header('location: /proexp/show');
     }
 
 }

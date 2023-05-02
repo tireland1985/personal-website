@@ -180,10 +180,10 @@ class portfolioController{
         
     }
 
-   /* public function deleteProjectsSubmit(){
+    public function deleteSubmit(){
         // admin function - delete record
         //TODO: check permissions first
         $this->projectsTable->delete($this->post['id']);
         header('location: /portfolio/showProjects/');
-    }*/
+    }
 }

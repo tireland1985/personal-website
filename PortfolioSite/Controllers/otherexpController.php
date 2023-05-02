@@ -58,8 +58,13 @@ class otherexpController {
             $otherExp['title'] = $this->purifier->purify($otherExp['title']);
             $otherExp['details'] = $this->purifier->purify($otherExp['details']);
             $this->cvOtherExpTable->save($otherExp);
-            header('location: /cv/showOtherExp');
+            header('location: /otherexp/show');
         }
+    }
+
+    public function deleteSubmit(){
+        $this->cvOtherExpTable->delete($this->post['id']);
+        header('location: /otherexp/show');
     }
 
 }

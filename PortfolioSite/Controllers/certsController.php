@@ -59,4 +59,9 @@ class certsController{
             header('location: /certs/show');
         }
     }
+
+    public function deleteSubmit(){
+        $this->certsTable->delete($this->post['id']);
+        header('location: /certs/show');
+    }
 }
