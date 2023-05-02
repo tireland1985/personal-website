@@ -24,7 +24,7 @@
                         <td><?=$row->title;?></td>
                         <td><a href="/otherexp/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/delete/deleteOtherExp" method="post">
+                            <form action="/otherexp/delete" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
                                 <input type="submit" value="Delete">
                             </form>

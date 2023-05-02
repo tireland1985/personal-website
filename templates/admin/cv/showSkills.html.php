@@ -23,7 +23,7 @@
                         <td><?=$row->modal_name; ?></td>
                         <td><a href="/skills/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/delete/deleteSkills" method="post">
+                            <form action="/skills/delete" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
                                 <input type="submit" value="Delete" />
                             </form>

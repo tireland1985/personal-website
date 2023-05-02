@@ -23,7 +23,7 @@
                         <td><?=$row->lastname;?></td>
                         <td><a href="/user/editUsers?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/delete/deleteUser" method="post">
+                            <form action="/user/delete" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
                                 <input type="submit" value="Delete" />
                             </form>

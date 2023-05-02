@@ -25,7 +25,7 @@
                         <td><?=$row->valid_to ?? '' ?></td>
                         <td><a href="/certs/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/delete/deleteCert" method="post">
+                            <form action="/certs/delete" method="post">
                                 <input type="hidden" name="id" value="<?=$row->id;?>" />
                                 <input type="submit" value="Delete">
                             </form>

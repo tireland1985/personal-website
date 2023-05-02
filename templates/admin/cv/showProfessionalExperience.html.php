@@ -26,7 +26,7 @@
                         <td><?=$row->end_date;?></td>
                         <td><a href="/proexp/edit?id=<?=$row->id;?>">Edit</a></td>
                         <td>
-                            <form action="/delete/deleteProfessionalExperience" method="post">
+                            <form action="/proexp/delete" method="post">
                                 <input type="hidden" name="id" value="<?$row->id;?>" />
                                 <input type="submit" value="Delete" />
                             </form>
