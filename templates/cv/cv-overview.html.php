@@ -38,8 +38,11 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <?php foreach($certsList as $certs): ?>
-                                <h3><a href="<?=$certs->vendor_url ?? '' ?>"><?=$certs->vendor_name ?? '' ?></a></h3>
-                                <p class="cv-text"><?=$certs->cert_name ?? '' ?> - &emsp; <?=$certs->vaid_from ?? '' ?> - <?=$certs->valid_to ?? ''?></p>
+                                <div id="certInfo">
+                                    <h3><a href="<?=$certs->vendor_url ?? '' ?>"><?=$certs->vendor_name ?? '' ?></a></h3> &nbsp;
+                                    <p class="cv-text"><?=$certs->cert_name ?? '' ?> &emsp; <?=date('F Y', strtotime($certs->valid_from)); ?> - <?=date('F Y', strtotime($certs->valid_to));?></p>
+                                </div>
+                                
                             <?php endforeach; ?>
                         </div>
                     </div>
