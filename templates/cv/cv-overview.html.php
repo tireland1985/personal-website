@@ -40,7 +40,7 @@
                             <?php foreach($certsList as $certs): ?>
                                 <div id="certInfo">
                                     <h3><a href="<?=$certs->vendor_url ?? '' ?>"><?=$certs->vendor_name ?? '' ?></a></h3> &nbsp;
-                                    <p class="cv-text"><?=$certs->cert_name ?? '' ?> &emsp; <?=date('F Y', strtotime($certs->valid_from)); ?> - <?=date('F Y', strtotime($certs->valid_to));?></p>
+                                    <p class="cv-text"><?=$certs->cert_name ?? '' ?> &emsp; <?=date('F Y', strtotime($certs->valid_from)); ?> &emsp;-&emsp; <?=date('F Y', strtotime($certs->valid_to));?></p>
                                 </div>
                                 
                             <?php endforeach; ?>
