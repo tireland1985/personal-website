@@ -157,6 +157,39 @@ class portfolioController{
                 $errors[] = 'Other URL is not valid';
             }
         }
+        if(isset($_FILES['images']['name'])){
+            require '../functions/image_validation.php';
+            $uploadsDir = $_ENV['PROJECT_IMAGES_DIR'];
+            //check if files exist
+            if(!empty(array_filter($_FILES['images']['name']))){
+                //loop through files
+                foreach($_FILES['images']['name'] as $id=>$val){
+                    //Get files info & path
+                    $fileName       = $_FILES['images']['name'][$id];
+                    $tempLocation   = $_FILES['images']['tmp_name'][$id];
+                    $targetPath     = $uploadsDir . $fileName;
+                    $uploadDate     = date('Y-m-d H:i:s');
+                    $uploadOk = 1;
+
+                    if(validate_extension($fileName)){
+                        //if the file passes pathinfo validation checks
+                        if(move_uploaded_file($tempLocation, $targetPath)){
+                            $this->imagesTable->saveUploadedImage($fileName, $targetPath, $uploadDate, $_POST['project_id']);
+                        } else {
+                            $valid = false;
+                            $errors[] = 'File(s) could not be uploaded';
+                        }
+                    } else {
+                        $valid = false;
+                        $errors[] = 'Only .jpg, .jpeg, .png and .gif file formats are permitted';
+                    }
+                }
+            } else {
+                $valid = false;
+                $errors[] = 'No file selected for upload';
+            }
+            
+        }
 
         if($valid == true){
             //no errors - sanitize input
