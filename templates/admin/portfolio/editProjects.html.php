@@ -1,4 +1,5 @@
 <main id="admin-page">
+    <?=getcwd();?>
     <div class="row">
         <div class="col s3">
         <ul>
