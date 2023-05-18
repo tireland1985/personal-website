@@ -170,11 +170,17 @@ class portfolioController{
                     $targetPath     = $uploadsDir . $fileName;
                     $uploadDate     = date('Y-m-d H:i:s');
                     $uploadOk = 1;
+                    //copy into imageFile array
+                    $imageFile = [];
+                    $imageFile['file_name'] = $fileName;
+                    $imageFile['file_path'] = $targetPath;
+                    $imageFile['created'] = $uploadDate;
+                    $imageFile['project_id'] = $project['project_id'];
 
                     if(validate_extension($fileName)){
                         //if the file passes pathinfo validation checks
                         if(move_uploaded_file($tempLocation, $targetPath)){
-                            $this->imagesTable->saveUploadedImage($fileName, $targetPath, $uploadDate, $_POST['project_id']);
+                            $this->imagesTable->save($imageFile);
                         } else {
                             $valid = false;
                             $errors[] = 'File(s) could not be uploaded';
