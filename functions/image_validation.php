@@ -4,7 +4,10 @@ function validate_extension($file){
     $allowed_exts = ['gif', 'png', 'jpg', 'jpeg'];
     $info = pathinfo($file);
 
-    if(in_array($info['extension'], $allowed_exts))
-        return false;
-    return 'Error: only ' . implode(', ', $allowed_exts) . ' are permitted';
+    if(in_array($info['extension'], $allowed_exts)){
+        return true;
+    }
+    else return false;
+//        return false;
+//    return 'Error: only ' . implode(', ', $allowed_exts) . ' are permitted';
 }
