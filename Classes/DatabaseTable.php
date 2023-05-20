@@ -139,6 +139,29 @@ class DatabaseTable {
      * }
     */
 
+    public function deleteImages($id){
+        $getImages = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' WHERE project_id = :id');
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $getImages->bindParam(':id', $id, \PDO::PARAM_INT);
+        $getImages->execute();     
+
+        if($getImages->rowCount >0) {
+            // iterate through any files found
+            foreach($getImages as $row){
+                // delete the file
+                if(unlink($row->file_path . $row->file_name)){
+                    // delete the record
+                    $stmt = $this->pdo->prepare('DELETE FROM ' . $this->table . ' WHERE project_id = :id');
+                    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+                    $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+                    $stmt->execute();
+                }else {
+                    die('Delete operation failed');
+                }
+            }
+        }
+    }
+
     public function countRecords($field){
         $stmt = $this->pdo->prepare('SELECT ' . $field . ' FROM ' . $this->table );
         $stmt->setFetchMode(\PDO::FETCH_CLASS, $this->entityClass, $this->entityConstructor);
