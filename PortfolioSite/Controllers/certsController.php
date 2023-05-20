@@ -45,7 +45,38 @@ class certsController{
         $valid = true;
 
         // validation checks
-
+        if(!empty($cert['vendor_url'])){
+            if(!filter_var($cert['vendor_url'], FILTER_VALIDATE_URL)){
+                $valid = false;
+                $errors[] = 'Invalid URL';
+            }
+        }
+        if(empty($cert['vendor_name'])){
+            $valid = false;
+            $errors[] = 'Vendor name required';
+        }
+        if(empty($cert['valid_from'])){
+            $valid = false;
+            $errors[] = 'Start date not provided';
+        }
+        if(empty($cert['valid_to'])){
+            $valid = false;
+            $errors[] = 'End date not provided';
+        }
+        if(empty($cert['cert_name'])){
+            $valid = false;
+            $errors[] = 'Certificate name not provided';
+        }
+        $validateStartDate = DateTime::createFromFormat('Y-m-d', $cert['valid_from']);
+        if($validateStartDate && $validateStartDate->format('Y-m-d') != $cert['valid_from']) {
+            $valid = false;
+            $errors[] = 'Provided start date invalid: use YYYY-MM-DD format (ex: 2019-07-18)';
+        }
+        $validateEndDate = DateTime::createFromFormat('Y-m-d', $cert['valid_to']);
+        if($validateEndDate && $validateEndDate->format('Y-m-d') != $cert['valid_to']) {
+            $valid = false;
+            $errors[] = 'Provided end date invalid: use YYYY-MM-DD format (ex: 2019-07-18)';
+        }
         //submission is valid
         if($valid == true){
             //Purify submission
