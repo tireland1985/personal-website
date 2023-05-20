@@ -223,6 +223,7 @@ class portfolioController{
         // admin function - delete record
         //TODO: check permissions first
         $this->projectsTable->delete($this->post['id']);
+        $this->imagesTable->deleteImages($this->post['id']);
         header('location: /portfolio/showProjects/');
     }
 }
